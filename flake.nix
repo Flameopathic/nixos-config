@@ -21,7 +21,7 @@
         specialArgs = { inherit inputs; }; # makes it so that all submodules can use inputs
         modules = [
           ./host/fnix2/configuration.nix
-      	  ./prof/nixos/default.nix
+          ./prof/nixos/default.nix
           ./prof/nixos/sd-boot.nix
           ./prof/nixos/ui.nix          
           home-manager.nixosModules.home-manager {
@@ -30,6 +30,7 @@
       	    home-manager.users.flame = {
               imports = [
                 ./prof/h-m/flame.nix
+                # other modules
                 ./prof/h-m/hyprland.nix
               ];
             };
