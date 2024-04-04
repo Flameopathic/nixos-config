@@ -15,18 +15,46 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     # make configuration name same as host name to make rebuild command work automagically
-    nixosConfigurations.fnix2 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; }; # makes it so that all submodules can use inputs
-      modules = [
-        ./configuration.nix
-	home-manager.nixosModules.home-manager
-	{
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.flame = import ./home.nix;
-	}
-      ];
+    nixosConfigurations = {
+      fnix2 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; }; # makes it so that all submodules can use inputs
+        modules = [
+          ./host/fnix2/configuration.nix
+          ./prof/nixos/sd-boot.nix
+          ./prof/nixos/ui.nix          
+          home-manager.nixosModules.home-manager {
+      	    home-manager.useGlobalPkgs = true;
+      	    home-manager.useUserPackages = true;
+      	    home-manager.users.flame = {
+              imports = [
+                ./prof/h-m/flame.nix
+                # other modules
+                ./prof/h-m/hyprland.nix
+              ];
+            };
+      	  }
+        ];
+      };
+      surfnix = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./host/surfnix/configuration.nix
+          ./prof/nixos/sd-boot.nix
+          ./prof/nixos/ui.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.flame = {
+              imports = [
+                ./prof/h-m/flame.nix
+                ./prof/h-m/hyprland.nix
+              ];
+            };
+          }
+        ];
+      };
     };
   };
 }
