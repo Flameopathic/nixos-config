@@ -46,6 +46,7 @@
           ./prof/nixos/default.nix
           ./prof/nixos/sd-boot.nix
           ./prof/nixos/ui.nix
+          ./prof/nixos/remote-builder.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

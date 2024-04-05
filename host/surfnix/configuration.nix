@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "fnix2";
+  networking.hostName = "surfnix";
   
   users.users.flame = {
     isNormalUser = true;
