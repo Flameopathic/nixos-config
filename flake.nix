@@ -67,6 +67,7 @@
           ./prof/nixos/default.nix
           # ./prof/nixos/mc-server.nix
           ./prof/nixos/rpi-boot.nix
+          ./prof/nixos/ssh-server.nix
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
