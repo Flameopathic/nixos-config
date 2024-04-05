@@ -33,6 +33,7 @@
                 ./prof/h-m/flame.nix
                 # other modules
                 ./prof/h-m/hyprland.nix
+                ./prof/h-m/ui-apps.nix
               ];
             };
       	  }
@@ -54,6 +55,7 @@
               imports = [
                 ./prof/h-m/flame.nix
                 ./prof/h-m/hyprland.nix
+                ./prof/h-m/ui-apps.nix
               ];
             };
           }
