@@ -4,10 +4,10 @@
 
   home.packages = with pkgs; [
     neofetch
-    discord
-    beeper
+    # discord
+    # beeper
     kitty
-    unityhub
+    # unityhub
   ];
 
   programs = {

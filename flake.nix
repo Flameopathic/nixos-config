@@ -64,12 +64,12 @@
         modules = [
           ./host/servnix/configuration.nix
           ./prof/nixos/default.nix
-          ./prof/nixos/sd-boot.nix
-          ./prof/nixos/mc-server.nix
+          # ./prof/nixos/mc-server.nix
+          ./prof/nixos/rpi-boot.nix
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
-              useUserPkgs = true;
+              useUserPackages = true;
               users.flame = {
                 imports = [
                   ./prof/h-m/flame.nix
