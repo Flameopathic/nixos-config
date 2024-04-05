@@ -3,6 +3,6 @@
 		discord
 		beeper
 		unityhub
-		minecraft
+		prismlauncher
 	];
 }
