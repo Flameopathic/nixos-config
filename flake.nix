@@ -65,7 +65,7 @@
         modules = [
           ./host/servnix/configuration.nix
           ./prof/nixos/default.nix
-          # ./prof/nixos/mc-server.nix
+          ./prof/nixos/mc-server.nix
           ./prof/nixos/rpi-boot.nix
           ./prof/nixos/ssh-server.nix
           home-manager.nixosModules.home-manager {
