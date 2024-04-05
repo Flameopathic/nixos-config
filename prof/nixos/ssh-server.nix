@@ -1,9 +1,5 @@
 { config, pkgs, inputs, ... }: {
 	services = {
-	  avahi = {
-			enable = true;
-			nssmdns = true;
-		};
 	  openssh = {
 			enable = true;
 			# best practice is to require public-key authentication
