@@ -12,11 +12,11 @@
 			gamemode = "survival";
 			enable-command-block = false;
 			enable-query = false;
-			generator-settings = {};
+			# generator-settings = {};
 			enforce-secure-profile = true;
 			level-name = "world";
 			motd = "wip prolly";
-			query.port = 25565;
+			# query.port = 25565;
 			pvp = true;
 			generate-structures = true;
 			max-chained-neighbor-updates = 1000000;
