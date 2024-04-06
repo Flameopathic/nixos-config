@@ -5,6 +5,11 @@
 
   time.timeZone = "US/Eastern";
 
+  users.users.flame = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  };
+
   services.gnome.gnome-keyring.enable = true; # makes nextcloud happy i suppose
 
   environment.systemPackages = with pkgs; [
