@@ -15,7 +15,7 @@
 			# generator-settings = {};
 			enforce-secure-profile = true;
 			level-name = "world";
-			motd = "wip prolly";
+			motd = "the place to be on a saturday";
 			# query.port = 25565;
 			pvp = true;
 			generate-structures = true;
@@ -60,13 +60,14 @@
 			# text-filtering-config = ;
 			spawn-monsters = true;
 			enforce-whitelist = true;
-			spawn-protection = 16;
+			spawn-protection = 0;
 			# resource-pack-sha1 = ;
 			max-world-size = 5000;
 		};
 		whitelist = {
 			Flameopathic = "040ebdc7-9ca1-475d-9b3d-4fb62a29b19e";
 			DerpLemonade = "b32f9046-264b-4e02-911c-90fbcbd167a7";
+			nox_quack = "19051a2b-ac8e-4bab-86fd-e9ab42e8de3d";
 		};
 	};
 }
