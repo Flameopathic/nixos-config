@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "surfnix"
+  networking.hostName = "surfnix";
 
   programs = {
     steam.enable = true;
