@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs"; # ensures nixpkgs version is consistent between home manager and system
@@ -69,6 +70,7 @@
           ./prof/nixos/default.nix
           ./prof/nixos/mc-server.nix
           ./prof/nixos/rpi-boot.nix
+          ./prof/nixos/rpi4-overclock.nix
           ./prof/nixos/ssh-server.nix
           home-manager.nixosModules.home-manager {
             home-manager = {
