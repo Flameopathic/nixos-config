@@ -25,6 +25,7 @@
           ./prof/nixos/default.nix
           ./prof/nixos/sd-boot.nix
           ./prof/nixos/ui.nix          
+          ./prof/nixos/hyprland.nix
           ./prof/nixos/nvidia.nix
           home-manager.nixosModules.home-manager {
       	    home-manager.useGlobalPkgs = true;
@@ -48,6 +49,7 @@
           ./prof/nixos/default.nix
           ./prof/nixos/sd-boot.nix
           ./prof/nixos/ui.nix
+          ./prof/nixos/hyprland.nix
           ./prof/nixos/remote-builder.nix
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
