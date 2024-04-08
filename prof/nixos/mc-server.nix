@@ -2,6 +2,7 @@
 	services.minecraft-server = {
 		enable = true;
 		eula = true;
+		package = pkgs.papermc;
 		jvmOpts = "-Xmx6G -Xms6G";
 		openFirewall = true;
 		declarative = true;
@@ -68,6 +69,8 @@
 			Flameopathic = "040ebdc7-9ca1-475d-9b3d-4fb62a29b19e";
 			DerpLemonade = "b32f9046-264b-4e02-911c-90fbcbd167a7";
 			nox_quack = "19051a2b-ac8e-4bab-86fd-e9ab42e8de3d";
+			Mercadies = "c8200af1-7fb8-48fc-83b8-1066ef221333";
+			LadyIanite07 = "aefc488b-ff80-4b4f-8b73-f8241e5df6d5";
 		};
 	};
 }
