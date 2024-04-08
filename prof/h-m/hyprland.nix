@@ -29,6 +29,7 @@
       '';
       "$mod" = "SUPER";
       "monitor" = ",highres,auto,auto";
+      "misc:disable_hyprland_logo" = true;
 
       input = {
         # should make steam popups happier
