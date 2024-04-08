@@ -2,6 +2,7 @@
 	services.minecraft-server = {
 		enable = true;
 		eula = true;
+		package = pkgs.papermc;
 		jvmOpts = "-Xmx6G -Xms6G";
 		openFirewall = true;
 		declarative = true;
