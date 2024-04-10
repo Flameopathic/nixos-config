@@ -2,8 +2,8 @@
 	services.minecraft-server = {
 		enable = true;
 		eula = true;
-		package = pkgs.papermc;
-		jvmOpts = "-Xmx6G -Xms6G";
+		package = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.papermc; # uses papermc from unstable branch
+		jvmOpts = "-Xmx6656M -Xms6656M -XX:+AlwaysPreTouch -XX:+DisableExplicitGC -XX:+ParallelRefProcEnabled -XX:+PerfDisableSharedMem -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1HeapRegionSize=8M -XX:G1HeapWastePercent=5 -XX:G1MaxNewSizePercent=40 -XX:G1MixedGCCountTarget=4 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1NewSizePercent=30 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15 -XX:MaxGCPauseMillis=200 -XX:MaxTenuringThreshold=1 -XX:SurvivorRatio=32";
 		openFirewall = true;
 		declarative = true;
 		serverProperties = {
@@ -71,6 +71,8 @@
 			nox_quack = "19051a2b-ac8e-4bab-86fd-e9ab42e8de3d";
 			Mercadies = "c8200af1-7fb8-48fc-83b8-1066ef221333";
 			LadyIanite07 = "aefc488b-ff80-4b4f-8b73-f8241e5df6d5";
+			Psycho_Blade1 = "2a4d0a8f-d55c-4c83-9db5-a06665ad1231";
+			StupidSufy = "b7248d94-9b5a-45b4-83b4-1f0d1f0d850b";
 		};
 	};
 }

@@ -14,13 +14,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
     # make configuration name same as host name to make rebuild command work automagically
     nixosConfigurations = {
       fnix2 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; }; # makes it so that all submodules can use inputs
-        modules = [
+        modules = [ # nixos imports
           ./host/fnix2/configuration.nix
           ./prof/nixos/default.nix
           ./prof/nixos/sd-boot.nix
@@ -31,9 +31,8 @@
       	    home-manager.useGlobalPkgs = true;
       	    home-manager.useUserPackages = true;
       	    home-manager.users.flame = {
-              imports = [
+              imports = [ # home-manager imports
                 ./prof/h-m/flame.nix
-                # other modules
                 ./prof/h-m/hyprland.nix
                 ./prof/h-m/ui-apps.nix
               ];
@@ -65,7 +64,7 @@
         ];
       };
       servnix = nixpkgs.lib.nixosSystem {
-        system = "aarch64";
+        system = "aarch64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./host/servnix/configuration.nix
