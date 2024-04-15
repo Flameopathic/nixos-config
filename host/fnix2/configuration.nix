@@ -5,7 +5,6 @@
 
   networking.hostName = "fnix2";
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-  environment.systemPackages = [ pkgs.xautoclick ];
   
   programs = {
     steam.enable = true;
