@@ -3,7 +3,9 @@
 		discord
 		beeper
 		unityhub
+
 		prismlauncher
+		glfw-wayland-minecraft # should help Minecraft flickering issues
 	];
 	programs = {
 		kitty = {
