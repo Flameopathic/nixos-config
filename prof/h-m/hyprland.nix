@@ -8,13 +8,16 @@
   # drun
   programs.wofi = {
     enable = true;
-    # theme = "fancy";
+  };
+
+  # waybar
+  programs.waybar = {
+    enable = true;
   };
 
   # packages
   home.packages = with pkgs; [
     swww
-    waybar
     brightnessctl
   ];
   wayland.windowManager.hyprland = {
