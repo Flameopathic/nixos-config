@@ -15,6 +15,7 @@
   home.packages = with pkgs; [
     swww
     waybar
+    brightnessctl
   ];
   wayland.windowManager.hyprland = {
     enable = true;
@@ -59,7 +60,14 @@
       	"$mod, up, movefocus, u"
       	"$mod, down, movefocus, d"
 
-              # special workspace
+        # brightness and volume
+        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+       
+        # special workspace
       	"$mod, S, togglespecialworkspace, magic"
       	"$mod SHIFT, S, movetoworkspace, special:magic"
       ] ++ (
