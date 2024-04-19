@@ -9,13 +9,17 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs"; # ensures nixpkgs version is consistent between home manager and system
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.3.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, lanzaboote, ... }@inputs: {
     # make configuration name same as host name to make rebuild command work automagically
     nixosConfigurations = {
       fnix2 = nixpkgs.lib.nixosSystem {
