@@ -101,6 +101,7 @@
           ./prof/nixos/mc-server.nix
           ./prof/nixos/sd-boot.nix
           ./prof/nixos/ssh-server.nix
+          ./prof/nixos/remote-ssh.nix
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
