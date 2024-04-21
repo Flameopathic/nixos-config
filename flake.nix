@@ -92,6 +92,28 @@
           }
         ];
       };
+      shaktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./host/shaktop/configuration.nix
+          ./prof/nixos/default.nix
+          ./prof/mc-server.nix
+          ./prof/nixos/sd-boot.nix
+          ./prof/nixos/ssh-server.nix
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.flame = {
+                imports = [
+                  ./prof/h-m/flame.nix
+                ];
+              };
+            };
+          }
+        ];
+      };
     };
   };
 }
