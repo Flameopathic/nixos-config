@@ -98,7 +98,7 @@
         modules = [
           ./host/shaktop/configuration.nix
           ./prof/nixos/default.nix
-          ./prof/mc-server.nix
+          ./prof/nixos/mc-server.nix
           ./prof/nixos/sd-boot.nix
           ./prof/nixos/ssh-server.nix
           home-manager.nixosModules.home-manager {
