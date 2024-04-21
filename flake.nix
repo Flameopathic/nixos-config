@@ -51,7 +51,7 @@
         modules = [
           ./host/surfnix/configuration.nix
           ./prof/nixos/default.nix
-          ./prof/nixos/sd-boot.nix
+          ./prof/nixos/lanzaboote.nix
           ./prof/nixos/ui.nix
           ./prof/nixos/hyprland.nix
           ./prof/nixos/remote-builder.nix
