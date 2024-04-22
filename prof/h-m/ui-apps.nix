@@ -3,9 +3,8 @@
 		discord
 		beeper
 		unityhub
-
+		inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.bambu-studio
 		prismlauncher
-		glfw-wayland-minecraft # should help Minecraft flickering issues
 	];
 	programs = {
 		kitty = {

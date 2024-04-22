@@ -33,14 +33,17 @@
           ./prof/nixos/hyprland.nix
           ./prof/nixos/nvidia.nix
           home-manager.nixosModules.home-manager {
-      	    home-manager.useGlobalPkgs = true;
-      	    home-manager.useUserPackages = true;
-      	    home-manager.users.flame = {
-              imports = [ # home-manager imports
-                ./prof/h-m/flame.nix
-                ./prof/h-m/hyprland.nix
-                ./prof/h-m/ui-apps.nix
-              ];
+      	    home-manager = {
+              useGlobalPkgs = true;
+        	    useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+        	    users.flame = {
+                imports = [ # home-manager imports
+                  ./prof/h-m/flame.nix
+                  ./prof/h-m/hyprland.nix
+                  ./prof/h-m/ui-apps.nix
+                ];
+              };
             };
       	  }
         ];
@@ -57,14 +60,17 @@
           ./prof/nixos/remote-builder.nix
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.flame = {
-              imports = [
-                ./prof/h-m/flame.nix
-                ./prof/h-m/hyprland.nix
-                ./prof/h-m/ui-apps.nix
-              ];
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+              users.flame = {
+                imports = [
+                  ./prof/h-m/flame.nix
+                  ./prof/h-m/hyprland.nix
+                  ./prof/h-m/ui-apps.nix
+                ];
+              };
             };
           }
         ];
@@ -83,6 +89,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
               users.flame = {
                 imports = [
                   ./prof/h-m/flame.nix
@@ -106,6 +113,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
               users.flame = {
                 imports = [
                   ./prof/h-m/flame.nix
