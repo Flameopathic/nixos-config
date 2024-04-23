@@ -41,7 +41,19 @@
       	mouse_refocus = false;
       };
       "windowrulev2" = "stayfocused,class:(wofi)"; # makes wofi stay
-           
+
+      # appearance
+      general = {
+        border_size = 3;
+        gaps_out = 15;
+        cursor_inactive_timeout = 15;
+      };
+      decoration = {
+        rounding = 3;
+        inactive_opacity = .75;
+      };
+      
+      # binds
       bindm = [
         "$mod, mouse:272, movewindow"
       	"$mod, mouse:273, resizewindow"
