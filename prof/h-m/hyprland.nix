@@ -43,6 +43,15 @@
         # should make steam popups happier
         follow_mouse = 1;
       	mouse_refocus = false;
+
+        repeat_delay = 400; # ms before key repeat
+
+        touchpad = {
+          natural_scroll = true;
+        };
+      };
+      gestures = {
+        workspace_swipe = true;
       };
       "windowrulev2" = "stayfocused,class:(wofi)"; # makes wofi stay
 
@@ -50,11 +59,12 @@
       general = {
         border_size = 3;
         gaps_out = 15;
+        resize_on_border = true;
         cursor_inactive_timeout = 15;
       };
       decoration = {
         rounding = 3;
-        inactive_opacity = .75;
+        inactive_opacity = .90;
       };
       
       # binds
