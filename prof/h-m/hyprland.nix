@@ -15,6 +15,10 @@
     enable = true;
   };
 
+  programs.swaylock = {
+    enable = true;
+  };
+
   # packages
   home.packages = with pkgs; [
     swww
