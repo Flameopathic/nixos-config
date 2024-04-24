@@ -74,12 +74,12 @@
         "$mod, mouse:272, movewindow"
       	"$mod, mouse:273, resizewindow"
       ];
-      bindl = [ # switch binds
-        ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"main, disable\""
+      bindl = [ # works even when a lockscreen is active
+        # ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"main, disable\""
         ", switch:Lid Switch, exec, swaylock"
-        ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"main, highres, auto, auto\""
+        # ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"main, highres, auto, auto\""
       ];
-      binde = [ # repeating binds
+      bindel = [ # repeat and work on lockscreen
         # brightness and volume
         ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
