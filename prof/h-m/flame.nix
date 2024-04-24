@@ -28,6 +28,22 @@
     };
   };
 
+
+  xdg.desktopEntries = {
+    shutdown = {
+      name = "Shutdown Now";
+      exec = "Shutdown Now";
+      comment = "Shutdown computer immediately";
+      categories = [ "Utility" ];
+    };
+    reboot = {
+      name = "Reboot";
+      exec = "reboot";
+      comment = "Reboot computer.";
+      categories = [ "Utility" ];
+    };
+  };
+
   home.stateVersion = "23.11"; # home manager can be updated without changing this - read documentation
   programs.home-manager.enable = true;
 }
