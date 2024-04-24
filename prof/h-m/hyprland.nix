@@ -85,7 +85,6 @@
         ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%-"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+"
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
       ];
       bindr = [ # triggers on key release - weird stuff can be done
       	"$mod, R, exec, pkill wofi || wofi --normal-window --show drun"
@@ -101,19 +100,14 @@
       	"$mod, J, togglesplit,"
         "$mod, L, exec, swaylock"
 
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+
       	# focus
       	"$mod, left, movefocus, l"
       	"$mod, right, movefocus, r"
       	"$mod, up, movefocus, u"
       	"$mod, down, movefocus, d"
 
-        # brightness and volume
-        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
-        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%-"
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+"
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
-       
         # special workspace
       	"$mod, S, togglespecialworkspace, magic"
       	"$mod SHIFT, S, movetoworkspace, special:magic"
