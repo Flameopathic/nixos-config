@@ -82,6 +82,7 @@
       	"$mod, V, togglefloating,"
       	"$mod, R, exec, wofi --normal-window --show drun"
       	"$mod, J, togglesplit,"
+        "$mod, L, exec, swaylock"
 
       	# focus
       	"$mod, left, movefocus, l"
