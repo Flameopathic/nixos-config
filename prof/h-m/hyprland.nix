@@ -17,6 +17,9 @@
 
   programs.swaylock = {
     enable = true;
+    settings = {
+      color = "808080";
+    };
   };
 
   # packages
@@ -64,7 +67,6 @@
       };
       decoration = {
         rounding = 3;
-        inactive_opacity = .90;
       };
       
       # binds
