@@ -31,8 +31,8 @@
 
   xdg.desktopEntries = {
     shutdown = {
-      name = "Shutdown Now";
-      exec = "Shutdown Now";
+      name = "Shutdown";
+      exec = "shutdown now";
       comment = "Shutdown computer immediately";
       categories = [ "Utility" ];
     };

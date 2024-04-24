@@ -36,7 +36,7 @@
       	mako &
       '';
       "$mod" = "SUPER";
-      "monitor" = ",highres,auto,auto";
+      "monitor" = "main, highres, auto, auto";
       "misc:disable_hyprland_logo" = true;
 
       input = {
@@ -72,6 +72,22 @@
         "$mod, mouse:272, movewindow"
       	"$mod, mouse:273, resizewindow"
       ];
+      bindl = [ # switch binds
+        ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"main, disable\""
+        ", switch:Lid Switch, exec, swaylock"
+        ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"main, highres, auto, auto\""
+      ];
+      binde = [ # repeating binds
+        # brightness and volume
+        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+      ];
+      bindr = [ # triggers on key release - weird stuff can be done
+      	"$mod, R, exec, pkill wofi || wofi --normal-window --show drun"
+      ];
       bind = [
         # programs
         "$mod, F, exec, firefox"
@@ -80,7 +96,6 @@
       	"$mod, C, killactive,"
       	"$mod, M, exit,"
       	"$mod, V, togglefloating,"
-      	"$mod, R, exec, wofi --normal-window --show drun"
       	"$mod, J, togglesplit,"
         "$mod, L, exec, swaylock"
 
