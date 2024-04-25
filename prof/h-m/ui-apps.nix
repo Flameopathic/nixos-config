@@ -3,7 +3,7 @@
 		discord
 		beeper
 		unityhub
-		inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.bambu-studio
+		inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.orca-slicer
 		prismlauncher
 	];
 	programs = {
