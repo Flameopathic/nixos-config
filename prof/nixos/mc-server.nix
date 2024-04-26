@@ -32,7 +32,7 @@
 			allow-flight = false;
 			# initial-disabled-packs = ;
 			broadcast-rcon-to-ops = true;
-			view-distance = 64;
+			view-distance = 128;
 			# server-ip = ;
 			# resource-pack-prompt = ;
 			allow-nether = true;

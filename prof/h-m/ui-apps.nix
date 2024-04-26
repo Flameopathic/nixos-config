@@ -4,6 +4,7 @@
 		beeper
 		unityhub
 		prismlauncher
+		glfw-wayland-minecraft
 	];
 	programs = {
 		kitty = {
