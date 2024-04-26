@@ -39,7 +39,9 @@
       	mako &
       '';
       "$mod" = "SUPER";
-      "monitor" = "main, highres, auto, auto";
+      monitor = [
+        "DP-3, 5120x1440@239.761002, auto, auto"
+      ];
       "misc:disable_hyprland_logo" = true;
 
       input = {

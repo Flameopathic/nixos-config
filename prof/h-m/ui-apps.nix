@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }: {
 	home.packages = with pkgs; [
-		discord
+	  discord
 		beeper
 		unityhub
 		inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.orca-slicer
