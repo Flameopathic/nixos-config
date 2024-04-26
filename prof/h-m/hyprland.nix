@@ -107,6 +107,10 @@
       	"$mod, right, movefocus, r"
       	"$mod, up, movefocus, u"
       	"$mod, down, movefocus, d"
+      	"$mod, h, movefocus, l"
+      	"$mod, l, movefocus, r"
+      	"$mod, k, movefocus, u"
+      	"$mod, j, movefocus, d"
 
         # special workspace
       	"$mod, S, togglespecialworkspace, magic"
