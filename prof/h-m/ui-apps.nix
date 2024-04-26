@@ -1,9 +1,8 @@
 { config, pkgs, inputs, ... }: {
 	home.packages = with pkgs; [
-	  discord
+		inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.discord-screenaudio
 		beeper
 		unityhub
-		inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.orca-slicer
 		prismlauncher
 	];
 	programs = {
