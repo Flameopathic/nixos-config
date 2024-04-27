@@ -74,6 +74,8 @@
 			Psycho_Blade1 = "2a4d0a8f-d55c-4c83-9db5-a06665ad1231";
 			StupidSufy = "b7248d94-9b5a-45b4-83b4-1f0d1f0d850b";
 			ippon_datara = "96b3cf60-32f5-4cb5-9a38-43178c59aea3";
+			vio_q = "861b6592-a1aa-4b63-bb9d-aac16637f30a";
+			Attticusss = "af017840-c5a7-4615-af67-edc8f52c4deb";
 		};
 	};
 }
