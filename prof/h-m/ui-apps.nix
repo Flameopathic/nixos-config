@@ -5,6 +5,8 @@
 		unityhub
 		prismlauncher
 		glfw-wayland-minecraft
+		gnome.file-roller
+		xfce.thunar
 	];
 	programs = {
 		kitty = {
