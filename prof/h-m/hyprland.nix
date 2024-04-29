@@ -41,6 +41,7 @@
       "$mod" = "SUPER";
       monitor = [
         "DP-3, 5120x1440@239.761002, auto, auto"
+        "eDP-1, highres, auto, auto"
       ];
       "misc:disable_hyprland_logo" = true;
 
@@ -77,9 +78,9 @@
       	"$mod, mouse:273, resizewindow"
       ];
       bindl = [ # works even when a lockscreen is active
-        # ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"main, disable\""
+        ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
         ", switch:Lid Switch, exec, swaylock"
-        # ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"main, highres, auto, auto\""
+        ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, highres, auto, auto\""
       ];
       bindel = [ # repeat and work on lockscreen
         # brightness and volume

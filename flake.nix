@@ -57,7 +57,7 @@
           ./prof/nixos/lanzaboote.nix
           ./prof/nixos/ui.nix
           ./prof/nixos/hyprland.nix
-          ./prof/nixos/remote-builder.nix
+          ./prof/nixos/battery.nix
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.home-manager {
             home-manager = {
