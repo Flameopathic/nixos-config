@@ -53,7 +53,11 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./host/surfnix/configuration.nix
-          ./mod/default.nix
+          ./prof/nixos/default.nix
+          ./prof/nixos/lanzaboote.nix
+          ./prof/nixos/ui.nix
+          ./prof/nixos/hyprland.nix
+          ./prof/nixos/battery.nix
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
           home-manager.nixosModules.home-manager {
             home-manager = {
@@ -62,7 +66,9 @@
               extraSpecialArgs = { inherit inputs; };
               users.flame = {
                 imports = [
-                  ./mod-hm/default.nix
+                  ./prof/h-m/flame.nix
+                  ./prof/h-m/hyprland.nix
+                  ./prof/h-m/ui-apps.nix
                 ];
               };
             };
