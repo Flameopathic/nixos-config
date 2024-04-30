@@ -77,6 +77,8 @@
 			vio_q = "861b6592-a1aa-4b63-bb9d-aac16637f30a";
 			Attticusss = "af017840-c5a7-4615-af67-edc8f52c4deb";
 			blood_ANDtendons = "0a66ec37-9a7b-4fe9-98e8-0107cd815cc4";
+			Beans5428 = "073479a7-d6b4-4c1d-974a-0dd656738562";
+			NumberVoice7226 = "acd79e6b-ec94-478d-ad4b-d43d7b8f3ec6";
 		};
 	};
 }
