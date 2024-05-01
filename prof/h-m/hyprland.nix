@@ -25,7 +25,6 @@
   # packages
   home.packages = with pkgs; [
     swww
-    brightnessctl
     brillo
   ];
   wayland.windowManager.hyprland = {
@@ -95,14 +94,14 @@
       ];
       bind = [
         # programs
-        "$mod, F, exec, firefox"
+        "$mod, f, exec, firefox"
       	", Print, exec, grimblast copy area"
-      	"$mod, Q, exec, kitty"
-      	"$mod, C, killactive,"
-      	"$mod, M, exit,"
-      	"$mod, V, togglefloating,"
-      	"$mod, J, togglesplit,"
-        "$mod, L, exec, swaylock"
+      	"$mod, q, exec, kitty"
+      	"$mod, c, killactive,"
+      	"$mod, m, exit,"
+      	"$mod, n, togglefloating,"
+      	"$mod, j, togglesplit,"
+        "$mod, p, exec, swaylock"
 
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
 
@@ -117,8 +116,8 @@
       	"$mod, j, movefocus, d"
 
         # special workspace
-      	"$mod, S, togglespecialworkspace, magic"
-      	"$mod SHIFT, S, movetoworkspace, special:magic"
+      	"$mod, s, togglespecialworkspace, magic"
+      	"$mod SHIFT, s, movetoworkspace, special:magic"
       ] ++ (
         # makes 1-10 workspace bindings
       	builtins.concatLists (builtins.genList (
