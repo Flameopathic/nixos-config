@@ -28,7 +28,7 @@
     };
   };
 
-
+  # TODO: move to proper place
   xdg.desktopEntries = {
     shutdown = {
       name = "Shutdown";
