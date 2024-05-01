@@ -27,11 +27,12 @@
         specialArgs = { inherit inputs; }; # makes it so that all submodules can use inputs
         modules = [ # nixos imports
           ./host/fnix2/configuration.nix
-          ./prof/nixos/default.nix
-          ./prof/nixos/sd-boot.nix
-          ./prof/nixos/ui.nix          
-          ./prof/nixos/hyprland.nix
-          ./prof/nixos/nvidia.nix
+          ./mod/default.nix
+          # ./prof/nixos/default.nix
+          # ./prof/nixos/sd-boot.nix
+          # ./prof/nixos/ui.nix          
+          # ./prof/nixos/hyprland.nix
+          # ./prof/nixos/nvidia.nix
           home-manager.nixosModules.home-manager {
       	    home-manager = {
               useGlobalPkgs = true;

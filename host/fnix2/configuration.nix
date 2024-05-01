@@ -4,7 +4,14 @@
   ];
 
   networking.hostName = "fnix2";
-  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
+  flame = {
+    setup.enable = true;
+    sd-boot.enable = true;
+    ui.enable = true;
+    hyprland.enable = true;
+    nvidia.enable = true;
+  };
   
   programs = {
     steam.enable = true;
