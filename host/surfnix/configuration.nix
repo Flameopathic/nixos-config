@@ -5,6 +5,14 @@
 
   networking.hostName = "surfnix";
 
+  flame = {
+    setup.enable = true;
+    lanzaboote.enable = true;
+    ui.enable = true;
+    hyprland.enable = true;
+    battery.enable = true;
+  };
+
   programs = {
     steam.enable = true;
   };
