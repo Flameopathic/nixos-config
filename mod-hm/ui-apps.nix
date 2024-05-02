@@ -11,7 +11,7 @@ in {
 	
 	config = mkIf cfg.enable {
 		home.packages = with pkgs; [
-			inputs.nixpkgs-unstable.legacyPackages.${pkgs.system}.discord-screenaudio
+			unstable.discord-screenaudio
 			beeper
 			unityhub
 			prismlauncher
