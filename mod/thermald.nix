@@ -12,7 +12,7 @@ in {
 	config = mkIf cfg.enable {
 		services.thermald = {
 			enable = true;
-			configFile = ../../resources/thermal-conf.xml;
+		  configFile = ../resources/thermal-conf.xml;
 		};
 	};
 }

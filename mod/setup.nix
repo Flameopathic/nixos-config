@@ -20,6 +20,7 @@ in {
       isNormalUser = true;
       extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     };
+    flame.home-manager.enable = true;
 
     nixpkgs.overlays = [
       (final: prev: {
