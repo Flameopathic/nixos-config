@@ -28,11 +28,6 @@
         modules = [ # nixos imports
           ./host/fnix2/configuration.nix
           ./mod/default.nix
-          # ./prof/nixos/default.nix
-          # ./prof/nixos/sd-boot.nix
-          # ./prof/nixos/ui.nix          
-          # ./prof/nixos/hyprland.nix
-          # ./prof/nixos/nvidia.nix
           home-manager.nixosModules.home-manager {
       	    home-manager = {
               useGlobalPkgs = true;
@@ -40,9 +35,8 @@
               extraSpecialArgs = { inherit inputs; };
         	    users.flame = {
                 imports = [ # home-manager imports
-                  ./prof/h-m/flame.nix
-                  ./prof/h-m/hyprland.nix
-                  ./prof/h-m/ui-apps.nix
+                  ./host/fnix2/home.nix
+                  ./mod-hm/default.nix
                 ];
               };
             };
