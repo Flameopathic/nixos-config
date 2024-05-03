@@ -101,12 +101,10 @@ in {
           ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%-"
           ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+"
         ];
-        bindr = [ # triggers on key release - weird stuff can be done
-        	"$mod, R, exec, pkill wofi || wofi --normal-window --show drun"
-        ];
         bind = [
           # programs
           "$mod, f, exec, firefox"
+          "$mod, R, exec, wofi --normal-window --show drun"
         	", Print, exec, grimblast copy area"
         	"$mod, q, exec, kitty"
         	"$mod, c, killactive,"
