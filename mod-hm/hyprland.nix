@@ -114,7 +114,7 @@ in {
         	"$mod, m, exit,"
         	"$mod, n, togglefloating,"
         	"$mod, j, togglesplit,"
-          "$mod, p, exec, hyprlock"
+          "$mod, p, exec, swaylock"
 
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
 
