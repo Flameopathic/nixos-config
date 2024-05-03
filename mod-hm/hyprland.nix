@@ -40,6 +40,7 @@ in {
     # packages
     home.packages = with pkgs; [
       swww
+      unstable.hyprlock
       brillo
     ];
     wayland.windowManager.hyprland = {
