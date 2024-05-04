@@ -19,7 +19,11 @@ in {
 				driSupport = true;
 				driSupport32Bit = true;
 			};
-			nvidia.modesetting.enable = true;
+			nvidia = {
+				modesetting.enable = true;
+			};
 		};
+
+		boot.kernelPackages = pkgs.unstable.linuxPackages; # allows me to get more recent nvidia drivers that *might* fix changes
 	};
 }

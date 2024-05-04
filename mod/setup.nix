@@ -24,7 +24,10 @@ in {
 
     nixpkgs.overlays = [
       (final: prev: {
-        unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
+        unstable = import inputs.nixpkgs-unstable {
+          system = pkgs.system;
+          config.allowUnfree = true;
+        };
       })
     ];
 
