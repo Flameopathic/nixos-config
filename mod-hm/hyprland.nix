@@ -28,6 +28,33 @@ in {
     # waybar
     programs.waybar = {
       enable = true;
+      settings = {
+        mainBar = {
+          position = "bottom";
+          modules-left = [
+            "hyprland/workspaces" 
+            "hyprland/window"
+          ];
+          "hyprland/window" = {
+            icons = true;
+          };
+          modules-right = [
+            "backlight"
+            "battery"
+            "bluetooth"
+            "cpu"
+            "clock"
+            "disk"
+            "memory"
+            "network"
+            "privacy"
+            "systemd-failed-units"
+            "temperature"
+            "tray"
+            "wireplumber"
+          ];
+        };
+      };
     };
 
     programs.swaylock = {
