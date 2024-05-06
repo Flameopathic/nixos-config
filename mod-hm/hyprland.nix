@@ -31,6 +31,7 @@ in {
       settings = {
         mainBar = {
           position = "bottom";
+          spacing = 4;
           modules-left = [
             "hyprland/workspaces" 
             "hyprland/window"
