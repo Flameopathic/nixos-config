@@ -323,7 +323,6 @@ in {
           waybar &
         	swww init &
         	nextcloud-client &
-        	beeper &
         	mako &
         '';
         "$mod" = "SUPER";
