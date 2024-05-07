@@ -5,6 +5,8 @@
 
   networking.hostName = "surfnix";
 
+  security.pki.certificateFiles = [ ../../resources/ccsdfg_sha2.pem ];
+
   flame = {
     setup.enable = true;
     lanzaboote.enable = true;

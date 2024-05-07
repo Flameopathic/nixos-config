@@ -12,6 +12,7 @@ in {
 	config = mkIf cfg.enable {
 		home.packages = with pkgs; [
 			unstable.discord-screenaudio
+			unstable.obsidian
 			beeper
 			unityhub
 			prismlauncher

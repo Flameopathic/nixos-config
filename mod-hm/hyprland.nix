@@ -136,15 +136,6 @@ in {
       }
       */
 
-      window#waybar.termite {
-          background-color: #3F3F3F;
-      }
-
-      window#waybar.chromium {
-          background-color: #000000;
-          border: none;
-      }
-
       button {
           /* Use box-shadow instead of border so the text isn't offset */
           box-shadow: inset 0 -3px transparent;
@@ -192,8 +183,11 @@ in {
       #backlight,
       #network,
       #pulseaudio,
-      #tray,
-
+      #tray {
+        padding: 0 10px;
+        color: #ffffff;
+      }
+      
       #window,
       #workspaces {
           margin: 0 4px;
