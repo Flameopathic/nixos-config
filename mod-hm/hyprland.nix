@@ -30,6 +30,7 @@ in {
       enable = true;
       settings = {
         main = {
+          layer = "top";
           position = "bottom";
           spacing = 4;
           modules-left = [
