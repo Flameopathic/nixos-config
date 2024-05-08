@@ -48,7 +48,6 @@ in {
             "clock"
             "tray"
             "bluetooth"
-            "disk"
           ];
           tray.spacing = 10;
           clock = {
@@ -179,7 +178,6 @@ in {
       #battery,
       #cpu,
       #memory,
-      #disk,
       #temperature,
       #backlight,
       #network,
@@ -303,7 +301,7 @@ in {
     programs.swaylock = {
       enable = true;
       settings = {
-        color = "808080";
+        color = "000000";
       };
     };
 
