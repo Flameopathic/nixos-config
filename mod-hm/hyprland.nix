@@ -184,6 +184,8 @@ in {
       #backlight,
       #network,
       #pulseaudio,
+      #bluetooth,
+      #disk,
       #tray {
         padding: 0 10px;
         color: #ffffff;
