@@ -309,6 +309,7 @@ in {
     home.packages = with pkgs; [
       swww
       brillo
+      networkmanagerapplet
     ];
     wayland.windowManager.hyprland = {
       enable = true;
@@ -319,6 +320,7 @@ in {
         	swww init &
         	nextcloud-client &
         	mako &
+          nm-applet &
         '';
         "$mod" = "SUPER";
         monitor = cfg.monitor;
