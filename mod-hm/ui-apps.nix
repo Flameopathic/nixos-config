@@ -13,6 +13,7 @@ in {
 		home.packages = with pkgs; [
 			unstable.discord-screenaudio
 			unstable.obsidian
+			vlc
 			beeper
 			unityhub
 			prismlauncher

@@ -19,7 +19,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixos-hardware, home-manager, lanzaboote, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: {
     # make configuration name same as host name to make rebuild command work automagically
     nixosConfigurations = {
       fnix2 = nixpkgs.lib.nixosSystem {

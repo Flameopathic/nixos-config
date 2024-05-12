@@ -372,7 +372,7 @@ in {
         ];
         bind = [
           # programs
-          "$mod, f, exec, firefox"
+          "$mod, f, fullscreen, 0"
           "$mod, R, exec, wofi --normal-window --show drun"
         	", Print, exec, grimblast copy area"
         	"$mod, q, exec, kitty"
