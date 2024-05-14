@@ -166,10 +166,9 @@ in {
 	      	    "trailhead.firstrun.didSeeAboutWelcome" = true;
 							
 	      	  };
-	         #  extensions = with inputs.firefox-addons.${pkgs.system}; [
-	         #    ublock-origin
-	         #   darkreader
-	       	 #  ];
+	          extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+	            ublock-origin
+	       	  ];
 	      	};
 	      };
 	    };
