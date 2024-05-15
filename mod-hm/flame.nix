@@ -32,6 +32,11 @@ in {
       bash = {
         enable = true;
         enableCompletion = true;
+        shellAliases = {
+          nrbs = "sudo nixos-rebuild switch";
+          conf = "cd /etc/nixos";
+          ".." = "cd ..";
+        };
       };
       helix = {
         enable = true;

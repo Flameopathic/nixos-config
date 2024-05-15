@@ -13,6 +13,7 @@
     ui.enable = true;
     hyprland.enable = true;
     battery.enable = true;
+    surface.enable = true;
   };
 
   programs = {
