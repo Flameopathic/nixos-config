@@ -310,7 +310,7 @@ in {
       swww
       brillo
       networkmanagerapplet
-      shotman
+      unstable.hyprshot
     ];
     wayland.windowManager.hyprland = {
       enable = true;
@@ -383,7 +383,7 @@ in {
         	"$mod, j, togglesplit,"
           "$mod, p, exec, swaylock"
 
-          "$mod SHIFT, s, exec, shotman"
+          "$mod SHIFT, s, exec, hyprshot -m region"
 
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
 
