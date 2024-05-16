@@ -19,7 +19,7 @@ in {
 			unstable.godot_4
 			prismlauncher
 			gnome.file-roller
-			xfce.thunar
+			gnome.nautilus
 		];
 		programs = {
 			kitty = {
@@ -28,6 +28,22 @@ in {
 		};
 
 		flame.firefox.enable = true;
+		
+		gtk = {
+			enable = true;
+			# cursorTheme = {
+			# 	name = "quintom";
+			# 	package = pkgs.quintom-cursor-theme;
+			# };
+			# iconTheme = {
+			# 	name = "tau-hydrogen";
+			# 	package = pkgs.tau-hydrogen;
+			# };
+			theme = {
+				name = "Fluent";
+				package = pkgs.fluent-gtk-theme;
+			};
+		};
 		
 	  services = {
 	    gnome-keyring.enable = true; # necessary for automatically logging back into nextcloud-client
