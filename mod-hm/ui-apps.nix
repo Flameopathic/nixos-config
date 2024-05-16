@@ -14,6 +14,7 @@ in {
 			unstable.discord-screenaudio
 			unstable.obsidian
 			vlc
+			libreoffice
 			beeper
 			unityhub
 			prismlauncher

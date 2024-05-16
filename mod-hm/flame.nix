@@ -33,7 +33,7 @@ in {
         enable = true;
         enableCompletion = true;
         shellAliases = {
-          nrbs = "sudo nixos-rebuild switch";
+          snrbs = "sudo nixos-rebuild switch";
           conf = "cd /etc/nixos";
           ".." = "cd ..";
         };

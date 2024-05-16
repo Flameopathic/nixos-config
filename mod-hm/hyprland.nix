@@ -310,6 +310,7 @@ in {
       swww
       brillo
       networkmanagerapplet
+      shotman
     ];
     wayland.windowManager.hyprland = {
       enable = true;
@@ -382,6 +383,8 @@ in {
         	"$mod, j, togglesplit,"
           "$mod, p, exec, swaylock"
 
+          "$mod SHIFT, s, exec, shotman"
+
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
 
         	# focus
@@ -395,8 +398,8 @@ in {
         	"$mod, j, movefocus, d"
 
           # special workspace
-        	"$mod, s, togglespecialworkspace, magic"
-        	"$mod SHIFT, s, movetoworkspace, special:magic"
+        	"$mod, o, togglespecialworkspace, magic"
+        	"$mod SHIFT, o, movetoworkspace, special:magic"
         ] ++ (
           # makes 1-10 workspace bindings
         	builtins.concatLists (builtins.genList (
