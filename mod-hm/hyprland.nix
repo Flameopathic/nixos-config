@@ -345,6 +345,7 @@ in {
 
         # appearance
         general = {
+          allow_tearing = true;
           border_size = 3;
           gaps_out = 15;
           resize_on_border = true;
@@ -353,7 +354,9 @@ in {
         decoration = {
           rounding = 3;
         };
-      
+
+        env = "WLR_DRM_NO_ATOMIC,1";
+
         # binds
         bindm = [
           "$mod, mouse:272, movewindow"
@@ -383,7 +386,7 @@ in {
         	"$mod, j, togglesplit,"
           "$mod, p, exec, swaylock"
 
-          "$mod SHIFT, s, exec, hyprshot -m region"
+          "$mod SHIFT, s, exec, hyprshot -m region -o ~/Nextcloud/Pictures/Screenshots"
 
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
 

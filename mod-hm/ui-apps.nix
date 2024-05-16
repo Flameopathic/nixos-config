@@ -16,7 +16,7 @@ in {
 			vlc
 			libreoffice
 			beeper
-			unityhub
+			unstable.godot_4
 			prismlauncher
 			gnome.file-roller
 			xfce.thunar
