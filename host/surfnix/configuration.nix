@@ -5,7 +5,7 @@
 
   networking.hostName = "surfnix";
 
-  security.pki.certificateFiles = [ ../../resources/ccsdfg_sha2.pem ];
+  security.pki.certificateFiles = [ ../../resources/enterprise.pem ];
 
   flame = {
     setup.enable = true;
