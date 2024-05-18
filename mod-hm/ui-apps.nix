@@ -39,10 +39,10 @@ in {
 			# 	name = "tau-hydrogen";
 			# 	package = pkgs.tau-hydrogen;
 			# };
-			theme = {
-				name = "Fluent";
-				package = pkgs.fluent-gtk-theme;
-			};
+			# theme = {
+			# 	name = "Fluent";
+			# 	package = pkgs.fluent-gtk-theme;
+			# };
 		};
 		
 	  services = {

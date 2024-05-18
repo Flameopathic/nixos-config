@@ -11,6 +11,7 @@
     ui.enable = true;
     hyprland.enable = true;
     nvidia.enable = true;
+    remote-builder.enable = true;
   };
   
   programs = {

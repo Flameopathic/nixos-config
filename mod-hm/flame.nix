@@ -17,6 +17,7 @@ in {
       neofetch
       nerdfonts
       sbctl
+      nix-tree
     ];
 
     programs = {
