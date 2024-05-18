@@ -13,7 +13,7 @@
     };
     rpi-boot = {
       enable = true;
-      overclock = true;
+      overclock = false;
     };
     ssh-server.enable = true;
   };
