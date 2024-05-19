@@ -16,6 +16,7 @@ in {
 			unstable.obsidian
 			vlc
 			libreoffice
+			hunspellDicts.en_US
 			beeper
 			unstable.godot_4
 			prismlauncher
