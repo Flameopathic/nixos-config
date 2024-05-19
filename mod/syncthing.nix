@@ -16,14 +16,27 @@ in {
 			openDefaultPorts = cfg.server;
 			user = mkDefault "flame";
 			dataDir = mkDefault "/home/flame/syncthing";
-			configDir = mkDefault "/home/flame/syncthing/.config/syncthing";
-			# overrideDevices = mkDefault true;
-			# overrideFolders = mkDefault true;
-			# settings = {
-			# 	device = {
-			# 		"fnix2" = 
-			# 	};
-			# };
+			# configDir = mkDefault "/home/flame/doc/.config/syncthing";
+			overrideDevices = mkDefault true;
+			overrideFolders = mkDefault true;
+			
+			settings = {
+				devices = {
+					"fnix2" = {
+						id = "ONYBVSG-TRXS6VT-CXQ737X-CD4QQ5B-PQEJIC6-23CORFG-RA3MGDZ-X6YYBQP";
+					};
+				};
+				folders = {
+					doc = {
+						path = "/home/flame/doc";
+						devices = [ "fnix2" ];
+						id = "doc";
+					};
+				};
+				options = {
+					urAccepted = -1;
+				};
+			};
 		};
 	};
 }
