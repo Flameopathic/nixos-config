@@ -16,10 +16,8 @@ in {
 			openDefaultPorts = cfg.server;
 			user = mkDefault "flame";
 			dataDir = mkDefault "/home/flame/syncthing";
-			# configDir = mkDefault "/home/flame/doc/.config/syncthing";
 			overrideDevices = mkDefault true;
 			overrideFolders = mkDefault true;
-			
 			settings = {
 				devices = {
 					"fnix2" = {
@@ -34,6 +32,10 @@ in {
 						path = "/home/flame/doc";
 						devices = [ "fnix2" "surfnix" ];
 						id = "doc";
+						versioning = {
+							type = "trashcan";
+							params.cleanoutDays = "1000";
+						};
 					};
 				};
 				options = {
