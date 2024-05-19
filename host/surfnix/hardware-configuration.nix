@@ -24,9 +24,15 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/home/flame/Nextcloud" =
+  fileSystems."/home/flame/doc/Nextcloud Backup" =
     { device = "/dev/disk/by-uuid/723a3feb-0852-4346-b5b9-b72153a79ec0";
       fsType = "ext4";
+    };
+
+  fileSystems."/home/flame/Nextcloud" =
+    { device = "/home/flame/doc/Nextcloud Backup";
+      fsType = "none";
+      options = [ "bind" ];
     };
 
   swapDevices =

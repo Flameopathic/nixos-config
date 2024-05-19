@@ -33,7 +33,7 @@ in {
 				folders = {
 					doc = {
 						path = "/home/flame/doc";
-						devices = [ "fnix2" "surfnix" ];
+						devices = [ "fnix2" "surfnix" "servnix" ];
 						id = "doc";
 						versioning = {
 							type = "trashcan";
