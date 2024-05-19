@@ -36,6 +36,7 @@ in {
           snrbs = "sudo nixos-rebuild switch";
           conf = "cd /etc/nixos";
           ".." = "cd ..";
+          ssh = "TERM=xterm ssh";
         };
       };
       helix = {
