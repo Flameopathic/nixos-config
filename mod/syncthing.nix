@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, lib }:
+{ config, inputs, pkgs, lib, ... }:
 
 with lib;
 
@@ -24,6 +24,6 @@ in {
 			# 		"fnix2" = 
 			# 	};
 			# };
-		}
-	}
+		};
+	};
 }
