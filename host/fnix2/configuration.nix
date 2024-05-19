@@ -12,6 +12,7 @@
     hyprland.enable = true;
     nvidia.enable = true;
     remote-builder.enable = true;
+    ssh-server.enable = true;
   };
   
   programs = {
