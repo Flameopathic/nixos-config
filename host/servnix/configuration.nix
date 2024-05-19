@@ -16,6 +16,10 @@
       overclock = false;
     };
     ssh-server.enable = true;
+    syncthing = {
+      enable = true;
+      server = true;
+    };
   };
   
 	system.stateVersion = "23.11"; # read docs before changing

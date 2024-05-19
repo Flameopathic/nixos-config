@@ -26,6 +26,9 @@ in {
 					"surfnix" = {
 						id = "NJRGKSE-QTLVGI6-KUIMKVT-53GP7IN-6XUTFMZ-KKG76DZ-45Q6K2Q-P6AAIAB";
 					};
+					"servnix" = {
+						id = "DLLU755-KDYY2I7-5MSLDZC-4A5Q7IA-VJ5MCKH-F6J3XWN-GOYI2W3-OOONBQP";
+					};
 				};
 				folders = {
 					doc = {
