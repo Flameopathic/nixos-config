@@ -14,6 +14,7 @@
     hyprland.enable = true;
     battery.enable = true;
     surface.enable = true;
+    syncthing.enable = true;
   };
 
   programs = {
