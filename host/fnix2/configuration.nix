@@ -13,6 +13,7 @@
     nvidia.enable = true;
     remote-builder.enable = true;
     ssh-server.enable = true;
+    syncthing.enable = true;
   };
   
   programs = {

@@ -15,7 +15,6 @@ in {
 
     home.packages = with pkgs; [
       neofetch
-      nerdfonts
       sbctl
       nix-tree
     ];

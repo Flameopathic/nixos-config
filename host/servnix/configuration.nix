@@ -7,10 +7,10 @@
 
   flame = {
     setup.enable = true;
-    mc-server = {
-      enable = true;
-      ram = "6656M";
-    };
+    # mc-server = {
+    #   enable = true;
+    #   ram = "6656M";
+    # };
     rpi-boot = {
       enable = true;
       overclock = false;
