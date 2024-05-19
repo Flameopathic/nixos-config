@@ -319,7 +319,6 @@ in {
         exec-once = ''
           waybar &
         	swww init &
-        	nextcloud-client &
         	mako &
           nm-applet &
         '';
@@ -386,7 +385,7 @@ in {
         	"$mod, j, togglesplit,"
           "$mod, p, exec, swaylock"
 
-          "$mod SHIFT, s, exec, hyprshot -m region -o ~/Nextcloud/Pictures/Screenshots"
+          "$mod SHIFT, s, exec, hyprshot -m region -o ~/Nextcloud/Pictures/Screenshots" # TODO: change screenshots folder
 
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
 

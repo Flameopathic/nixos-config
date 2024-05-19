@@ -46,10 +46,5 @@ in {
 			# 	package = pkgs.fluent-gtk-theme;
 			# };
 		};
-		
-	  services = {
-	    gnome-keyring.enable = true; # necessary for automatically logging back into nextcloud-client
-	    nextcloud-client.enable = true;
-	  };
 	};
 }
