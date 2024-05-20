@@ -21,7 +21,8 @@ in {
 			unstable.godot_4
 			prismlauncher
 			gnome.file-roller
-			gnome.nautilus
+			# fm # really good looking file manager, gonna wait until it's a bit better on the back end
+			pcmanfm
 		];
 		programs = {
 			kitty = {
