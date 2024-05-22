@@ -29,12 +29,6 @@
       fsType = "ext4";
     };
 
-  fileSystems."/home/flame/Nextcloud" =
-    { device = "/home/flame/doc/Nextcloud Backup";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
   swapDevices =
     [ { device = "/dev/disk/by-uuid/fddaeb1c-e259-4ffb-9eda-03a39dd3e618"; }
     ];
