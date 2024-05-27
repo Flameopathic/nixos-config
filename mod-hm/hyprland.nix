@@ -376,7 +376,7 @@ in {
         bind = [
           # programs
           "$mod, f, fullscreen, 0"
-          "$mod, R, exec, wofi --normal-window --show drun"
+          "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
         	", Print, exec, grimblast copy area"
         	"$mod, q, exec, kitty"
         	"$mod, c, killactive,"
