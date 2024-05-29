@@ -39,7 +39,7 @@ in {
           ssh = "TERM=xterm ssh";
         };
       };
-      helix = {
+      kakoune = {
         enable = true;
         defaultEditor = true;
       };
