@@ -42,13 +42,34 @@ in {
       kakoune = {
         enable = true;
         defaultEditor = true;
+        config = {
+          autoReload = "yes";
+          indentWidth = 2;
+          numberLines = {
+            enable = true;
+            highlightCursor = true;
+          };
+          scrollOff = {
+            columns = 10;
+            lines = 10;
+          };
+          ui = {
+            assistant = "none";
+            enableMouse = true;
+          };
+          # wrapLines = {
+          #   enable = true;
+          #   indent = true;
+          #   marker = "⏎";
+          # };
+        };
       };
     };
 
     # TODO: move to proper place
     xdg.desktopEntries = {
       shutdown = {
-        name = "Shutdown";
+        name = "Shutdown now";
         exec = "shutdown now";
         comment = "Shutdown computer immediately";
         categories = [ "Utility" ];
