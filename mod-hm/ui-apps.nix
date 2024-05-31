@@ -12,12 +12,12 @@ in {
 	config = mkIf cfg.enable {
 		home.packages = with pkgs; [
 			nerdfonts
-			unstable.discord-screenaudio
-			unstable.obsidian
+			discord
+			obsidian
 			vlc
 			libreoffice
 			hunspellDicts.en_US
-			unstable.godot_4
+			godot_4
 			prismlauncher
 			gnome.file-roller
 			# fm # really good looking file manager, gonna wait until it's a bit better on the back end
