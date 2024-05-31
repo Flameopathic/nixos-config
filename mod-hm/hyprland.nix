@@ -310,7 +310,7 @@ in {
       swww
       brillo
       networkmanagerapplet
-      unstable.hyprshot
+      hyprshot
     ];
     wayland.windowManager.hyprland = {
       enable = true;
