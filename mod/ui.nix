@@ -11,8 +11,8 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = [ pkgs.where-is-my-sddm-theme ];
-    services.xserver = {
-      enable = true;
+    services = {
+      xserver.enable = true;
       displayManager.sddm = {
         enable = true;
         wayland.enable = true;
