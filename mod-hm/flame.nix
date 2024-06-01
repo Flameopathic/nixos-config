@@ -34,6 +34,8 @@ in {
         enableCompletion = true;
         shellAliases = {
           snrbs = "sudo nixos-rebuild switch";
+          nrbs-shak = "nixos-rebuild switch --use-remote-sudo --target-host craft.flameopathic.com --flake /etc/nixos#shaktop";
+          nrbs-serv = "nixos-rebuild switch --use-remote-sudo --target-host 10.0.0.180 --flake /etc/nixos#servnix";
           conf = "cd /etc/nixos";
           ".." = "cd ..";
           ssh = "TERM=xterm ssh";
