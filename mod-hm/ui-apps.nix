@@ -18,6 +18,7 @@ in {
 			libreoffice
 			hunspellDicts.en_US
 			godot_4
+			bambu-studio
 			prismlauncher
 			gnome.file-roller
 			# fm # really good looking file manager, gonna wait until it's a bit better on the back end

@@ -12,5 +12,6 @@ in {
 	config = mkIf cfg.enable {
 		services.iptsd.enable = true;
 		environment.systemPackages = [ pkgs.surface-control ];
+		flame.mobile.enable = true;
 	};
 }

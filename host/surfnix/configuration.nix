@@ -9,10 +9,9 @@
 
   flame = {
     setup.enable = true;
-    lanzaboote.enable = true;
+    sd-boot.enable = true;
     ui.enable = true;
     hyprland.enable = true;
-    battery.enable = true;
     surface.enable = true;
     syncthing.enable = true;
   };
