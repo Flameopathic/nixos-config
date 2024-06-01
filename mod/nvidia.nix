@@ -21,7 +21,7 @@ in {
 			};
 			nvidia = {
 				modesetting.enable = true;
-				package = config.boot.kernelPackages.nvidiaPackages.production;
+				package = config.boot.kernelPackages.nvidiaPackages.beta;
 			};
 		};
 	};

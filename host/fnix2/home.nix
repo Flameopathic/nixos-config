@@ -3,7 +3,7 @@
 		user.enable = true;
 		hyprland = {
 			enable = true;
-			# monitor = ["DP-3, 5120x1440@239.761002, auto, auto"];
+			monitor = [ "Unknown-1, disabled" "DP-1, highres, auto, auto" ];
 		};
 		ui-apps.enable = true;
 	};

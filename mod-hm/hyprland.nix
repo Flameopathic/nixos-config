@@ -316,20 +316,15 @@ in {
       enable = true;
       xwayland.enable = true;
       settings = {
-        exec-once = ''
-          waybar &
-        	swww init &
-        	mako &
-          nm-applet &
-        '';
+        exec-once = "waybar & swww init & mako & nm-applet &";
         "$mod" = "SUPER";
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;
 
         input = {
           # should make steam popups happier
-          follow_mouse = 1;
-        	mouse_refocus = false;
+          # follow_mouse = 1;
+          # mouse_refocus = false;
 
           repeat_delay = 400; # ms before key repeat
 
@@ -340,7 +335,7 @@ in {
         gestures = {
           workspace_swipe = true;
         };
-        "windowrulev2" = "stayfocused,class:(wofi)"; # makes wofi stay
+        # "windowrulev2" = "stayfocused,class:(wofi)"; # makes wofi stay
 
         # appearance
         general = {
@@ -354,12 +349,12 @@ in {
           rounding = 3;
         };
 
-        env = "WLR_DRM_NO_ATOMIC,1";
+        # env = "WLR_DRM_NO_ATOMIC,1";
 
         # binds
         bindm = [
           "$mod, mouse:272, movewindow"
-        	"$mod, mouse:273, resizewindow"
+          "$mod, mouse:273, resizewindow"
         ];
         bindl = [ # works even when a lockscreen is active
           # ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
@@ -377,12 +372,12 @@ in {
           # programs
           "$mod, f, fullscreen, 0"
           "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
-        	", Print, exec, grimblast copy area"
-        	"$mod, q, exec, kitty"
-        	"$mod, c, killactive,"
-        	"$mod, m, exit,"
-        	"$mod, n, togglefloating,"
-        	"$mod, j, togglesplit,"
+          ", Print, exec, grimblast copy area"
+          "$mod, q, exec, kitty"
+          "$mod, c, killactive,"
+          "$mod, m, exit,"
+          "$mod, n, togglefloating,"
+          "$mod, j, togglesplit,"
           "$mod, p, exec, swaylock"
 
           "$mod SHIFT, s, exec, hyprshot -m region -o ~/Nextcloud/Pictures/Screenshots" # TODO: change screenshots folder
