@@ -43,6 +43,7 @@ in {
       settings = {
         auto-optimise-store = true;
         experimental-features = [ "nix-command" "flakes" ];
+        trusted-users = [ "flame" ]; # should allow for remote builds
       };
       gc = { # garbage collection
         automatic = true;

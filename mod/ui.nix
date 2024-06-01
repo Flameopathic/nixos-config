@@ -10,13 +10,13 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.catppuccin-sddm ]; # themeing not working
+    environment.systemPackages = [ pkgs.where-is-my-sddm-theme ]; # themeing not working
     services = {
       xserver.enable = true;
       displayManager.sddm = {
         enable = true;
         wayland.enable = true;
-        theme = "catppuccin";
+        theme = "where_is_my_sddm_theme";
       };
     };
 
