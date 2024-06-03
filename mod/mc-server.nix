@@ -16,6 +16,7 @@ in {
 	};
 
 	config = mkIf cfg.enable {
+		services.logind.lidSwitch = "ignore";
 		services.minecraft-server = {
 			enable = true;
 			eula = true;
