@@ -335,7 +335,7 @@ in {
         gestures = {
           workspace_swipe = true;
         };
-        # "windowrulev2" = "stayfocused,class:(wofi)"; # makes wofi stay
+        "windowrulev2" = "stayfocused,class:(wofi)"; # makes wofi stay
 
         # appearance
         general = {
@@ -377,7 +377,7 @@ in {
           "$mod, c, killactive,"
           "$mod, m, exit,"
           "$mod, n, togglefloating,"
-          "$mod, j, togglesplit,"
+          "$mod, b, togglesplit,"
           "$mod, p, exec, swaylock"
 
           "$mod SHIFT, s, exec, hyprshot -m region -o ~/Nextcloud/Pictures/Screenshots" # TODO: change screenshots folder
