@@ -29,6 +29,7 @@ in {
 		programs = {
 			kitty = {
 				enable = true;
+				theme = "Nord";
 			};
 		};
 

@@ -16,6 +16,7 @@ in {
     home.packages = with pkgs; [
       neofetch
       sbctl
+      sshuttle
       nix-tree
     ];
 

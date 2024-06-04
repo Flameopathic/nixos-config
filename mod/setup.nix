@@ -13,6 +13,7 @@ in {
     nixpkgs.config.allowUnfree = true;
 
     networking.networkmanager.enable = true;
+    services.resolved.enable = true;
 
     time.timeZone = "US/Eastern";
 
