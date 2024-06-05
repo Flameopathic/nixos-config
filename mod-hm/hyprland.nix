@@ -316,7 +316,7 @@ in {
       enable = true;
       xwayland.enable = true;
       settings = {
-        exec-once = "waybar & swww img /etc/nixos/resources/lwp.png & mako & nm-applet &";
+        exec-once = "waybar & swww-daemon & swww img /etc/nixos/resources/lwp.png & mako & nm-applet &";
         "$mod" = "SUPER";
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;
