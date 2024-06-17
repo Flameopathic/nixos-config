@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:Flameopathic/nixos-hardware";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs"; # ensures nixpkgs version is consistent between home manager and system
