@@ -33,7 +33,10 @@ in {
 			};
 		};
 
-		flame.firefox.enable = true;
+		flame = {
+  			firefox.enable = true;
+  			vscode.enable = true;
+		};
 
 		home.pointerCursor = {
   			gtk.enable = true;

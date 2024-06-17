@@ -12,8 +12,14 @@ in {
   config = mkIf cfg.enable {
     programs.vscode = {
       enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+      ];
       userSettings = {
         "window.titleBarStyle" = "custom";
+        "workbench.sideBar.location" = "right";
+        "explorer.confirmDragAndDrop" = false;
+        "remoteHub.commitDirectlyWarning" = "off";
       };
     };
     xdg.desktopEntries = {

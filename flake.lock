@@ -207,7 +207,6 @@
       "original": {
         "owner": "Flameopathic",
         "repo": "nixos-hardware",
-        "rev": "461db33476eaf041ec950567db146fd08ede0b8d",
         "type": "github"
       }
     },
