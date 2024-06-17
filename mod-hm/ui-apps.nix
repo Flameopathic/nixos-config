@@ -29,26 +29,34 @@ in {
 		programs = {
 			kitty = {
 				enable = true;
-				theme = "Nord";
+				theme = "Rosé Pine Dawn";
 			};
 		};
 
 		flame.firefox.enable = true;
+
+		home.pointerCursor = {
+  			gtk.enable = true;
+  			package = pkgs.bibata-cursors-translucent;
+  			name = "Bibata_Ghost";
+  			size = 24;
+		};
 		
 		gtk = {
 			enable = true;
-			# cursorTheme = {
-			# 	name = "quintom";
-			# 	package = pkgs.quintom-cursor-theme;
-			# };
-			# iconTheme = {
-			# 	name = "tau-hydrogen";
-			# 	package = pkgs.tau-hydrogen;
-			# };
-			# theme = {
-			# 	name = "Fluent";
-			# 	package = pkgs.fluent-gtk-theme;
-			# };
+			cursorTheme = {
+				name = "Bibata_Ghost";
+				package = pkgs.bibata-cursors-translucent;
+				size = 24;
+			};
+			iconTheme = {
+				name = "rose-pine-dawn";
+				package = pkgs.rose-pine-icon-theme;
+			};
+			theme = {
+				name = "rose-pine-dawn";
+				package = pkgs.rose-pine-gtk-theme;
+			};
 		};
 	};
 }

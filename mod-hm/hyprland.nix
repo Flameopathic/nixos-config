@@ -41,13 +41,10 @@ in {
             "pulseaudio"
             "network"
             "cpu"
-            "memory"
-            "temperature"
             "backlight"
             "battery"
             "clock"
             "tray"
-            "bluetooth"
           ];
           tray.spacing = 10;
           clock = {
@@ -312,6 +309,8 @@ in {
       networkmanagerapplet
       hyprshot
     ];
+
+    # main config
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
