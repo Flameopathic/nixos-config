@@ -20,6 +20,7 @@ in {
         "workbench.sideBar.location" = "right";
         "explorer.confirmDragAndDrop" = false;
         "remoteHub.commitDirectlyWarning" = "off";
+        "git.enableSmartCommit" = true;
         "workbench.colorTheme" = "Rosé Pine Dawn (no italics)";
       };
     };
