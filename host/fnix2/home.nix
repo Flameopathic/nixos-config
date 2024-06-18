@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, lib, ... }: {
+{ ... }: {
 	flame = {
 		user.enable = true;
 		hyprland = {

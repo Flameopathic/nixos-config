@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ ... }: {
 	flame = {
 		user.enable = true;
 		hyprland.enable = true;

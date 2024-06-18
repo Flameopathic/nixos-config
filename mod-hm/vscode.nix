@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 with lib;
 
@@ -10,7 +10,7 @@ in {
   };
   
   config = mkIf cfg.enable {
-    home.packages = [ pkgs.nil ]; # lsp
+    home.packages = [ pkgs.nixd ]; # lsp
     programs.vscode = {
       enable = true;
       enableUpdateCheck = false;
@@ -28,7 +28,16 @@ in {
         "workbench.colorTheme" = "Rosé Pine Dawn (no italics)";
         "git.confirmSync" = false;
         "nix.enableLanguageServer" = true;
-        "nix.serverPath" = "nil";
+        "nix.serverPath" = "nixd";
+        "nix.serverSettings" = {
+          "nixd" = {
+            "diagnostic" = {
+              "suppress" = [
+                "sema-escaping-with"
+              ];
+            };
+          };
+        };
       };
     };
     xdg.desktopEntries = {
