@@ -12,6 +12,8 @@ in {
   config = mkIf cfg.enable {
     programs.vscode = {
       enable = true;
+      enableUpdateCheck = false;
+      enableExtensionUpdateCheck = false;
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         mvllow.rose-pine
