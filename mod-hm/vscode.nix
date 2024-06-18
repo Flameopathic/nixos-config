@@ -14,6 +14,7 @@ in {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
+        mvllow.rose-pine
       ];
       userSettings = {
         "window.titleBarStyle" = "custom";
