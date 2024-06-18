@@ -14,12 +14,14 @@ in {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
+        mvllow.rose-pine
       ];
       userSettings = {
         "window.titleBarStyle" = "custom";
         "workbench.sideBar.location" = "right";
         "explorer.confirmDragAndDrop" = false;
         "remoteHub.commitDirectlyWarning" = "off";
+        "workbench.colorTheme" = "Rosé Pine Dawn (no italics)";
       };
     };
     xdg.desktopEntries = {
