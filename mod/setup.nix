@@ -37,6 +37,8 @@ in {
       git
     ];
 
+    services.gnome.gnome-keyring.enable = true; # makes some things log in better; compatibility feature
+
     system.autoUpgrade = {
       enable = true;
     };
