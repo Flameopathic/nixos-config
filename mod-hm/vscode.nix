@@ -10,6 +10,7 @@ in {
   };
   
   config = mkIf cfg.enable {
+    home.packages = [ pkgs.nil ]; # lsp
     programs.vscode = {
       enable = true;
       enableUpdateCheck = false;
@@ -25,6 +26,9 @@ in {
         "remoteHub.commitDirectlyWarning" = "off";
         "git.enableSmartCommit" = true;
         "workbench.colorTheme" = "Rosé Pine Dawn (no italics)";
+        "git.confirmSync" = false;
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nil";
       };
     };
     xdg.desktopEntries = {
