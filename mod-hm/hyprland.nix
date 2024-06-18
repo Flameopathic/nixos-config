@@ -80,6 +80,11 @@ in {
           rounding = 3;
         };
 
+        # animations
+        animation = [
+          "workspaces, 1, 2, default, slidevert"
+          "windowsMove, 1, 2, default"
+        ];
         # env = "WLR_DRM_NO_ATOMIC,1";
 
         # binds
@@ -128,6 +133,12 @@ in {
           # special workspace
         	"$mod, o, togglespecialworkspace, magic"
         	"$mod SHIFT, o, movetoworkspace, special:magic"
+
+          # workspaces
+          "$mod SHIFT, j, workspace, +1"
+          "$mod SHIFT, k, workspace, -1"
+          "$mod SHIFT CTRL, j, movetoworkspace, +1"
+          "$mod SHIFT CTRL, k, movetoworkspace, -1"
         ] ++ (
           # makes 1-10 workspace bindings
         	builtins.concatLists (builtins.genList (
