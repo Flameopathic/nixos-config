@@ -19,10 +19,10 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: {
+  outputs = { nixpkgs, nixos-hardware, ... }@inputs: with nixpkgs.lib; {
     # make configuration name same as host name to make rebuild command work automagically
     nixosConfigurations = {
-      fnix2 = nixpkgs.lib.nixosSystem {
+      fnix2 = nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; }; # makes it so that all submodules can use inputs
         modules = [ # nixos imports
@@ -30,7 +30,7 @@
           ./mod/default.nix
         ];
       };
-      surfnix = nixpkgs.lib.nixosSystem {
+      surfnix = nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -39,7 +39,7 @@
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
         ];
       };
-      servnix = nixpkgs.lib.nixosSystem {
+      servnix = nixosSystem {
         system = "aarch64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -47,7 +47,7 @@
           ./mod/default.nix
         ];
       };
-      shaktop = nixpkgs.lib.nixosSystem {
+      shaktop = nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
