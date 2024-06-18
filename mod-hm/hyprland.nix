@@ -150,6 +150,7 @@ in {
                   in [
         	    "$mod, ${ws}, workspace, ${toString (x + 1)}"
         	    "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+              "$mod SHIFT CTRL, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
         	  ]
           ) 10)
         );
