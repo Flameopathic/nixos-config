@@ -18,6 +18,7 @@ in {
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         mvllow.rose-pine
+        rust-lang.rust-analyzer
       ];
       userSettings = {
         "window.titleBarStyle" = "custom";
