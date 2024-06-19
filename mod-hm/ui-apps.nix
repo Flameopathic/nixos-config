@@ -25,6 +25,7 @@ in {
 			# fm # really good looking file manager, gonna wait until it's a bit better on the back end
 			pcmanfm
 			geeqie
+			heroic
 		];
 		programs = {
 			kitty = {
