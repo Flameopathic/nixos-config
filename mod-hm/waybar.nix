@@ -186,11 +186,11 @@ in {
         }
 
         #clock {
-            # background-color: #fffaf3;
+            background-color: #fffaf3;
         }
 
         #battery {
-            # background-color: #fffaf3;
+            background-color: #fffaf3;
         }
 
         #battery.charging, #battery.plugged {
@@ -221,8 +221,8 @@ in {
         }
 
         #cpu {
-            # background-color: #286983;
-            # color: #000000;
+            background-color: #286983;
+            color: #000000;
         }
 
         #memory {
