@@ -167,7 +167,7 @@ in {
         #tray {
           padding: 0 10px;
           color: #575279;
-          background-color = #fffaf3;
+          background-color: #fffaf3;
         }
         
         #window,
