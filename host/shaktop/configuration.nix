@@ -5,6 +5,8 @@
 
   networking.hostName = "shaktop";
 
+  environment.systemPackages = [ pkgs.python3 ];
+
   flame = {
     setup.enable = true;
     mc-server.enable = true;
