@@ -18,6 +18,7 @@ in {
       sbctl
       sshuttle
       nix-tree
+      python3
     ];
 
     programs = {
