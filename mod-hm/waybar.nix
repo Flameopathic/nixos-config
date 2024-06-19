@@ -23,7 +23,6 @@ in {
           ];
           modules-right = [
             "pulseaudio"
-            "network"
             "cpu"
             "backlight"
             "battery"
@@ -97,9 +96,9 @@ in {
         }
 
         window#waybar {
-            background-color: rgba(43, 48, 59, 0.5);
-            border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-            color: #ffffff;
+            background-color: rgba(223, 218, 217, .75);
+            border-bottom: 3px solid rgba(242, 233, 225, .75);
+            color: #575279;
             transition-property: background-color;
             transition-duration: .5s;
         }
@@ -128,7 +127,7 @@ in {
         /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
         button:hover {
             background: inherit;
-            box-shadow: inset 0 -3px #ffffff;
+            box-shadow: inset 0 -3px #575279;
         }
 
         /* you can set a style on hover for any module like this */
@@ -139,16 +138,16 @@ in {
         #workspaces button {
             padding: 0 5px;
             background-color: transparent;
-            color: #ffffff;
+            color: #575279;
         }
 
         #workspaces button:hover {
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(121, 117, 147, 0.2);
         }
 
         #workspaces button.focused {
-            background-color: #64727D;
-            box-shadow: inset 0 -3px #ffffff;
+            background-color: #b4637a;
+            box-shadow: inset 0 -3px #b4637a;
         }
 
         #workspaces button.urgent {
@@ -167,7 +166,8 @@ in {
         #disk,
         #tray {
           padding: 0 10px;
-          color: #ffffff;
+          color: #575279;
+          background-color = #fffaf3;
         }
         
         #window,
@@ -186,12 +186,11 @@ in {
         }
 
         #clock {
-            background-color: #64727D;
+            # background-color: #fffaf3;
         }
 
         #battery {
-            background-color: #ffffff;
-            color: #000000;
+            # background-color: #fffaf3;
         }
 
         #battery.charging, #battery.plugged {
@@ -222,8 +221,8 @@ in {
         }
 
         #cpu {
-            background-color: #2ecc71;
-            color: #000000;
+            # background-color: #286983;
+            # color: #000000;
         }
 
         #memory {
@@ -265,7 +264,7 @@ in {
         }
 
         #tray {
-            background-color: #2980b9;
+            background-color: #d7827e;
         }
 
         #tray > .passive {
