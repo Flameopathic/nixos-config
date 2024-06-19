@@ -27,7 +27,7 @@
         specialArgs = { inherit inputs; }; # makes it so that all submodules can use inputs
         modules = [ # nixos imports
           ./host/fnix2/configuration.nix
-          ./mod/default.nix
+          ./mod
         ];
       };
       surfnix = nixosSystem {
@@ -35,7 +35,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./host/surfnix/configuration.nix
-          ./mod/default.nix
+          ./mod
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
         ];
       };
@@ -44,7 +44,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./host/servnix/configuration.nix
-          ./mod/default.nix
+          ./mod
         ];
       };
       shaktop = nixosSystem {
@@ -52,7 +52,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./host/shaktop/configuration.nix
-          ./mod/default.nix
+          ./mod
         ];
       };
     };

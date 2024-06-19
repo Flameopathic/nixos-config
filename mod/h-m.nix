@@ -21,7 +21,7 @@ in {
 			users.flame = {
 				imports = [
 					../host/${config.networking.hostName}/home.nix
-					../mod-hm/default.nix
+					../mod-hm
 				];
 			};
 		};
