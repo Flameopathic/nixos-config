@@ -7,7 +7,15 @@ let
 in {
 	options.flame.syncthing = {
 		enable = mkEnableOption "syncthing configuration";
-		server = mkEnableOption "syncthing server";
+		server = mkEnableOption "syncthing server (with open ports)";
+		home = mkOption {
+			description = "home folder";
+			default = /home/flame;
+		};
+		devices = mkOption {
+			description = "devices to share all folders with";
+			default = [ "fnix2" "surfnix" "servnix" ];
+		};
 	};
 
 	config = mkIf cfg.enable {
@@ -32,12 +40,21 @@ in {
 				};
 				folders = {
 					doc = {
-						path = "/home/flame/doc";
-						devices = [ "fnix2" "surfnix" "servnix" ];
+						path = "${home}/doc";
+						devices = devices;
 						id = "doc";
 						versioning = {
 							type = "trashcan";
 							params.cleanoutDays = "1000";
+						};
+					};
+					pic = {
+						path = "${home}/pic";
+						devices = devices;
+						id = "pic";
+						versioning = {
+							type = "trashcan";
+							params.cleanoutDays = "0"; # never clean out - prolly a bad idea, but the versioning system isn't hugely good anyway
 						};
 					};
 				};

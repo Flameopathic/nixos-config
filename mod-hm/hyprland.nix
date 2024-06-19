@@ -114,7 +114,7 @@ in {
         bind = [
           # programs
           "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
-          "$mod SHIFT, s, exec, hyprshot -m region -o ~/Nextcloud/Pictures/Screenshots" # TODO: change screenshots folder
+          "$mod SHIFT, s, exec, hyprshot -m region -o ~/pic/ss"
           "$mod, q, exec, kitty"
           "$mod, p, exec, swaylock"
 
