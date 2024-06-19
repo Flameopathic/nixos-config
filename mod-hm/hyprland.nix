@@ -57,7 +57,7 @@ in {
           # follow_mouse = 1;
           # mouse_refocus = false;
 
-          repeat_delay = 400; # ms before key repeat
+          repeat_delay = 350; # ms before key repeat
 
           touchpad = {
             natural_scroll = true;
@@ -80,11 +80,17 @@ in {
           rounding = 3;
         };
 
+        # windows
+        dwindle = {
+          smart_split = true;
+        };
+
         # animations
         animation = [
           "workspaces, 1, 2, default, slidevert"
           "windowsMove, 1, 2, default"
         ];
+
         # env = "WLR_DRM_NO_ATOMIC,1";
 
         # binds
@@ -95,6 +101,7 @@ in {
         bindl = [ # works even when a lockscreen is active
           # ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
           ", switch:Lid Switch, exec, swaylock"
+          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
           # ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, highres, auto, auto\""
         ];
         bindel = [ # repeat and work on lockscreen
@@ -106,19 +113,19 @@ in {
         ];
         bind = [
           # programs
-          "$mod, f, fullscreen, 0"
           "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
-          ", Print, exec, grimblast copy area"
+          "$mod SHIFT, s, exec, hyprshot -m region -o ~/Nextcloud/Pictures/Screenshots" # TODO: change screenshots folder
           "$mod, q, exec, kitty"
-          "$mod, c, killactive,"
-          "$mod, m, exit,"
-          "$mod, n, togglefloating,"
-          "$mod, b, togglesplit,"
           "$mod, p, exec, swaylock"
 
-          "$mod SHIFT, s, exec, hyprshot -m region -o ~/Nextcloud/Pictures/Screenshots" # TODO: change screenshots folder
+          # windows
+          "$mod, c, killactive,"
+          "$mod, n, togglefloating,"
+          "$mod, b, togglesplit,"
+          "$mod, f, fullscreen, 0"
+          "$mod SHIFT, f, fakefullscreen, 0"
 
-          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+          "$mod, m, exit,"
 
         	# focus
         	"$mod, left, movefocus, l"
