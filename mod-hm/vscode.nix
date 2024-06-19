@@ -19,6 +19,7 @@ in {
         jnoortheen.nix-ide
         mvllow.rose-pine
         rust-lang.rust-analyzer
+        ms-python.python
       ];
       userSettings = {
         "window.titleBarStyle" = "custom";
