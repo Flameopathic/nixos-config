@@ -10,7 +10,7 @@ in {
 		server = mkEnableOption "syncthing server (with open ports)";
 		home = mkOption {
 			description = "home folder";
-			default = /home/flame;
+			default = "/home/flame";
 		};
 		devices = mkOption {
 			description = "devices to share all folders with";
@@ -23,7 +23,7 @@ in {
 			enable = true;
 			openDefaultPorts = cfg.server;
 			user = mkDefault "flame";
-			dataDir = mkDefault "/home/flame/syncthing";
+			dataDir = mkDefault "${cfg.home}/syncthing";
 			overrideDevices = mkDefault true;
 			overrideFolders = mkDefault true;
 			settings = {
@@ -40,8 +40,8 @@ in {
 				};
 				folders = {
 					doc = {
-						path = "${home}/doc";
-						devices = devices;
+						path = "${cfg.home}/doc";
+						devices = cfg.devices;
 						id = "doc";
 						versioning = {
 							type = "trashcan";
@@ -49,8 +49,8 @@ in {
 						};
 					};
 					pic = {
-						path = "${home}/pic";
-						devices = devices;
+						path = "${cfg.home}/pic";
+						devices = cfg.devices;
 						id = "pic";
 						versioning = {
 							type = "trashcan";
