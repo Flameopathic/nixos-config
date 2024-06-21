@@ -1,9 +1,11 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
   ];
 
   networking.hostName = "shaktop";
+
+  environment.systemPackages = [ pkgs.python3 ];
 
   flame = {
     setup.enable = true;
