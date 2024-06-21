@@ -19,42 +19,33 @@
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, ... }@inputs: with nixpkgs.lib; {
-    # make configuration name same as host name to make rebuild command work automagically
-    nixosConfigurations = {
-      fnix2 = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; }; # makes it so that all submodules can use inputs
-        modules = [ # nixos imports
-          ./host/fnix2/configuration.nix
+  outputs = { nixpkgs, nixos-hardware, ... }@inputs: {
+    nixosConfigurations = let 
+      mkHost = host: { modules ? [], system ? "x86_64-linux", specialArgs ? { inherit inputs; }, ... }: nixpkgs.lib.nixosSystem {
+        system = system;
+        modules = modules ++ [
+          ({ ... }: {
+            networking.hostName = host;
+          })
+          ./host/${host}/configuration.nix
           ./mod
         ];
+        specialArgs = specialArgs;
       };
-      surfnix = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./host/surfnix/configuration.nix
-          ./mod
-          nixos-hardware.nixosModules.microsoft-surface-pro-intel
-        ];
+      
+    in builtins.mapAttrs mkHost {
+      # make configuration name same as host name to make rebuild command work automagically
+      # system default is "x86_64-linux"
+      # modules default to ./mod and ./host/${host}/configuration.nix
+      # specialArgs defaults to inheriting inputs alone
+      fnix2 = {};
+      surfnix = {
+        modules = [ nixos-hardware.nixosModules.microsoft-surface-pro-intel ];
       };
-      servnix = nixosSystem {
+      servnix = {
         system = "aarch64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./host/servnix/configuration.nix
-          ./mod
-        ];
       };
-      shaktop = nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./host/shaktop/configuration.nix
-          ./mod
-        ];
-      };
+      shaktop = {};
     };
   };
 }
