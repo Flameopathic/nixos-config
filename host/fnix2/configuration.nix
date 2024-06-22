@@ -2,19 +2,6 @@
   imports = [
     ./hardware-configuration.nix
   ];
-
-  networking.hostName = "fnix2";
-
-  flame = {
-    setup.enable = true;
-    sd-boot.enable = true;
-    ui.enable = true;
-    hyprland.enable = true;
-    nvidia.enable = true;
-    remote-builder.enable = true;
-    ssh-server.enable = true;
-    syncthing.enable = true;
-  };
   
   programs = {
     steam.enable = true;

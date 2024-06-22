@@ -3,19 +3,6 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "surfnix";
-
-  security.pki.certificateFiles = [ ../../resources/enterprise.pem ];
-
-  flame = {
-    setup.enable = true;
-    sd-boot.enable = true;
-    ui.enable = true;
-    hyprland.enable = true;
-    surface.enable = true;
-    syncthing.enable = true;
-  };
-
   programs = {
     steam.enable = true;
   };

@@ -1,22 +1,10 @@
-{ inputs, config, lib, ... }:
-
-with lib;
-
-let
-	cfg = config.flame.lanzaboote;
-in {
+{ inputs, ... }: {
 	imports = [
 			inputs.lanzaboote.nixosModules.lanzaboote
 	];
 
-	options.flame.lanzaboote = {
-		enable = mkEnableOption "enable Lanzaboote with secure boot";
-	};
-	
-	config = mkIf cfg.enable {
-		boot.lanzaboote = {
-			enable = true;
-			pkiBundle = "/etc/secureboot";
-		};
+	config.boot.lanzaboote = {
+		enable = true;
+		pkiBundle = "/etc/secureboot";
 	};
 }

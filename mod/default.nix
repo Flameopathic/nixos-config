@@ -1,15 +1,5 @@
-{ config, pkgs, lib, inputs, ... }:
-
-with lib; # TODO: consider removing enable option for this module and just moving any extraneous configuration to other modules
-
-let
-  cfg = config.flame.setup;
-in {
-  options.flame.setup = {
-    enable = mkEnableOption "basic setup, useful on effectively every machine";
-  };
-
-  config = mkIf cfg.enable {
+{ pkgs, inputs, ... }: {
+  config = {
     nixpkgs.config.allowUnfree = true;
 
     networking.networkmanager.enable = true;
@@ -21,7 +11,6 @@ in {
       isNormalUser = true;
       extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     };
-    flame.home-manager.enable = true;
 
     nixpkgs.overlays = [
       (final: prev: {

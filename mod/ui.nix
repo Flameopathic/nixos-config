@@ -1,15 +1,5 @@
-{ config, pkgs, lib, ... }: 
-
-with lib;
-
-let
-  cfg = config.flame.ui;
-in {
-  options.flame.ui = {
-    enable = mkEnableOption "basic ui setup";
-  };
-
-  config = mkIf cfg.enable {
+{ pkgs, ... }: {
+  config = {
     environment.systemPackages = [ pkgs.where-is-my-sddm-theme ]; # themeing not working
     services = {
       xserver.enable = true;

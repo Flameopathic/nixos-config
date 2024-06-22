@@ -1,16 +1,6 @@
-{ config, lib, ... }:
-
-with lib;
-
-let
-	cfg = config.flame.battery;
-in {
-	options.flame.battery = {
-		enable = mkEnableOption "options to improve battery life";
-	};
-
-	config = mkIf cfg.enable {
-		  services.tlp = {
+{ ... }: {
+	config = {
+		services.tlp = {
 			enable = true;
 			settings = {
 				CPU_BOOST_ON_AC = 1;

@@ -28,8 +28,6 @@ in {
       enable = true;
     };
 
-    flame.waybar.enable = true;
-
     programs.swaylock = {
       enable = true;
       settings = {
