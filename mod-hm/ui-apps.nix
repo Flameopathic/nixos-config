@@ -1,15 +1,10 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }: {
+	imports = [
+		./firefox.nix
+		./vscode.nix
+	];
 
-with lib;
-
-let
-	cfg = config.flame.ui-apps;
-in {
-	options.flame.ui-apps = {
-	  enable = mkEnableOption "most used ui apps";
-	};
-	
-	config = mkIf cfg.enable {
+	config = {
 		home.packages = with pkgs; [
 			nerdfonts
 			discord
@@ -33,16 +28,11 @@ in {
 			};
 		};
 
-		flame = {
-  			firefox.enable = true;
-  			vscode.enable = true;
-		};
-
 		home.pointerCursor = {
-  			gtk.enable = true;
-  			package = pkgs.bibata-cursors-translucent;
-  			name = "Bibata_Ghost";
-  			size = 24;
+			gtk.enable = true;
+			package = pkgs.bibata-cursors-translucent;
+			name = "Bibata_Ghost";
+			size = 24;
 		};
 		
 		gtk = {

@@ -1,26 +1,44 @@
-{ lib, ... }:
+{ pkgs, inputs, ... }: {
+  config = {
+    nixpkgs.config.allowUnfree = true;
 
-with lib;
+    networking.networkmanager.enable = true;
+    services.resolved.enable = true;
 
-let
+    time.timeZone = "US/Eastern";
 
-  # Recursively constructs an attrset of a given folder, recursing on directories, value of attrs is the filetype
-  getDir = dir: mapAttrs (file: type:
-    if type == "directory" then getDir "${dir}/${file}" else type
-  ) (builtins.readDir dir);
+    users.users.flame = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    };
 
-  # Collects all files of a directory as a list of strings of paths
-  files = dir: collect isString (mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir));
+    nixpkgs.overlays = [
+      (final: prev: {
+        stable = import inputs.nixpkgs-stable {
+          system = pkgs.system;
+          config.allowUnfree = true;
+        };
+      })
+    ];
 
-  # Filters out directories that don't end with .nix or are this file, also makes the strings absolute
-  validFiles = dir: map (file: ./. + "/${file}") (filter (file: hasSuffix ".nix" file && file != "default.nix" && ! lib.hasPrefix "x/taffybar/" file) (files dir));
+    environment.systemPackages = with pkgs; [
+      wget
+      git
+    ];
 
-in
+    services.gnome.gnome-keyring.enable = true; # makes some things log in better; compatibility feature
 
-{
-
-  imports = validFiles ./.;
-
+    nix = {
+      settings = {
+        auto-optimise-store = true;
+        experimental-features = [ "nix-command" "flakes" ];
+        trusted-users = [ "flame" ]; # should allow for remote builds
+      };
+      gc = { # garbage collection
+        automatic = true;
+        dates = "daily";
+        options = "--delete-older-than 7d";
+      };
+    };
+  };
 }
-# source: https://github.com/infinisil/system/blob/master/config/new-modules/default.nix
-# many thanks to infinisil, fr my savior <3

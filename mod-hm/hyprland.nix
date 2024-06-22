@@ -5,15 +5,18 @@ with lib;
 let
   cfg = config.flame.hyprland;
 in {
+  imports = [
+    ./waybar.nix
+  ];
+
   options.flame.hyprland = {
-    enable = mkEnableOption "hyprland setup and config";
     monitor = mkOption {
       default = [ ", highres, auto, auto" ];
       description = "list of monitor configuration(s)";
     };
   };
   
-  config = mkIf cfg.enable {
+  config = {
     # notification daemon
     services.mako = {
       enable = true;
@@ -24,8 +27,6 @@ in {
     programs.wofi = {
       enable = true;
     };
-
-    flame.waybar.enable = true;
 
     programs.swaylock = {
       enable = true;

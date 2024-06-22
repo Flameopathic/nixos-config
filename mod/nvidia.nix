@@ -1,15 +1,5 @@
-{ config, pkgs, lib, ... }:
-
-with lib;
-
-let
-  cfg = config.flame.nvidia;
-in {
-	options.flame.nvidia = {
-		enable = mkEnableOption "settings pertinent to nvidia machines";
-	};
-
-	config = mkIf cfg.enable {
+{ config, pkgs, ... }: {
+	config = {
 		services.xserver.videoDrivers = [ "nvidia" ];
 	
 		hardware = {

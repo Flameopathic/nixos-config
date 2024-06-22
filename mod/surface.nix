@@ -1,15 +1,7 @@
-{ config, lib, ... }:
-
-with lib;
-
-let
-	cfg = config.flame.surface;
-in {
-	options.flame.surface = {
-		enable = mkEnableOption "Microsoft Surface config";
-	};
-
-	config = mkIf cfg.enable {
-		flame.mobile.enable = mkDefault true;
-	};
+{ inputs, ... }: {
+	imports = [
+		inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
+		./mobile.nix
+		./thermald.nix
+	];
 }

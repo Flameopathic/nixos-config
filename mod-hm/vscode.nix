@@ -1,15 +1,5 @@
-{ config, pkgs, lib, ... }:
-
-with lib;
-
-let
-  cfg = config.flame.vscode;
-in {
-  options.flame.vscode = {
-    enable = mkEnableOption "enable VSCode program with special settings to work with gnome-libsecret";
-  };
-  
-  config = mkIf cfg.enable {
+{ pkgs, ... }: {
+  config = {
     home.packages = [ pkgs.nixd ]; # lsp
     programs.vscode = {
       enable = true;

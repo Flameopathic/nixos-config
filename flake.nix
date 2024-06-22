@@ -19,9 +19,9 @@
     };
   };
 
-  outputs = { nixpkgs, nixos-hardware, ... }@inputs: {
+  outputs = { ... }@inputs: {
     nixosConfigurations = let 
-      mkHost = host: { modules ? [], system ? "x86_64-linux", specialArgs ? { inherit inputs; }, ... }: nixpkgs.lib.nixosSystem {
+      mkHost = host: { modules ? [], home-modules ? [], system ? "x86_64-linux", specialArgs ? { inherit inputs; }, ... }: inputs.nixpkgs.lib.nixosSystem {
         system = system;
         modules = modules ++ [
           ({ ... }: {
@@ -29,6 +29,19 @@
           })
           ./host/${host}/configuration.nix
           ./mod
+          inputs.home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+              users.flame = {
+                imports = home-modules ++ [
+                  ./host/${host}/home.nix
+                  ./mod-hm
+                ];
+              };
+            };
+          }
         ];
         specialArgs = specialArgs;
       };
@@ -39,16 +52,53 @@
       # modules default to ./mod and ./host/${host}/configuration.nix
       # specialArgs defaults to inheriting inputs alone
       fnix2 = {
-        modules = [];
+        modules = [
+          ./mod/sd-boot.nix
+          ./mod/ui.nix
+          ./mod/hyprland.nix
+          ./mod/nvidia.nix
+          ./mod/remote-builder.nix
+          ./mod/ssh-server.nix
+          ./mod/syncthing.nix
+        ];
+        home-modules = [
+          ./mod-hm/hyprland.nix {
+            monitor = [ "Unknown-1, disabled" "DP-1, highres, auto, auto" ];
+          }
+          ./mod-hm/ui-apps.nix
+        ];
       };
       surfnix = {
-        modules = [ nixos-hardware.nixosModules.microsoft-surface-pro-intel ];
+        modules = [
+          ./mod/sd-boot.nix
+          ./mod/ui.nix
+          ./mod/hyprland.nix
+          ./mod/surface.nix
+          ./mod/syncthing.nix
+        ];
+        home-modules = [
+          ./mod-hm/hyprland.nix
+          ./mod-hm/ui-apps.nix
+        ];
       };
       servnix = {
         system = "aarch64-linux";
+        modules = [
+          ./mod/rpi-boot.nix
+          ./mod/ssh-server.nix
+          ./mod/syncthing.nix {
+            server = true;
+          }
+        ];
       };
       shaktop = {
-        modules = [];
+        modules = [
+          ./mod/sd-boot.nix
+          ./mod/mc-server.nix
+          ./mod/ssh-server.nix {
+            openFirewall = true;
+          }
+        ];
       };
     };
   };
