@@ -27,7 +27,7 @@ in {
         "explorer.confirmDragAndDrop" = false;
         "remoteHub.commitDirectlyWarning" = "off";
         "git.enableSmartCommit" = true;
-        "workbench.colorTheme" = "Rosé Pine Dawn (no italics)";
+        "workbench.colorTheme" = "Rosé Pine (no italics)";
         "git.confirmSync" = false;
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";

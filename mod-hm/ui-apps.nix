@@ -53,11 +53,11 @@ in {
 				size = 24;
 			};
 			iconTheme = {
-				name = "rose-pine-dawn";
+				name = "rose-pine";
 				package = pkgs.rose-pine-icon-theme;
 			};
 			theme = {
-				name = "rose-pine-dawn";
+				name = "rose-pine";
 				package = pkgs.rose-pine-gtk-theme;
 			};
 		};
