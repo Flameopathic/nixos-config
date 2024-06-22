@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ThermalConfiguration>
 <Platform>
-	<Name>Surface Pro 7 Thermal Workaround</Name>
+	<Name>Surface Pro Intel Thermal Workaround</Name>
 	<ProductName>*</ProductName>
 	<Preference>QUIET</Preference>
 	<ThermalZones>

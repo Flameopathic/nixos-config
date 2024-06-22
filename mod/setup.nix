@@ -39,9 +39,6 @@ in {
 
     services.gnome.gnome-keyring.enable = true; # makes some things log in better; compatibility feature
 
-    system.autoUpgrade = {
-      enable = true;
-    };
     nix = {
       settings = {
         auto-optimise-store = true;
@@ -50,7 +47,7 @@ in {
       };
       gc = { # garbage collection
         automatic = true;
-        dates = "weekly";
+        dates = "daily";
         options = "--delete-older-than 7d";
       };
     };

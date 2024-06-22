@@ -27,7 +27,7 @@ in {
         userName = "Flameopathic";
         userEmail = "flameopathic@gmail.com";
         extraConfig = {
-          init.defaultBranch = "main"; # makes `git init` simpler
+          init.defaultBranch = "master";
           safe.directory = "/etc/nixos"; # make sure to chown .git to an admin
         };
       };

@@ -32,20 +32,24 @@
         ];
         specialArgs = specialArgs;
       };
-      
+
     in builtins.mapAttrs mkHost {
       # make configuration name same as host name to make rebuild command work automagically
       # system default is "x86_64-linux"
       # modules default to ./mod and ./host/${host}/configuration.nix
       # specialArgs defaults to inheriting inputs alone
-      fnix2 = {};
+      fnix2 = {
+        modules = [];
+      };
       surfnix = {
         modules = [ nixos-hardware.nixosModules.microsoft-surface-pro-intel ];
       };
       servnix = {
         system = "aarch64-linux";
       };
-      shaktop = {};
+      shaktop = {
+        modules = [];
+      };
     };
   };
 }
