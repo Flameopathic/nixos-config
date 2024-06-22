@@ -1,26 +1,93 @@
-{ lib, ... }:
+{ pkgs, ... }: {
+  config = {
+    home.username = "flame";
+    home.homeDirectory = "/home/flame";
 
-with lib;
+    home.packages = with pkgs; [
+      neofetch
+      sbctl
+      sshuttle
+      nix-tree
+      python3
+    ];
 
-let
+    programs = {
+      git = {
+        enable = true;
+        userName = "Flameopathic";
+        userEmail = "flameopathic@gmail.com";
+        extraConfig = {
+          init.defaultBranch = "master";
+          safe.directory = "/etc/nixos"; # make sure to chown .git to an admin
+        };
+      };
+      bash = {
+        enable = true;
+        enableCompletion = true;
+        shellAliases = {
+          snrbs = "sudo nixos-rebuild switch";
+          conf = "cd /etc/nixos";
+          ".." = "cd ..";
+          ssh = "TERM=xterm ssh";
+        };
+      };
+      kakoune = {
+        enable = true;
+        defaultEditor = true;
+        plugins = with pkgs.kakounePlugins; [
+          fzf-kak
+          kakboard
+          byline-kak
+          smarttab-kak
+          powerline-kak
+          quickscope-kak
+          auto-pairs-kak
+          kakoune-rainbow
+          kakoune-buffers
+          kakoune-registers
+          kakoune-state-save
+        ];
+        config = {
+          autoReload = "yes";
+          indentWidth = 2;
+          numberLines = {
+            enable = true;
+            highlightCursor = true;
+          };
+          scrollOff = {
+            columns = 10;
+            lines = 10;
+          };
+          ui = {
+            assistant = "none";
+            enableMouse = true;
+          };
+          # wrapLines = {
+          #   enable = true;
+          #   indent = true;
+          #   marker = "⏎";
+          # };
+        };
+      };
+    };
 
-  # Recursively constructs an attrset of a given folder, recursing on directories, value of attrs is the filetype
-  getDir = dir: mapAttrs (file: type:
-    if type == "directory" then getDir "${dir}/${file}" else type
-  ) (builtins.readDir dir);
+    # TODO: move to proper place
+    xdg.desktopEntries = {
+      shutdown = {
+        name = "Shutdown now";
+        exec = "shutdown now";
+        comment = "Shutdown computer immediately";
+        categories = [ "Utility" ];
+      };
+      reboot = {
+        name = "Reboot";
+        exec = "reboot";
+        comment = "Reboot computer.";
+        categories = [ "Utility" ];
+      };
+    };
 
-  # Collects all files of a directory as a list of strings of paths
-  files = dir: collect isString (mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir));
-
-  # Filters out directories that don't end with .nix or are this file, also makes the strings absolute
-  validFiles = dir: map (file: ./. + "/${file}") (filter (file: hasSuffix ".nix" file && file != "default.nix" && ! lib.hasPrefix "x/taffybar/" file) (files dir));
-
-in
-
-{
-
-  imports = validFiles ./.;
-
+    home.stateVersion = "23.11"; # home manager can be updated without changing this - read documentation
+    programs.home-manager.enable = true;
+  };
 }
-# source: https://github.com/infinisil/system/blob/master/config/new-modules/default.nix
-# many thanks to infinisil, fr my savior <3

@@ -1,21 +1,17 @@
 { config, pkgs, lib, ... }:
 
-with lib;
-
 let
 	cfg = config.flame.mc-server;
 in {
 	options.flame.mc-server = {
-		enable = mkEnableOption "Minecraft server setup";
-
-		ram = mkOption {
+		ram = lib.mkOption {
 			default = "14G";
-			type = types.str;
+			type = lib.types.str;
 			description = "RAM to allocate to Java";
 		};
 	};
 
-	config = mkIf cfg.enable {
+	config = {
 		services.logind.lidSwitch = "ignore";
 		services.minecraft-server = {
 			enable = true;

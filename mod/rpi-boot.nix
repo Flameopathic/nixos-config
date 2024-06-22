@@ -1,16 +1,10 @@
 { config, pkgs, lib, ... }:
-
-with lib;
-
 let
   cfg = config.flame.rpi-boot;
 in {
-  options.flame.rpi-boot = {
-    enable = mkEnableOption "boot configuration for raspberry pi";
-    overclock = mkEnableOption "overclock, set up for pi 4";
-  };
+  options.flame.rpi-boot.overclock = lib.mkEnableOption "overclock, set up for pi 4";
 
-  config = mkIf cfg.enable {
+  config = {
     boot.loader.grub.enable = false;
     boot.loader.generic-extlinux-compatible.enable = true;
     environment.systemPackages = [ pkgs.libraspberrypi ];
