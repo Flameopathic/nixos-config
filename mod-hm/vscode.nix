@@ -20,6 +20,7 @@ in {
         mvllow.rose-pine
         rust-lang.rust-analyzer
         ms-python.python
+        eamodio.gitlens
       ];
       userSettings = {
         "window.titleBarStyle" = "custom";
