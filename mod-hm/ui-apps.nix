@@ -20,6 +20,7 @@
 			pcmanfm
 			geeqie
 			heroic
+			bottles
 		];
 		programs = {
 			kitty = {
