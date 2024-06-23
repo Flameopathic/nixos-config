@@ -63,7 +63,7 @@
         ];
         home-modules = [
           ./mod-hm/hyprland.nix {
-            monitor = [ "Unknown-1, disabled" "DP-1, highres, auto, auto" ];
+            flame.hyprland.monitor = [ "Unknown-1, disabled" "DP-1, highres, auto, auto" ];
           }
           ./mod-hm/ui-apps.nix
         ];
@@ -87,7 +87,7 @@
           ./mod/rpi-boot.nix
           ./mod/ssh-server.nix
           ./mod/syncthing.nix {
-            server = true;
+            flame.syncthing.server = true;
           }
         ];
       };
@@ -96,7 +96,7 @@
           ./mod/sd-boot.nix
           ./mod/mc-server.nix
           ./mod/ssh-server.nix {
-            openFirewall = true;
+            flame.ssh-server.openFirewall = true;
           }
         ];
       };

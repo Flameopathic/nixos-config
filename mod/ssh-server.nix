@@ -24,7 +24,7 @@ in {
 		};
 		users.users = {
 			flame.openssh.authorizedKeys.keys = cfg.pubKeys;
-			users.users.root.openssh.authorizedKeys.keys = cfg.pubKeys;
+			root.openssh.authorizedKeys.keys = cfg.pubKeys;
 		};
 		networking.firewall.allowedTCPPorts = if cfg.openFirewall then [
 			80
