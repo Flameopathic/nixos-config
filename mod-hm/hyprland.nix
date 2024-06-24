@@ -121,6 +121,7 @@ in {
 
           # windows
           "$mod, c, killactive,"
+          "$mod, i, exec, hyprctl kill"
           "$mod, n, togglefloating,"
           "$mod, b, togglesplit,"
           "$mod, f, fullscreen, 0"
