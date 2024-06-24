@@ -1,13 +1,11 @@
-{ config, pkgs, ... }: {
+{ config, ... }: {
 	config = {
 		services.xserver.videoDrivers = [ "nvidia" ];
 	
 		hardware = {
-			opengl = {
+			graphics = {
 				enable = true;
-				extraPackages = [ pkgs.glfw-wayland-minecraft ];
-				driSupport = true;
-				driSupport32Bit = true;
+				enable32Bit = true;
 			};
 			nvidia = {
 				modesetting.enable = true;
