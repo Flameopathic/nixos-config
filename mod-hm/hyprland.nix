@@ -118,6 +118,7 @@ in {
           "$mod SHIFT, s, exec, hyprshot -m region -o ~/pic/ss"
           "$mod, q, exec, kitty"
           "$mod, p, exec, swaylock"
+          "CTRL SHIFT $mod ALT, l, exec, firefox --new-tab https://linkedin.com/"
 
           # windows
           "$mod, c, killactive,"
