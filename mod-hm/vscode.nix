@@ -37,7 +37,7 @@
       code = {
         name = "Visual Studio Code";
         genericName = "Text Editor";
-        exec = "code --password-store=\"gnome-libsecret\"";
+        exec = "code --password-store=\"gnome-libsecret\" --disable-gpu";
         icon = "vscode";
         comment = "Code Editing. Redefined.";
         categories = [ "Utility" "TextEditor" "Development" "IDE" ];
