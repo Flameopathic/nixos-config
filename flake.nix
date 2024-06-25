@@ -9,6 +9,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs"; # ensures nixpkgs version is consistent between home manager and system
     };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -100,6 +104,33 @@
           }
         ];
       };
+    };
+    darwinConfigurations = let 
+      mkDarwin = host: { modules ? [], home-modules ? [], system ? "x86_64-darwin", specialArgs ? { inherit inputs; }, ... }: inputs.nix-darwin.lib.darwinSystem {
+        modules = modules ++ [
+          ({ ... }: {
+            networking.hostName = host;
+            nixpkgs.hostPlatform = system;
+          })
+          ./host/${host}/configuration.nix
+          inputs.home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = { inherit inputs; };
+              users.flame = {
+                imports = home-modules ++ [
+                  ./host/${host}/home.nix
+                  ./mod-hm
+                ];
+              };
+            };
+          }
+        ];
+        specialArgs = specialArgs;
+      };
+    in builtins.mapAttrs mkDarwin {
+      bear = {};
     };
   };
 }
