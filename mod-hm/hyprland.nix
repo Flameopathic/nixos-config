@@ -75,10 +75,12 @@ in {
           border_size = 3;
           gaps_out = 15;
           resize_on_border = true;
-          cursor_inactive_timeout = 15;
         };
         decoration = {
           rounding = 3;
+        };
+        cursor = {
+          inactive_timeout = 15;
         };
 
         # windows
