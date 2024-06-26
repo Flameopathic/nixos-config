@@ -21,10 +21,6 @@
     };
 
     hardware.bluetooth.enable = true;
-
-    systemd.tmpfiles.rules = [
-      "z /sys/class/backlight/intel_backlight/brightness 0664 root wheel"
-    ];
   
     # stuff to make hyprland happier
     environment.sessionVariables = {
