@@ -21,26 +21,30 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { ... }@inputs: {
+  outputs = { ... }@inputs: with inputs; {
     nixosConfigurations = let 
-      mkHost = host: { modules ? [], home-modules ? [], system ? "x86_64-linux", specialArgs ? { inherit inputs; }, ... }: inputs.nixpkgs.lib.nixosSystem {
+      mkHost = host: { modules ? [], home-modules ? [], system ? "x86_64-linux", specialArgs ? { inherit inputs; }, ... }: nixpkgs.lib.nixosSystem {
         system = system;
         modules = modules ++ [
           ({ ... }: {
             networking.hostName = host;
           })
           ./host/${host}/configuration.nix
+          ./host/${host}/hardware-configuration.nix
           ./mod
-          inputs.home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };
               users.flame = {
                 imports = home-modules ++ [
-                  ./host/${host}/home.nix
                   ./mod-hm
                 ];
               };
@@ -99,28 +103,37 @@
         modules = [
           ./mod/sd-boot.nix
           ./mod/mc-server.nix
+          ./mod/laptop-server.nix
           ./mod/ssh-server.nix {
             flame.ssh-server.openFirewall = true;
           }
         ];
       };
+      acervnix = {
+        modules = [
+          disko.nixosModules.disko
+          ./host/acervnix/disk-config.nix
+          ./mod/sd-boot.nix
+          ./mod/ssh-server.nix
+          ./mod/laptop-server.nix
+        ];
+      };
     };
     darwinConfigurations = let 
-      mkDarwin = host: { modules ? [], home-modules ? [], system ? "x86_64-darwin", specialArgs ? { inherit inputs; }, ... }: inputs.nix-darwin.lib.darwinSystem {
+      mkDarwin = host: { modules ? [], home-modules ? [], system ? "x86_64-darwin", specialArgs ? { inherit inputs; }, ... }: nix-darwin.lib.darwinSystem {
         modules = modules ++ [
           ({ ... }: {
             networking.hostName = host;
             nixpkgs.hostPlatform = system;
           })
           ./host/${host}/configuration.nix
-          inputs.home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };
               users.flame = {
                 imports = home-modules ++ [
-                  ./host/${host}/home.nix
                   ./mod-hm
                 ];
               };

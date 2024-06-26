@@ -12,7 +12,6 @@ in {
 	};
 
 	config = {
-		services.logind.lidSwitch = "ignore";
 		services.minecraft-server = {
 			enable = true;
 			eula = true;

@@ -10,6 +10,7 @@
     users.users.flame = {
       isNormalUser = true;
       extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+      initialPassword = "snepis";
     };
 
     nixpkgs.overlays = [
