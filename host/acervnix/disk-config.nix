@@ -18,7 +18,7 @@
               };
             };
             root = {
-              end = "-1G";
+              end = "-8G";
               content = {
                 type = "filesystem";
                 format = "ext4";
