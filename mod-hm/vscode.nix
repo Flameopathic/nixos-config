@@ -11,6 +11,7 @@
         rust-lang.rust-analyzer
         ms-python.python
         eamodio.gitlens
+        ms-vscode-remote.remote-ssh
       ];
       userSettings = {
         "window.titleBarStyle" = "custom";
