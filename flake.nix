@@ -25,6 +25,10 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { ... }@inputs: with inputs; {
@@ -68,6 +72,8 @@
           ./mod/remote-builder.nix
           ./mod/ssh-server.nix
           ./mod/syncthing.nix
+          agenix.nixosModules.default
+          {environment.systemPackages = [agenix.packages.x86_64-linux.default ];}
         ];
         home-modules = [
           ./mod-hm/hyprland.nix {
