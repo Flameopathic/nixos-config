@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
+  imports = [
+    inputs.vscode-server.homeModules.default
+  ];
+
   config = {
     home.packages = [ pkgs.nixd ]; # lsp
     programs.vscode = {
@@ -34,6 +38,9 @@
         };
       };
     };
+
+    services.vscode-server.enable = true;
+
     xdg.desktopEntries = {
       code = {
         name = "Visual Studio Code";
