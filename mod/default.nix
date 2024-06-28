@@ -15,7 +15,7 @@
 
     nixpkgs.overlays = [
       (final: prev: {
-        stable = import inputs.nixpkgs-stable {
+        unstable = import inputs.nixpkgs-unstable {
           system = pkgs.system;
           config.allowUnfree = true;
         };
