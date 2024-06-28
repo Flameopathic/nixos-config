@@ -4,7 +4,7 @@
   ];
 
   config = {
-    home.packages = [ pkgs.nixd ]; # lsp
+    home.packages = [ pkgs.unstable.nixd ]; # lsp
     programs.vscode = {
       enable = true;
       enableUpdateCheck = false;

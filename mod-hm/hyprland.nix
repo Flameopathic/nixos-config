@@ -1,7 +1,4 @@
 { config, pkgs, lib, ... }:
-
-with lib;
-
 let
   cfg = config.flame.hyprland;
 in {
@@ -10,7 +7,7 @@ in {
   ];
 
   options.flame.hyprland = {
-    monitor = mkOption {
+    monitor = lib.mkOption {
       default = [ ", highres, auto, auto" ];
       description = "list of monitor configuration(s)";
     };
