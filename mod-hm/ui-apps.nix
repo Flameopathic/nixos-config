@@ -7,7 +7,7 @@
 	config = {
 		home.packages = with pkgs; [
 			nerdfonts
-			discord
+			discord-screenaudio
 			obsidian
 			vlc
 			libreoffice
