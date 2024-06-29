@@ -42,7 +42,8 @@
           ./host/${host}/configuration.nix
           ./host/${host}/hardware-configuration.nix
           ./mod
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager 
+          {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
@@ -131,7 +132,8 @@
             nixpkgs.hostPlatform = system;
           })
           ./host/${host}/configuration.nix
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
