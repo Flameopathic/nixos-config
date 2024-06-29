@@ -16,6 +16,7 @@
         ms-python.python
         eamodio.gitlens
         ms-vscode-remote.remote-ssh
+        github.vscode-github-actions
       ];
       userSettings = {
         "window.titleBarStyle" = "custom";
