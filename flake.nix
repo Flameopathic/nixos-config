@@ -95,7 +95,7 @@
           ./mod-hm/hyprland.nix
           ./mod-hm/ui-apps.nix
           {
-            flame.hyprland.monitor = [ "eDP-1, preferred, auto, auto" "DP-1, preferred, auto, 1" ];
+            flame.hyprland.monitor = [ "eDP-1, preferred, 1920x0, auto" "DP-1, preferred, 0x0, 1" ];
           }
         ];
       };
