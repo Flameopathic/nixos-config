@@ -28,7 +28,7 @@ in {
     programs.swaylock = {
       enable = true;
       settings = {
-        color = "57327a";
+        color = config.colorScheme.palette.base03;
       };
     };
 
