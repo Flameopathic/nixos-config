@@ -24,7 +24,7 @@
         "explorer.confirmDragAndDrop" = false;
         "remoteHub.commitDirectlyWarning" = "off";
         "git.enableSmartCommit" = true;
-        "workbench.colorTheme" = config.colorScheme.name ++ " (no italics)";
+        "workbench.colorTheme" = config.colorScheme.name + " (no italics)";
         "git.confirmSync" = false;
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";
