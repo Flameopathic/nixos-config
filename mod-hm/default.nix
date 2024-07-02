@@ -31,38 +31,9 @@
           ssh = "TERM=xterm ssh";
         };
       };
-      kakoune = {
+      helix = {
         enable = true;
         defaultEditor = true;
-        plugins = with pkgs.kakounePlugins; [
-          fzf-kak
-          kakboard
-          byline-kak
-          smarttab-kak
-          powerline-kak
-          quickscope-kak
-          auto-pairs-kak
-          kakoune-rainbow
-          kakoune-buffers
-          kakoune-registers
-          kakoune-state-save
-        ];
-        config = {
-          autoReload = "yes";
-          indentWidth = 2;
-          numberLines = {
-            enable = true;
-            highlightCursor = true;
-          };
-          scrollOff = {
-            columns = 10;
-            lines = 10;
-          };
-          ui = {
-            assistant = "none";
-            enableMouse = true;
-          };
-        };
       };
     };    
 
