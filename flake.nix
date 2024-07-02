@@ -47,7 +47,7 @@
           {
             home-manager = {
               useGlobalPkgs = true;
-              useUserPackages = true;
+              useUserPackages = false;
               extraSpecialArgs = { inherit inputs; };
               users.flame = {
                 imports = home-modules ++ [

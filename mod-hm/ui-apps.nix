@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, lib, ... }: {
 	imports = [
 		./firefox.nix
 		./vscode.nix
@@ -6,7 +6,7 @@
 	];
 
 	config = {
-		colorScheme = inputs.nix-colors.colorSchemes.rose-pine-moon;
+		colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.rose-pine-moon;
 		home.packages = with pkgs; [
 			nerdfonts
 			discord-screenaudio
@@ -52,6 +52,19 @@
 				name = if config.colorScheme.name == "Rosé Pine Dawn" then "rose-pine-dawn" else if config.colorScheme.name == "Rosé Pine Moon" then "rose-pine-moon" else "";
 				package = pkgs.rose-pine-gtk-theme;
 			};
+		};
+		specialisation.light.configuration = {
+			colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
+			home.packages = with pkgs; [ # credit: Janik-Haag 
+				(hiPrio (writeShellApplication {
+				name = "toggle-theme";
+				runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
+				text =
+					''
+						"$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate
+					'';
+				}))
+			];
 		};
 	};
 }

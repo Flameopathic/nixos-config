@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   config = {
     home.username = "flame";
     home.homeDirectory = "/home/flame";
@@ -9,6 +9,14 @@
       sshuttle
       nix-tree
       python3
+      (writeShellApplication { # credit: Janik-Haag
+        name = "toggle-theme";
+        runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
+        text =
+          ''
+            "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate
+          '';
+      })
     ];
 
     programs = {
@@ -82,10 +90,16 @@
       reboot = {
         name = "Reboot";
         exec = "reboot";
-        comment = "Reboot computer.";
+        categories = [ "Utility" ];
+      };
+      theme-switch = lib.mkDefault {
+        name = "Toggle theme";
+        exec = "toggle-theme";
         categories = [ "Utility" ];
       };
     };
+
+    
 
     home.stateVersion = "23.11"; # home manager can be updated without changing this - read documentation
     programs.home-manager.enable = true;
