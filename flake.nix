@@ -75,7 +75,8 @@
           ./mod/syncthing.nix
         ];
         home-modules = [
-          ./mod-hm/hyprland.nix {
+          ./mod-hm/hyprland.nix
+          {
             flame.hyprland.monitor = [ "Unknown-1, disabled" "DP-1, highres, auto, auto" ];
           }
           ./mod-hm/ui-apps.nix
@@ -92,6 +93,9 @@
         home-modules = [
           ./mod-hm/hyprland.nix
           ./mod-hm/ui-apps.nix
+          {
+            flame.hyprland.monitor = [ "eDP-1, preferred, auto, auto" "DP-1, preferred, auto, 1" ];
+          }
         ];
       };
       servnix = {
