@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ config, pkgs, inputs, ... }: {
   imports = [
     inputs.vscode-server.homeModules.default
   ];
@@ -24,7 +24,7 @@
         "explorer.confirmDragAndDrop" = false;
         "remoteHub.commitDirectlyWarning" = "off";
         "git.enableSmartCommit" = true;
-        "workbench.colorTheme" = "Rosé Pine Dawn (no italics)";
+        "workbench.colorTheme" = config.colorScheme.name ++ " (no italics)";
         "git.confirmSync" = false;
         "nix.enableLanguageServer" = true;
         "nix.serverPath" = "nixd";

@@ -1,10 +1,12 @@
-{ pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
 	imports = [
 		./firefox.nix
 		./vscode.nix
+		inputs.nix-colors.homeManagerModules.default
 	];
 
 	config = {
+		colorScheme = inputs.nix-colors.colorSchemes.rose-pine-moon;
 		home.packages = with pkgs; [
 			nerdfonts
 			discord-screenaudio
@@ -24,7 +26,7 @@
 		programs = {
 			kitty = {
 				enable = true;
-				theme = "Rosé Pine Dawn";
+				theme = config.colorScheme.name;
 			};
 		};
 
@@ -43,11 +45,11 @@
 				size = 24;
 			};
 			iconTheme = {
-				name = "rose-pine-dawn";
+				name = if config.colorScheme.name == "Rosé Pine Dawn" then "rose-pine-dawn" else if config.colorScheme.name == "Rosé Pine Moon" then "rose-pine-moon" else "";
 				package = pkgs.rose-pine-icon-theme;
 			};
 			theme = {
-				name = "rose-pine-dawn";
+				name = if config.colorScheme.name == "Rosé Pine Dawn" then "rose-pine-dawn" else if config.colorScheme.name == "Rosé Pine Moon" then "rose-pine-moon" else "";
 				package = pkgs.rose-pine-gtk-theme;
 			};
 		};
