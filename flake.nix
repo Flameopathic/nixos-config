@@ -78,7 +78,7 @@
         home-modules = [
           ./mod-hm/hyprland.nix
           {
-            flame.hyprland.monitor = [ "Unknown-1, disabled" "DP-1, highres, auto, auto" ];
+            flame.hyprland.monitor = [ "Unknown-1, disabled" "DP-1, highres, 0x0, auto" "HDMI-A-1, highres, 3200x1440, 1" ];
           }
           ./mod-hm/ui-apps.nix
         ];
