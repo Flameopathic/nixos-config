@@ -11,6 +11,10 @@ in {
       default = [ ", highres, auto, auto" ];
       description = "list of monitor configuration(s)";
     };
+    wallpaper = lib.mkOption {
+      default = "leafy-moon.png";
+      description = "name of image in ../resources";
+    };
   };
   
   config = {
@@ -46,7 +50,8 @@ in {
       enable = true;
       xwayland.enable = true;
       settings = {
-        exec-once = "waybar & swww-daemon & swww img /etc/nixos/resources/lwp.png & mako & nm-applet & pasystray &";
+        exec-once = "waybar & swww-daemon & mako & nm-applet & pasystray &";
+        exec = "swww img /etc/nixos/resources/" + cfg.wallpaper;
         "$mod" = "SUPER";
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;

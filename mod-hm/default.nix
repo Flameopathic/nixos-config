@@ -14,7 +14,7 @@
         runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
         text =
           ''
-            "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate
+            "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate && hyprctl reload
           '';
       })
     ];
