@@ -21,6 +21,14 @@
 			# fm # really good looking file manager, gonna wait until it's a bit better on the back end
 			pcmanfm
 			bottles
+			(writeShellApplication { # credit: Janik-Haag
+        name = "toggle-theme";
+        runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
+        text =
+          ''
+            "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate && hyprctl reload
+          '';
+      })
 		];
 		programs = {
 			kitty = {
@@ -52,6 +60,26 @@
 				package = pkgs.rose-pine-gtk-theme;
 			};
 		};
+
+		xdg.desktopEntries = {
+      shutdown = {
+        name = "Shutdown now";
+        exec = "shutdown now";
+        comment = "Shutdown computer immediately";
+        categories = [ "Utility" ];
+      };
+      reboot = {
+        name = "Reboot";
+        exec = "reboot";
+        categories = [ "Utility" ];
+      };
+      theme-switch = lib.mkDefault {
+        name = "Toggle theme";
+        exec = "toggle-theme";
+        categories = [ "Utility" ];
+      };
+    };
+
 		specialisation.light.configuration = {
 			colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
 			programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";

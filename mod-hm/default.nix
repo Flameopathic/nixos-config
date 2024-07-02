@@ -9,14 +9,6 @@
       sshuttle
       nix-tree
       python3
-      (writeShellApplication { # credit: Janik-Haag
-        name = "toggle-theme";
-        runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
-        text =
-          ''
-            "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate && hyprctl reload
-          '';
-      })
     ];
 
     programs = {
@@ -70,36 +62,9 @@
             assistant = "none";
             enableMouse = true;
           };
-          # wrapLines = {
-          #   enable = true;
-          #   indent = true;
-          #   marker = "⏎";
-          # };
         };
       };
-    };
-
-    # TODO: move to proper place
-    xdg.desktopEntries = {
-      shutdown = {
-        name = "Shutdown now";
-        exec = "shutdown now";
-        comment = "Shutdown computer immediately";
-        categories = [ "Utility" ];
-      };
-      reboot = {
-        name = "Reboot";
-        exec = "reboot";
-        categories = [ "Utility" ];
-      };
-      theme-switch = lib.mkDefault {
-        name = "Toggle theme";
-        exec = "toggle-theme";
-        categories = [ "Utility" ];
-      };
-    };
-
-    
+    };    
 
     home.stateVersion = "23.11"; # home manager can be updated without changing this - read documentation
     programs.home-manager.enable = true;
