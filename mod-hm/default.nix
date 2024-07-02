@@ -33,7 +33,7 @@
         enable = true;
         enableCompletion = true;
         shellAliases = {
-          snrbs = "sudo nixos-rebuild switch";
+          snrbs = lib.mkDefault "sudo nixos-rebuild switch";
           conf = "cd /etc/nixos";
           ".." = "cd ..";
           ssh = "TERM=xterm ssh";

@@ -20,7 +20,6 @@
 			gnome.file-roller
 			# fm # really good looking file manager, gonna wait until it's a bit better on the back end
 			pcmanfm
-			geeqie
 			bottles
 		];
 		programs = {
@@ -55,6 +54,7 @@
 		};
 		specialisation.light.configuration = {
 			colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
+			programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
 			home.packages = with pkgs; [ # credit: Janik-Haag 
 				(hiPrio (writeShellApplication {
 				name = "toggle-theme";
