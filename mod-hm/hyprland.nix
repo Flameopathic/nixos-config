@@ -4,6 +4,7 @@ let
 in {
   imports = [
     ./waybar.nix
+    ./hypridle.nix
   ];
 
   options.flame.hyprland = {
@@ -27,13 +28,6 @@ in {
     # drun
     programs.wofi = {
       enable = true;
-    };
-
-    programs.swaylock = {
-      enable = true;
-      settings = {
-        color = config.colorScheme.palette.base03;
-      };
     };
 
     # packages
@@ -107,7 +101,7 @@ in {
         bindl = [ # works even when a lockscreen is active
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
           ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
-          ", switch:Lid Switch, exec, swaylock"
+          ", switch:Lid Switch, exec, hyprlock"
           ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, preferred, 1920x0, auto\""
         ];
         bindel = [ # repeat and work on lockscreen
@@ -122,7 +116,7 @@ in {
           "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
           "$mod SHIFT, s, exec, hyprshot -m region -o ~/pic/ss"
           "$mod, q, exec, kitty"
-          "$mod, p, exec, swaylock"
+          "$mod, p, exec, hyprlock"
           "CTRL SHIFT $mod ALT, l, exec, firefox --new-tab https://linkedin.com/"
 
           # windows
