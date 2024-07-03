@@ -3,12 +3,11 @@
 		./firefox.nix
 		./vscode.nix
 		inputs.nix-colors.homeManagerModules.default
+		./stylix.nix
 	];
 
 	config = {
-		colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.rose-pine-moon;
 		home.packages = with pkgs; [
-			nerdfonts
 			discord-screenaudio
 			obsidian
 			vlc
@@ -33,31 +32,14 @@
 		programs = {
 			kitty = {
 				enable = true;
-				theme = config.colorScheme.name;
 			};
 		};
 
-		home.pointerCursor = {
-			gtk.enable = true;
-			package = pkgs.bibata-cursors-translucent;
-			name = "Bibata_Ghost";
-			size = 24;
-		};
-		
 		gtk = {
 			enable = true;
-			cursorTheme = {
-				name = "Bibata_Ghost";
-				package = pkgs.bibata-cursors-translucent;
-				size = 24;
-			};
 			iconTheme = {
-				name = if config.colorScheme.name == "Rosé Pine Dawn" then "rose-pine-dawn" else if config.colorScheme.name == "Rosé Pine Moon" then "rose-pine-moon" else "";
+				name = lib.mkDefault "rose-pine-moon";
 				package = pkgs.rose-pine-icon-theme;
-			};
-			theme = {
-				name = if config.colorScheme.name == "Rosé Pine Dawn" then "rose-pine-dawn" else if config.colorScheme.name == "Rosé Pine Moon" then "rose-pine-moon" else "";
-				package = pkgs.rose-pine-gtk-theme;
 			};
 		};
 
@@ -81,7 +63,6 @@
     };
 
 		specialisation.light.configuration = {
-			colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
 			programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
 			home.packages = with pkgs; [ # credit: Janik-Haag 
 				(hiPrio (writeShellApplication {
@@ -93,7 +74,12 @@
 					'';
 				}))
 			];
-			flame.hyprland.wallpaper = "lwp.png";
+
+			gtk.iconTheme.name = "rose-pine-dawn";
+			stylix = {
+				image = ../resources/lwp.png;
+				base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
+			};
 		};
 	};
 }

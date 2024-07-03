@@ -101,7 +101,7 @@ in {
         bindl = [ # works even when a lockscreen is active
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
           ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
-          ", switch:Lid Switch, exec, hyprlock"
+          ", switch:Lid Switch, exec, swaylock"
           ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, preferred, 1920x0, auto\""
         ];
         bindel = [ # repeat and work on lockscreen
@@ -116,7 +116,7 @@ in {
           "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
           "$mod SHIFT, s, exec, hyprshot -m region -o ~/pic/ss"
           "$mod, q, exec, kitty"
-          "$mod, p, exec, hyprlock"
+          "$mod, p, exec, swaylock"
           "CTRL SHIFT $mod ALT, l, exec, firefox --new-tab https://linkedin.com/"
 
           # windows
