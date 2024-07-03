@@ -138,10 +138,14 @@
 				"signon.firefoxRelay.feature" = "disabled";
 				"toolkit.telemetry.pioneer-new-studies-available" = false;
 				"trailhead.firstrun.didSeeAboutWelcome" = true;
-		
 			};
 			extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
 				ublock-origin
+				darkreader
+				simple-tab-groups
+				sponsorblock
+				dearrow
+				videospeed
 			];
 		};
 	};
