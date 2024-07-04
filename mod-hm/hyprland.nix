@@ -44,7 +44,7 @@ in {
       enable = true;
       xwayland.enable = true;
       settings = {
-        exec-once = "waybar & swww-daemon & mako & nm-applet & pasystray &";
+        exec-once = "swww-daemon & mako & nm-applet & pasystray &";
         exec = "swww img /etc/nixos/resources/" + cfg.wallpaper;
         "$mod" = "SUPER";
         monitor = cfg.monitor;
@@ -100,9 +100,9 @@ in {
         ];
         bindl = [ # works even when a lockscreen is active
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
-          ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
-          ", switch:Lid Switch, exec, hyprlock"
-          ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, preferred, 1920x0, auto\""
+          ", switch:Lid Switch, exec, systemctl suspend"
+          # ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
+          # ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, preferred, 1920x0, auto\""
         ];
         bindel = [ # repeat and work on lockscreen
           # brightness and volume
