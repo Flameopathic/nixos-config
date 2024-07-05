@@ -1,4 +1,9 @@
 { pkgs, inputs, ... }: {
+  imports = [
+    ./sd-boot.nix
+    ./default-disk.nix
+  ];
+
   config = {
     nixpkgs.config.allowUnfree = true;
 

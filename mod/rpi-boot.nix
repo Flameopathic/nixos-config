@@ -5,6 +5,7 @@ in {
   options.flame.rpi-boot.overclock = lib.mkEnableOption "overclock, set up for pi 4";
 
   config = {
+    flame.sd-boot.enable = false;
     boot.loader.grub.enable = false;
     boot.loader.generic-extlinux-compatible.enable = true;
     environment.systemPackages = [ pkgs.libraspberrypi ];

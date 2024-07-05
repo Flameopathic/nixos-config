@@ -1,6 +1,13 @@
 # Example to create a bios compatible gpt partition
-{ ... }: {
-  disko.devices = {
+{ config, lib, ... }:
+let cfg = config.flame.default-disk;
+in {
+  options.flame.default-disk.enable = lib.mkOption {
+    description = "default disko disk configuration";
+    default = true;
+  };
+
+  config.disko.devices = lib.mkIf cfg.enable {
     disk = {
       sda = {
         device = "/dev/sda";

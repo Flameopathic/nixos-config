@@ -37,14 +37,14 @@
       mkHost = host: { modules ? [], home-modules ? [], system ? "x86_64-linux", specialArgs ? { inherit inputs; }, ... }: nixpkgs.lib.nixosSystem {
         system = system;
         modules = modules ++ [
-          ({ ... }: {
-            networking.hostName = host;
-          })
           ./host/${host}/configuration.nix
           ./host/${host}/hardware-configuration.nix
           ./mod
+
+          disko.nixosModules.disko
           home-manager.nixosModules.home-manager 
           {
+            networking.hostName = host;
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = false;
@@ -67,7 +67,6 @@
       # specialArgs defaults to inheriting inputs alone
       fnix2 = {
         modules = [
-          ./mod/sd-boot.nix
           ./mod/ui.nix
           ./mod/hyprland.nix
           ./mod/nvidia.nix
@@ -76,15 +75,13 @@
           ./mod/syncthing.nix
         ];
         home-modules = [
-          {
-            flame.hyprland.monitor = [ "Unknown-1, disabled" "DP-1, highres, 0x0, auto" "HDMI-A-1, highres, 3200x1440, 1" ];
-          }
+          { flame.hyprland.monitor = [ "Unknown-1, disabled" "DP-1, highres, 0x0, auto" "HDMI-A-1, highres, 3200x1440, 1" ]; }
           ./mod-hm/ui-apps.nix
         ];
       };
+
       surfnix = {
         modules = [
-          ./mod/sd-boot.nix
           ./mod/ui.nix
           ./mod/hyprland.nix
           ./mod/surface.nix
@@ -97,6 +94,7 @@
           ./mod-hm/ui-apps.nix
         ];
       };
+
       servnix = {
         system = "aarch64-linux";
         modules = [
@@ -108,9 +106,9 @@
           }
         ];
       };
+
       shaktop = {
         modules = [
-          ./mod/sd-boot.nix
           ./mod/mc-server.nix
           ./mod/laptop-server.nix
           ./mod/ssh-server.nix
@@ -120,11 +118,10 @@
           }
         ];
       };
+
       acervnix = {
         modules = [
-          disko.nixosModules.disko
           ./host/acervnix/disk-config.nix
-          ./mod/sd-boot.nix
           ./mod/ssh-server.nix
           ./mod/laptop-server.nix
         ];
