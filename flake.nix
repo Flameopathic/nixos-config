@@ -102,7 +102,8 @@
         modules = [
           ./mod/rpi-boot.nix
           ./mod/ssh-server.nix
-          ./mod/syncthing.nix {
+          ./mod/syncthing.nix
+          {
             flame.syncthing.server = true;
           }
         ];
@@ -112,7 +113,9 @@
           ./mod/sd-boot.nix
           ./mod/mc-server.nix
           ./mod/laptop-server.nix
-          ./mod/ssh-server.nix {
+          ./mod/ssh-server.nix
+          ./mod/unturned.nix
+          {
             flame.ssh-server.openFirewall = true;
           }
         ];
