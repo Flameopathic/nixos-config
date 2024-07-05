@@ -100,9 +100,7 @@ in {
         ];
         bindl = [ # works even when a lockscreen is active
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
-          ", switch:Lid Switch, exec, systemctl suspend"
-          # ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\""
-          # ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, preferred, 1920x0, auto\""
+          ", switch:on:Lid Switch, exec, systemctl suspend"
         ];
         bindel = [ # repeat and work on lockscreen
           # brightness and volume
