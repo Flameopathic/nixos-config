@@ -121,7 +121,6 @@
 
       acervnix = {
         modules = [
-          ./host/acervnix/disk-config.nix
           ./mod/ssh-server.nix
           ./mod/laptop-server.nix
         ];
