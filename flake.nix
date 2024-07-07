@@ -40,8 +40,6 @@
           ({ ... }: {
             networking.hostName = host;
           })
-          ./host/${host}/configuration.nix
-          ./host/${host}/hardware-configuration.nix
           ./mod
           home-manager.nixosModules.home-manager 
           {
@@ -52,11 +50,12 @@
               users.flame = {
                 imports = home-modules ++ [
                   ./mod-hm
-                ];
+                ] ++ nixpkgs.lib.optional (builtins.pathExists ./host/${host}/home.nix) ./host/${host}/home.nix;
               };
             };
           }
-        ];
+        ] ++ nixpkgs.lib.optional (builtins.pathExists ./host/${host}/hardware-configuration.nix) ./host/${host}/hardware-configuration.nix
+          ++ nixpkgs.lib.optional (builtins.pathExists ./host/${host}/configuration.nix) ./host/${host}/configuration.nix;
         specialArgs = specialArgs;
       };
 
