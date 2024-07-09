@@ -1,9 +1,16 @@
-{ config, pkgs, inputs, lib, ... }: {
+{ config, pkgs, inputs, lib, ... }: 
+
+let cfg = config.flame.ui;
+in {
 	imports = [
 		./firefox.nix
 		./vscode.nix
 		inputs.nix-colors.homeManagerModules.default
 	];
+
+	options.flame.ui.cursorSize = lib.mkOption {
+		default = 24;
+	};
 
 	config = {
 		colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.rose-pine-moon;
@@ -29,6 +36,7 @@
             "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate && hyprctl reload
           '';
       })
+			geeqie
 		];
 		programs = {
 			kitty = {
@@ -41,7 +49,7 @@
 			gtk.enable = true;
 			package = pkgs.bibata-cursors-translucent;
 			name = "Bibata_Ghost";
-			size = 24;
+			size = cfg.cursorSize;
 		};
 		
 		gtk = {
@@ -49,7 +57,7 @@
 			cursorTheme = {
 				name = "Bibata_Ghost";
 				package = pkgs.bibata-cursors-translucent;
-				size = 24;
+				size = cfg.cursorSize;
 			};
 			iconTheme = {
 				name = if config.colorScheme.name == "Rosé Pine Dawn" then "rose-pine-dawn" else if config.colorScheme.name == "Rosé Pine Moon" then "rose-pine-moon" else "";

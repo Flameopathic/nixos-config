@@ -91,7 +91,14 @@ in {
           "windowsMove, 1, 2, default"
         ];
 
-        # env = "WLR_DRM_NO_ATOMIC,1";
+        # xwayland scaling fixes
+        xwayland = {
+          force_zero_scaling = true;
+        };
+        env = [
+          "GDK_SCALE,2"
+          "XCURSOR_SIZE,${builtins.toString config.flame.ui.cursorSize}"
+        ];
 
         # binds
         bindm = [
