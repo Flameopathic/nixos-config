@@ -16,7 +16,6 @@ in {
 		colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.rose-pine-moon;
 		home.packages = with pkgs; [
 			nerdfonts
-			discord-screenaudio
 			obsidian
 			vlc
 			libreoffice
@@ -37,6 +36,7 @@ in {
           '';
       })
 			geeqie
+			vesktop # TODO: change to `programs.vesktop` when home manager merges the pr
 		];
 		programs = {
 			kitty = {
