@@ -122,6 +122,7 @@ in {
           "$mod SHIFT, s, exec, hyprshot -m region -o ~/pic/ss"
           "$mod, q, exec, kitty"
           "$mod, p, exec, hyprlock"
+          "$mod, t, exec, toggle-theme"
           "CTRL SHIFT $mod ALT, l, exec, firefox --new-tab https://linkedin.com/"
 
           # windows
