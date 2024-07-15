@@ -17,9 +17,9 @@
 
     home.pointerCursor = {
       gtk.enable = true;
-      package = pkgs.bibata-cursors-translucent;
-      name = "Bibata_Ghost";
-      size = config.flame.ui.cursorSize;
+      package = config.gtk.cursorTheme.package;
+      name = config.gtk.cursorTheme.name;
+      size = config.gtk.cursorTheme.size;
     };
 
     gtk = {
