@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:nixpkgs/nixos-hardware";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
       url = "github:Flameopathic/home-manager/release-24.05"; # TODO: change back once vesktop module is merged
       inputs.nixpkgs.follows = "nixpkgs"; # ensures nixpkgs version is consistent between home manager and system

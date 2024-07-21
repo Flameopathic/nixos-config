@@ -209,15 +209,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1720042825,
-        "narHash": "sha256-A0vrUB6x82/jvf17qPCpxaM+ulJnD8YZwH9Ci0BsAzE=",
-        "owner": "nix-community",
+        "lastModified": 1721584601,
+        "narHash": "sha256-W1OKsQUANTJHvnG9jgW7wOF77tngZaEBBr6MbKjOLFA=",
+        "owner": "Flameopathic",
         "repo": "home-manager",
-        "rev": "e1391fb22e18a36f57e6999c7a9f966dc80ac073",
+        "rev": "260c5422545831b22b2fb4235c0e0095a7bc7e84",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "Flameopathic",
         "ref": "release-24.05",
         "repo": "home-manager",
         "type": "github"
@@ -291,15 +291,15 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1719145664,
-        "narHash": "sha256-+0bBlerLxsHUJcKPDWZM1wL3V9bzCFjz+VyRTG8fnUA=",
-        "owner": "Flameopathic",
+        "lastModified": 1721413321,
+        "narHash": "sha256-0GdiQScDceUrVGbxYpV819LHesK3szHOhJ09e6sgES4=",
+        "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "c3e48cbd88414f583ff08804eb57b0da4c194f9e",
+        "rev": "ab165a8a6cd12781d76fe9cbccb9e975d0fb634f",
         "type": "github"
       },
       "original": {
-        "owner": "Flameopathic",
+        "owner": "nixos",
         "repo": "nixos-hardware",
         "type": "github"
       }
