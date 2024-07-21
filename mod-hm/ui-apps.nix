@@ -24,12 +24,16 @@
 			pcmanfm
 			bottles
 			geeqie
-			vesktop # TODO: change to `programs.vesktop` when home manager merges the pr
 		];
 
-		programs.kitty = {
-			enable = true;
-			theme = config.colorScheme.name;
+		programs  = {
+			kitty = {
+				enable = true;
+				theme = config.colorScheme.name;
+			};
+			vesktop = {
+
+			};
 		};
 
 		xdg.desktopEntries = {
