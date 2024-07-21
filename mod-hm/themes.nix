@@ -47,6 +47,8 @@
 
     specialisation.light.configuration = {
 			colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
+      gtk.theme.name = "rose-pine-dawn";
+      flame.hyprland.wallpaper = "lwp.png";
 
 			programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
 
@@ -60,10 +62,6 @@
 					'';
 				}))
 			];
-
-      gtk.theme.name = "rose-pine-dawn";
-
-			flame.hyprland.wallpaper = "lwp.png";
 		};
   };
 }
