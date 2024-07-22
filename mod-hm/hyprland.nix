@@ -14,7 +14,7 @@ in {
     };
     wallpaper = lib.mkOption {
       default = "leafy-moon.png";
-      description = "name of image in ../resources";
+      description = "name of image in /etc/nixos/resources";
     };
   };
   
@@ -46,7 +46,7 @@ in {
       settings = {
         exec-once = "swww-daemon & mako & nm-applet & pasystray &";
         exec = "swww img /etc/nixos/resources/" + cfg.wallpaper;
-        "$mod" = "SUPER";
+
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;
 
@@ -101,6 +101,7 @@ in {
         ];
 
         # binds
+        "$mod" = "SUPER";
         bindm = [
           "$mod, mouse:272, movewindow"
           "$mod, mouse:273, resizewindow"
@@ -123,7 +124,9 @@ in {
           "$mod, q, exec, kitty"
           "$mod, p, exec, hyprlock"
           "$mod, t, exec, toggle-theme"
+          "$mod, w, exec, swww img /etc/nixos/resources/${cfg.wallpaper}"
           "CTRL SHIFT $mod ALT, l, exec, firefox --new-tab https://linkedin.com/"
+
 
           # windows
           "$mod, c, killactive,"
