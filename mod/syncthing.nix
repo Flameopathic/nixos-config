@@ -55,6 +55,15 @@ in {
 						params.cleanoutDays = "0"; # never clean out - prolly a bad idea, but the versioning system isn't hugely good anyway
 					};
 				};
+				prg = {
+					path = "${cfg.home}/prg";
+					devices = cfg.devices;
+					id = "prg";
+					versioning = {
+						type = "trashcan";
+						params.cleanoutDays = "1000";
+					};
+				};
 			};
 			options = {
 				urAccepted = -1;
