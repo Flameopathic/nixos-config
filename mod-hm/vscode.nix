@@ -4,7 +4,10 @@
   ];
 
   config = {
-    home.packages = [ pkgs.unstable.nixd ]; # lsp
+    home.packages = [
+      pkgs.unstable.nixd # language server
+      pkgs.nixpkgs-fmt
+    ];
     programs.vscode = {
       enable = true;
       enableUpdateCheck = false;
@@ -27,6 +30,7 @@
         "workbench.colorTheme" = config.colorScheme.name + " (no italics)";
         "git.confirmSync" = false;
         "nix.enableLanguageServer" = true;
+        "nix.formatterPath" = "nixpkgs-fmt";
         "nix.serverPath" = "nixd";
         "nix.serverSettings" = {
           "nixd" = {
@@ -52,15 +56,15 @@
         categories = [ "Utility" "TextEditor" "Development" "IDE" ];
         actions.new-empty-window = {
           exec = "code --new-window --password-store=\"gnome-libsecret\"";
-        	icon = "vscode";
-        	name = "New Empty Window";
+          icon = "vscode";
+          name = "New Empty Window";
         };
         mimeType = [ "text/plain" "inode/directory" ];
         startupNotify = true;
         type = "Application";
         settings = {
           Keywords = "vscode";
-        	StartupWMClass = "Code";
+          StartupWMClass = "Code";
         };
       };
     };
