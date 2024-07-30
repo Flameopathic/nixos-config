@@ -7,7 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     solaar
-    (pkgs.callPackage ../../pkgs/wl-clicker {})
+    (pkgs.callPackage ../../pkgs/wl-clicker { })
   ];
 
   system.stateVersion = "23.11"; # shouldn't be changed

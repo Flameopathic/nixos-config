@@ -1,6 +1,6 @@
 { inputs, ... }: {
-	imports = [
-		inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
-		./mobile.nix
-	];
+  imports = [
+    inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
+    ./mobile.nix
+  ];
 }

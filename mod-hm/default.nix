@@ -37,7 +37,7 @@
         enable = true;
         defaultEditor = true;
       };
-    };    
+    };
 
     programs.home-manager.enable = true;
   };

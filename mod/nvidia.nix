@@ -1,20 +1,20 @@
 { config, pkgs, ... }: {
-	config = {
-		services.xserver.videoDrivers = [ "nvidia" ];
+  config = {
+    services.xserver.videoDrivers = [ "nvidia" ];
 
-		boot.kernelPackages = pkgs.unstable.linuxPackages;
-	
-		hardware = {
-			opengl = {
-				enable = true;
-				extraPackages = [ pkgs.glfw-wayland ];
-				driSupport = true;
-				driSupport32Bit = true;
-			};
-			nvidia = {
-				modesetting.enable = true;
-				package = config.boot.kernelPackages.nvidiaPackages.beta;
-			};
-		};
-	};
+    boot.kernelPackages = pkgs.unstable.linuxPackages;
+
+    hardware = {
+      opengl = {
+        enable = true;
+        extraPackages = [ pkgs.glfw-wayland ];
+        driSupport = true;
+        driSupport32Bit = true;
+      };
+      nvidia = {
+        modesetting.enable = true;
+        package = config.boot.kernelPackages.nvidiaPackages.beta;
+      };
+    };
+  };
 }

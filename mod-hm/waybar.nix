@@ -1,4 +1,4 @@
-{ inputs, config, ... }: {  
+{ inputs, config, ... }: {
   config.programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -8,7 +8,7 @@
         position = "bottom";
         spacing = 4;
         modules-left = [
-          "hyprland/workspaces" 
+          "hyprland/workspaces"
           "hyprland/window"
         ];
         modules-right = [
@@ -31,11 +31,11 @@
         temperature = {
           critical-threshold = 80;
           format = "{temperatureC}°C {icon}";
-          format-icons = ["" "" ""];
+          format-icons = [ "" "" "" ];
         };
         backlight = {
           format = "{percent}% {icon}";
-          format-icons = ["" "" "" "" "" "" "" "" ""];
+          format-icons = [ "" "" "" "" "" "" "" "" "" ];
         };
         battery = {
           states = {
@@ -47,7 +47,7 @@
           format-charging = "{capacity}% ";
           format-plugged = "{capacity}% ";
           format-alt = "{time} {icon}";
-          format-icons = ["" "" "" "" ""];
+          format-icons = [ "" "" "" "" "" ];
         };
         network = {
           format-wifi = "{essid} ({signalStrength}%) ";

@@ -35,7 +35,8 @@
         experimental-features = [ "nix-command" "flakes" ];
         trusted-users = [ "flame" ]; # should allow for remote builds
       };
-      gc = { # garbage collection
+      gc = {
+        # garbage collection
         automatic = true;
         dates = "daily";
         options = "--delete-older-than 7d";

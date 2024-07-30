@@ -11,7 +11,7 @@
     };
 
     services.printing.enable = true;
-  
+
     security.rtkit.enable = true; # not entirely sure what this does, but the wiki said it was good
     services.pipewire = {
       enable = true;
@@ -21,7 +21,7 @@
     };
 
     hardware.bluetooth.enable = true;
-  
+
     # stuff to make hyprland happier
     environment.sessionVariables = {
       # makes cursor visible on nvidia - not necessarily necessary for others, testing necessary

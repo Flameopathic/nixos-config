@@ -1,7 +1,8 @@
 { config, pkgs, lib, ... }:
 let
   cfg = config.flame.hyprland;
-in {
+in
+{
   imports = [
     ./waybar.nix
     ./hypridle.nix
@@ -17,7 +18,7 @@ in {
       description = "name of image in /etc/nixos/resources";
     };
   };
-  
+
   config = {
     # notification daemon
     services.mako = {
@@ -106,11 +107,13 @@ in {
           "$mod, mouse:272, movewindow"
           "$mod, mouse:273, resizewindow"
         ];
-        bindl = [ # works even when a lockscreen is active
+        bindl = [
+          # works even when a lockscreen is active
           ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
           ", switch:on:Lid Switch, exec, systemctl suspend"
         ];
-        bindel = [ # repeat and work on lockscreen
+        bindel = [
+          # repeat and work on lockscreen
           # brightness and volume
           ", XF86MonBrightnessDown, exec, brillo -q -u 150000 -U 2"
           ", XF86MonBrightnessUp, exec, brillo -q -u 150000 -A 2"
@@ -138,19 +141,19 @@ in {
 
           "$mod, m, exit,"
 
-        	# focus
-        	"$mod, left, movefocus, l"
-        	"$mod, right, movefocus, r"
-        	"$mod, up, movefocus, u"
-        	"$mod, down, movefocus, d"
-        	"$mod, h, movefocus, l"
-        	"$mod, l, movefocus, r"
-        	"$mod, k, movefocus, u"
-        	"$mod, j, movefocus, d"
+          # focus
+          "$mod, left, movefocus, l"
+          "$mod, right, movefocus, r"
+          "$mod, up, movefocus, u"
+          "$mod, down, movefocus, d"
+          "$mod, h, movefocus, l"
+          "$mod, l, movefocus, r"
+          "$mod, k, movefocus, u"
+          "$mod, j, movefocus, d"
 
           # special workspace
-        	"$mod, o, togglespecialworkspace, magic"
-        	"$mod SHIFT, o, movetoworkspace, special:magic"
+          "$mod, o, togglespecialworkspace, magic"
+          "$mod SHIFT, o, movetoworkspace, special:magic"
 
           # workspaces
           "$mod SHIFT, j, workspace, +1"
@@ -159,18 +162,22 @@ in {
           "$mod SHIFT CTRL, k, movetoworkspace, -1"
         ] ++ (
           # makes 1-10 workspace bindings
-        	builtins.concatLists (builtins.genList (
-        	  x: let
-        	    ws = let
-        	      c = (x + 1) / 10;
-        	    in
-        	      builtins.toString (x + 1 - (c * 10));
-                  in [
-        	    "$mod, ${ws}, workspace, ${toString (x + 1)}"
-        	    "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-              "$mod SHIFT CTRL, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
-        	  ]
-          ) 10)
+          builtins.concatLists (builtins.genList
+            (
+              x:
+              let
+                ws =
+                  let
+                    c = (x + 1) / 10;
+                  in
+                  builtins.toString (x + 1 - (c * 10));
+              in
+              [
+                "$mod, ${ws}, workspace, ${toString (x + 1)}"
+                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+                "$mod SHIFT CTRL, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
+              ]
+            ) 10)
         );
       };
     };

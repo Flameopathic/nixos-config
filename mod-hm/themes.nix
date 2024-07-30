@@ -6,7 +6,8 @@
     colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.rose-pine-moon;
 
     home.packages = with pkgs; [
-      (writeShellApplication { # credit: Janik-Haag
+      (writeShellApplication {
+        # credit: Janik-Haag
         name = "toggle-theme";
         runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
         text = ''
@@ -23,21 +24,21 @@
     };
 
     gtk = {
-			enable = true;
-			cursorTheme = {
-				name = "Bibata_Ghost";
-				package = pkgs.bibata-cursors-translucent;
-				size = config.flame.ui.cursorSize;
-			};
-			iconTheme = {
-				name = config.gtk.theme.name;
-				package = pkgs.rose-pine-icon-theme;
-			};
-			theme = {
-				name = lib.mkDefault "rose-pine-moon";
-				package = pkgs.rose-pine-gtk-theme;
-			};
-		};
+      enable = true;
+      cursorTheme = {
+        name = "Bibata_Ghost";
+        package = pkgs.bibata-cursors-translucent;
+        size = config.flame.ui.cursorSize;
+      };
+      iconTheme = {
+        name = config.gtk.theme.name;
+        package = pkgs.rose-pine-icon-theme;
+      };
+      theme = {
+        name = lib.mkDefault "rose-pine-moon";
+        package = pkgs.rose-pine-gtk-theme;
+      };
+    };
 
     xdg.desktopEntries.theme-switch = {
       name = "Toggle theme";
@@ -46,22 +47,23 @@
     };
 
     specialisation.light.configuration = {
-			colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
+      colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
       gtk.theme.name = "rose-pine-dawn";
       flame.hyprland.wallpaper = "lwp.png";
 
-			programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
+      programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
 
-			home.packages = with pkgs; [ # credit: Janik-Haag 
-				(hiPrio (writeShellApplication {
-				name = "toggle-theme";
-				runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
-				text =
-					''
-						"$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
-					'';
-				}))
-			];
-		};
+      home.packages = with pkgs; [
+        # credit: Janik-Haag 
+        (hiPrio (writeShellApplication {
+          name = "toggle-theme";
+          runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
+          text =
+            ''
+              						"$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
+              					'';
+        }))
+      ];
+    };
   };
 }

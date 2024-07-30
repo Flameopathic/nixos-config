@@ -1,3 +1,3 @@
 { ... }: {
-	system.stateVersion = "23.11"; # read docs before changing
+  system.stateVersion = "23.11"; # read docs before changing
 }

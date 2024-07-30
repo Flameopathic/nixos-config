@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
@@ -14,24 +15,26 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5d4e35d3-a06b-45d8-8b0c-11b9bd998dc1";
+    {
+      device = "/dev/disk/by-uuid/5d4e35d3-a06b-45d8-8b0c-11b9bd998dc1";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F1E8-03CD";
+    {
+      device = "/dev/disk/by-uuid/F1E8-03CD";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/home/flame/doc/Nextcloud Backup" =
-    { device = "/dev/disk/by-uuid/723a3feb-0852-4346-b5b9-b72153a79ec0";
+    {
+      device = "/dev/disk/by-uuid/723a3feb-0852-4346-b5b9-b72153a79ec0";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/fddaeb1c-e259-4ffb-9eda-03a39dd3e618"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/fddaeb1c-e259-4ffb-9eda-03a39dd3e618"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's

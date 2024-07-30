@@ -1,40 +1,40 @@
 { config, pkgs, lib, ... }: {
-	imports = [
-		./firefox.nix
-		./vscode.nix
-		./themes.nix
-		./vesktop.nix
-	];
+  imports = [
+    ./firefox.nix
+    ./vscode.nix
+    ./themes.nix
+    ./vesktop.nix
+  ];
 
-	options.flame.ui.cursorSize = lib.mkOption {
-		default = 24;
-	};
+  options.flame.ui.cursorSize = lib.mkOption {
+    default = 24;
+  };
 
-	config = {
-		home.packages = with pkgs; [
-			nerdfonts
-			obsidian
-			vlc
-			libreoffice
-			hunspellDicts.en_US
-			godot_4
-			bambu-studio
-			prismlauncher
-			gnome.file-roller
-			# fm # really good looking file manager, gonna wait until it's a bit better on the back end
-			pcmanfm
-			bottles
-			geeqie
-		];
+  config = {
+    home.packages = with pkgs; [
+      nerdfonts
+      obsidian
+      vlc
+      libreoffice
+      hunspellDicts.en_US
+      godot_4
+      bambu-studio
+      prismlauncher
+      gnome.file-roller
+      # fm # really good looking file manager, gonna wait until it's a bit better on the back end
+      pcmanfm
+      bottles
+      geeqie
+    ];
 
-		programs  = {
-			kitty = {
-				enable = true;
-				theme = config.colorScheme.name;
-			};
-		};
+    programs = {
+      kitty = {
+        enable = true;
+        theme = config.colorScheme.name;
+      };
+    };
 
-		xdg.desktopEntries = {
+    xdg.desktopEntries = {
       shutdown = {
         name = "Shutdown now";
         exec = "shutdown now";
@@ -47,5 +47,5 @@
         categories = [ "Utility" ];
       };
     };
-	};
+  };
 }
