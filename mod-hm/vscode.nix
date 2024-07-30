@@ -15,7 +15,7 @@
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         mvllow.rose-pine
-        rust-lang.rust-analyzer
+        # rust-lang.rust-analyzer
         ms-python.python
         eamodio.gitlens
         ms-vscode-remote.remote-ssh
@@ -41,6 +41,12 @@
             };
           };
         };
+        "editor.formatOnSave" = true;
+        "editor.formatOnType" = true;
+        "editor.formatOnPaste" = true;
+      };
+      userTasks = {
+        version = "2.0.0";
       };
     };
 
