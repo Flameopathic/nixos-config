@@ -47,6 +47,13 @@
       };
       userTasks = {
         version = "2.0.0";
+        tasks = [
+          {
+            label = "format all nix files";
+            type = "shell";
+            command = "find . -name \"*.nix\" -exec nixpkgs-fmt {} \\;";
+          }
+        ];
       };
     };
 
