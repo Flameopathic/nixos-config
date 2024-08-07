@@ -117,11 +117,9 @@
           "extensions.webextensions.restrictedDomains" = "";
           "extensions.postDownloadThirdPartyPrompt" = false;
           # could sanitize after close
-          "privacy.resistFingerprinting" = true; # could be a breaking change
+          "privacy.resistFingerprinting" = false;
 
           # i don't quite get these next two
-          "privacy.window.maxInnerWidth" = 1600;
-          "privacy.window.maxInnerHeight" = 900;
           "privacy.resistFingerprinting.block_mozAddonManager" = true;
           "browser.display.use_system_colors" = false;
           "browser.startup.blankWindow" = false;
@@ -132,7 +130,7 @@
           "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;
           "privacy.annotate_channels.strict_list.enabled" = true;
           "privacy.donottrackheader.enabled" = true;
-          "privacy.fingerprintingProtection" = true;
+          "privacy.fingerprintingProtection" = false;
           "privacy.globalprivacycontrol.enabled" = true;
           "privacy.query_stripping.enabled" = true;
           "privacy.query_stripping.enabled.pbmode" = true;
