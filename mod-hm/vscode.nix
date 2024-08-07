@@ -20,6 +20,7 @@
         eamodio.gitlens
         ms-vscode-remote.remote-ssh
         github.vscode-github-actions
+        zaaack.markdown-editor
       ];
       userSettings = {
         "window.titleBarStyle" = "custom";

@@ -27,7 +27,9 @@
       git
     ];
 
-    services.gnome.gnome-keyring.enable = true; # makes some things log in better; compatibility feature
+    # makes some things log in better; compatibility feature
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.gdm-password.enableGnomeKeyring = true;
 
     nix = {
       settings = {
