@@ -32,6 +32,9 @@
         enable = true;
         theme = config.colorScheme.name;
       };
+      joplin-desktop = {
+        enable = true;
+      };
     };
 
     xdg.desktopEntries = {
