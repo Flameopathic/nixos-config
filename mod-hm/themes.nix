@@ -36,7 +36,7 @@
       };
       theme = {
         name = lib.mkDefault "rose-pine-moon";
-        package = pkgs.rose-pine-gtk-theme;
+        package = lib.mkDefault pkgs.rose-pine-gtk-theme;
       };
     };
 
@@ -47,23 +47,49 @@
     };
 
     specialisation.light.configuration = {
-      colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
-      gtk.theme.name = "rose-pine-dawn";
-      flame.hyprland.wallpaper = "lwp.png";
+      colorScheme = {
+        slug = "nord-light";
+        name = "Nord Light";
+        author = "threddast, based on fuxialexander's doom-nord-light-theme (Doom Emacs)";
+        palette = {
+          base00 = "e5e9f0";
+          base01 = "c2d0e7";
+          base02 = "b8c5db";
+          base03 = "aebacf";
+          base04 = "60728c";
+          base05 = "2e3440";
+          base06 = "3b4252";
+          base07 = "29838d";
+          base08 = "99324b";
+          base09 = "ac4426";
+          base0A = "9a7500";
+          base0B = "4f894c";
+          base0C = "398eac";
+          base0D = "3b6ea8";
+          base0E = "97365b";
+          base0F = "5272af";
+        };
+      };
 
-      programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
+      gtk.theme = {
+        name = "";
+        package = pkgs.};
 
-      home.packages = with pkgs; [
-        # credit: Janik-Haag 
-        (hiPrio (writeShellApplication {
-          name = "toggle-theme";
-          runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
-          text =
-            ''
-              						"$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
-              					'';
-        }))
-      ];
+        flame.hyprland.wallpaper = "lwp.png";
+
+        programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
+
+        home.packages = with pkgs; [
+          # credit: Janik-Haag 
+          (hiPrio (writeShellApplication {
+            name = "toggle-theme";
+            runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
+            text =
+              ''
+                						"$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
+                					'';
+          }))
+        ];
+      };
     };
-  };
-}
+  }
