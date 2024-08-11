@@ -60,8 +60,8 @@
           runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
           text =
             ''
-              						"$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
-              					'';
+              "$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
+            '';
         }))
       ];
     };
