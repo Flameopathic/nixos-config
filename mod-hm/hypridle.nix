@@ -13,19 +13,19 @@
       enable = true;
       settings = {
         general = {
+          immediate_render = true;
           hide_cursor = true;
           ignore_empty_input = true;
+          no_fade_in = true;
         };
         background = {
           color = "rgba(${inputs.nix-colors.lib.conversions.hexToRGBString ", " config.colorScheme.palette.base03}, 1.0)";
-          blur_passes = 3;
-          blur_size = 8;
+          path = "/etc/nixos/resources/bay.png";
         };
 
         input-field = {
           size = "600, 100";
           position = "0, 0";
-          monitor = "";
           dots_center = true;
           fade_on_empty = false;
           font_color = "rgb(202, 211, 245)";
