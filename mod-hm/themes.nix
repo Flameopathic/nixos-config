@@ -35,8 +35,10 @@
         package = pkgs.rose-pine-icon-theme;
       };
       theme = {
-        name = lib.mkDefault "rose-pine-moon";
-        package = lib.mkDefault pkgs.rose-pine-gtk-theme;
+        name = lib.mkDefault "Graphite-Dark-nord";
+        package = pkgs.graphite-gtk-theme.override {
+          tweaks = [ "nord" ];
+        };
       };
     };
 
@@ -73,23 +75,23 @@
 
       gtk.theme = {
         name = "";
-        package = pkgs.};
-
-        flame.hyprland.wallpaper = "lwp.png";
-
-        programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
-
-        home.packages = with pkgs; [
-          # credit: Janik-Haag 
-          (hiPrio (writeShellApplication {
-            name = "toggle-theme";
-            runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
-            text =
-              ''
-                						"$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
-                					'';
-          }))
-        ];
       };
+
+      flame.hyprland.wallpaper = "lwp.png";
+
+      programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
+
+      home.packages = with pkgs; [
+        # credit: Janik-Haag 
+        (hiPrio (writeShellApplication {
+          name = "toggle-theme";
+          runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
+          text =
+            ''
+              						"$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
+              					'';
+        }))
+      ];
     };
-  }
+  };
+}

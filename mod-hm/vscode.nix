@@ -14,7 +14,7 @@
       enableExtensionUpdateCheck = false;
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
-        mvllow.rose-pine
+        arcticicestudio.nord-visual-studio-code
         # rust-lang.rust-analyzer
         ms-python.python
         eamodio.gitlens
@@ -28,7 +28,7 @@
         "explorer.confirmDragAndDrop" = false;
         "remoteHub.commitDirectlyWarning" = "off";
         "git.enableSmartCommit" = true;
-        "workbench.colorTheme" = config.colorScheme.name + " (no italics)";
+        "workbench.colorTheme" = "Nord";
         "git.confirmSync" = false;
         "nix.enableLanguageServer" = true;
         "nix.formatterPath" = "nixpkgs-fmt";

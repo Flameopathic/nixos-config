@@ -30,7 +30,7 @@
     programs = {
       kitty = {
         enable = true;
-        theme = config.colorScheme.name;
+        theme = lib.mkDefault "Nord";
       };
       joplin-desktop = {
         enable = true;
