@@ -32,8 +32,9 @@
         enable = true;
         theme = config.colorScheme.name;
       };
-      joplin-desktop = {
+      taskwarrior = {
         enable = true;
+        dataLocation = "/home/flame/doc/.task";
       };
     };
 
