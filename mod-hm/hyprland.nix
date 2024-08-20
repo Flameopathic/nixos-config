@@ -97,7 +97,6 @@ in
           force_zero_scaling = true;
         };
         env = [
-          "GDK_SCALE,2"
           "XCURSOR_SIZE,${builtins.toString config.flame.ui.cursorSize}"
         ];
 
@@ -152,8 +151,8 @@ in
           "$mod, j, movefocus, d"
 
           # special workspace
-          "$mod, o, togglespecialworkspace, magic"
-          "$mod SHIFT, o, movetoworkspace, special:magic"
+          "$mod, w, togglespecialworkspace, magic"
+          "$mod SHIFT, w, movetoworkspace, special:magic"
 
           # workspaces
           "$mod SHIFT, j, workspace, +1"

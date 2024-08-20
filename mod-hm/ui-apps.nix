@@ -32,8 +32,12 @@
         enable = true;
         theme = lib.mkDefault "Nord";
       };
-      joplin-desktop = {
+      taskwarrior = {
         enable = true;
+        dataLocation = "/home/flame/doc/.task";
+        config = {
+          calendar.details = "full";
+        };
       };
     };
 

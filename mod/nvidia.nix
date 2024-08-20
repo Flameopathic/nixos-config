@@ -7,13 +7,12 @@
     hardware = {
       opengl = {
         enable = true;
-        extraPackages = [ pkgs.glfw-wayland ];
         driSupport = true;
         driSupport32Bit = true;
       };
       nvidia = {
         modesetting.enable = true;
-        package = config.boot.kernelPackages.nvidiaPackages.beta;
+        package = config.boot.kernelPackages.nvidiaPackages.latest;
       };
     };
   };
