@@ -36,6 +36,9 @@ in
         "servnix" = {
           id = "DGMX5KZ-AUI3E4J-DHOPIFF-YRCOMWK-WZ6PUX3-2UHDTVH-RDTMFO3-ZP6M5QM";
         };
+        "foldeopathic" = {
+          id = "5GC5N6H-LHNYSOH-LXBY746-U3OEOXH-LVKQFDD-P2QTFB2-6HTAOHY-Y6I4CAO";
+        };
       };
       folders = {
         doc = {
@@ -64,6 +67,10 @@ in
             type = "trashcan";
             params.cleanoutDays = "1000";
           };
+        };
+        phone = {
+          path = "${cfg.home}/pic/phone";
+          devices = cfg.devices ++ [ "foldeopathic" ];
         };
       };
       options = {
