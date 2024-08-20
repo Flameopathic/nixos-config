@@ -74,7 +74,7 @@
       };
 
       gtk.theme = {
-        name = "";
+        name = "Graphite-Light-nord";
       };
 
       flame.hyprland.wallpaper = "lwp.png";
