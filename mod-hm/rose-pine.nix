@@ -3,7 +3,7 @@
     inputs.nix-colors.homeManagerModules.default
   ];
   config = {
-    colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.rose-pine-dawn;
+    colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.rose-pine-moon;
 
     home.packages = with pkgs; [
       (writeShellApplication {
