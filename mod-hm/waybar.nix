@@ -196,7 +196,6 @@
       }
 
       #backlight {
-          background-color: #${config.colorScheme.palette.base04};
       }
 
       #network {
