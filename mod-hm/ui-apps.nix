@@ -2,7 +2,6 @@
   imports = [
     ./firefox.nix
     ./vscode.nix
-    ./themes.nix
     ./vesktop.nix
   ];
 
