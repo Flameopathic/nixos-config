@@ -85,6 +85,7 @@
               flame.hyprland.monitor = [ "Unknown-1, disabled" "DP-1, highres, 0x0, auto" "HDMI-A-1, highres, 3200x1440, 1" ];
             }
             ./mod-hm/ui-apps.nix
+            ./mod-hm/rose-pine.nix
           ];
         };
         surfnix = {
@@ -94,6 +95,7 @@
             ./mod/hyprland.nix
             ./mod/surface.nix
             ./mod/syncthing.nix
+            ./mod-hm/nord.nix
           ];
           home-modules = [
             {
