@@ -95,13 +95,13 @@
             ./mod/hyprland.nix
             ./mod/surface.nix
             ./mod/syncthing.nix
-            ./mod-hm/nord.nix
           ];
           home-modules = [
             {
               flame.hyprland.monitor = [ "eDP-1, preferred, 1920x0, auto" "DP-1, preferred, 0x0, 1" ];
             }
             ./mod-hm/ui-apps.nix
+            ./mod-hm/nord.nix
           ];
         };
         servnix = {
