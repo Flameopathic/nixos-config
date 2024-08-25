@@ -14,7 +14,7 @@ in
       description = "list of monitor configuration(s)";
     };
     wallpaper = lib.mkOption {
-      default = "leafy-moon.png";
+      default = "";
       description = "name of image in /etc/nixos/resources";
     };
   };

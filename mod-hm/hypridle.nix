@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, ... }: {
+{ config, inputs, ... }: {
   config = {
     services.hypridle = {
       enable = true;

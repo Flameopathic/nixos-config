@@ -1,7 +1,17 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, lib, ... }:
+let
+  cfg = config.flame.vscode;
+
+in
+{
   imports = [
     inputs.vscode-server.homeModules.default
   ];
+
+  options.flame.vscode.theme = lib.mkOption {
+    default = "";
+    description = "string name of theme";
+  };
 
   config = {
     home.packages = [
@@ -14,7 +24,7 @@
       enableExtensionUpdateCheck = false;
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
-        mvllow.rose-pine
+        arcticicestudio.nord-visual-studio-code
         # rust-lang.rust-analyzer
         ms-python.python
         eamodio.gitlens
@@ -28,7 +38,7 @@
         "explorer.confirmDragAndDrop" = false;
         "remoteHub.commitDirectlyWarning" = "off";
         "git.enableSmartCommit" = true;
-        "workbench.colorTheme" = config.colorScheme.name + " (no italics)";
+        "workbench.colorTheme" = cfg.theme;
         "git.confirmSync" = false;
         "nix.enableLanguageServer" = true;
         "nix.formatterPath" = "nixpkgs-fmt";
