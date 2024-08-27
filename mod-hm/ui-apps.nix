@@ -36,6 +36,7 @@
         dataLocation = "/home/flame/doc/.task";
         config = {
           calendar.details = "full";
+          nag = "";
         };
       };
     };
