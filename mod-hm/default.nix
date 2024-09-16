@@ -1,7 +1,9 @@
 { pkgs, lib, ... }: {
   config = {
-    home.username = "flame";
-    home.homeDirectory = "/home/flame";
+    home = {
+      username = "flame";
+      homeDirectory = "/home/flame";
+    };
 
     home.packages = with pkgs; [
       neofetch

@@ -52,6 +52,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = false;
                 extraSpecialArgs = { inherit inputs; };
+                backupFileExtension = "hm-bkp";
                 users.flame = {
                   imports = home-modules ++ [
                     ./mod-hm
