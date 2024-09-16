@@ -72,6 +72,10 @@ in
           path = "${cfg.home}/pic/phone";
           devices = cfg.devices ++ [ "foldeopathic" ];
         };
+        mus = {
+          path = "${cfg.home}/mus";
+          devices = cfg.devices ++ [ "foldeopathic" ];
+        };
       };
       options = {
         urAccepted = -1;
