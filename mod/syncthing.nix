@@ -22,7 +22,7 @@ in
     enable = true;
     openDefaultPorts = cfg.server;
     user = mkDefault "flame";
-    dataDir = mkDefault "${cfg.home}/syncthing";
+    dataDir = mkDefault "${cfg.home}/.config/syncthing";
     overrideDevices = mkDefault true;
     overrideFolders = mkDefault true;
     settings = {

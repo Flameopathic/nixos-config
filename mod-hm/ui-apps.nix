@@ -20,7 +20,7 @@
       bambu-studio
       prismlauncher
       gnome.file-roller
-      pcmanfm
+      gnome.nautilus
       bottles
       geeqie
       quodlibet
