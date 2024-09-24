@@ -116,6 +116,8 @@ in
           # brightness and volume
           ", XF86MonBrightnessDown, exec, brillo -q -u 150000 -U 2"
           ", XF86MonBrightnessUp, exec, brillo -q -u 150000 -A 2"
+          "$mod, XF86MonBrightnessDown, exec, brillo -p -u 150000 -U 2"
+          "$mod, XF86MonBrightnessUp, exec, brillo -p -u 150000 -A 2"
           ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%-"
           ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+"
         ];
