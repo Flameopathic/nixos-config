@@ -8,9 +8,9 @@
     ( pkgs.writeShellApplication {
         # credit: Janik-Haag
         name = "surface-msr-adjust";
-        runtimeInputs = with pkgs; [ coreutils kitty msr-tools ];
+        runtimeInputs = with pkgs; [ coreutils msr-tools ];
         text = ''
-          sudo -A modprobe msr; sudo wrmsr --all 0x601 0x408
+          sudo modprobe msr; sudo wrmsr --all 0x601 0x408
         '';
       })
   ];
