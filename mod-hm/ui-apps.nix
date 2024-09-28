@@ -17,7 +17,6 @@
       libreoffice
       hunspellDicts.en_US
       godot_4
-      bambu-studio
       prismlauncher
       gnome.file-roller
       gnome.nautilus
@@ -25,6 +24,7 @@
       geeqie
       quodlibet
       yt-dlp
+      ncdu
     ];
 
     programs = {
