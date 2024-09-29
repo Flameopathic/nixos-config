@@ -65,7 +65,10 @@ in
         gestures = {
           workspace_swipe = true;
         };
-        "windowrulev2" = "stayfocused,class:(wofi)"; # makes wofi stay
+        "windowrulev2" = [
+          "stayfocused,class:(wofi)"
+          "tag +game, title:(THE FINALS)"
+        ]; # makes wofi stay
 
         # appearance
         general = {
@@ -121,8 +124,13 @@ in
           ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%-"
           ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+"
         ];
+
+        bindit = "$mod, SUPER_L, exec, pkill -SIGUSR1 waybar";
+        bindirt = "$mod, SUPER_L, exec, pkill -SIGUSR1 waybar";
+
         bind = [
           # programs
+          "$mod, tab, exec, pkill -SIGUSR1 waybar"
           "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
           "$mod SHIFT, s, exec, hyprshot -m region -o ~/pic/ss"
           "$mod, q, exec, kitty"
@@ -139,6 +147,15 @@ in
           "$mod, b, togglesplit,"
           "$mod, f, fullscreen, 0"
           "$mod SHIFT, f, fakefullscreen, 0"
+          
+          # gaming mode
+          "$mod, g, setfloating"
+          "$mod, g, movetoworkspace, 5"
+          "$mod, g, moveactive, exact 25% 0%"
+          "$mod, g, resizeactive, exact 50% 100%"
+          "$mod, g, exec, hyprctl setprop active dimaround 1"
+          "$mod, g, exec, hyprctl setprop active renderunfocused"
+
 
           "$mod, m, exit,"
 
