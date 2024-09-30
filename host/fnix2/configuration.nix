@@ -1,6 +1,12 @@
 { pkgs, ... }: {
   programs = {
-    steam.enable = true;
+    steam = {
+      enable = true;
+    };
+    gamescope = {
+      enable = true;
+      package = pkgs.unstable.gamescope;
+    };
   };
 
   hardware.logitech.wireless.enable = true;
