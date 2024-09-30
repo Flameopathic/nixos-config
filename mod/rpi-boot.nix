@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   cfg = config.flame.rpi-boot;
 in
@@ -11,10 +16,13 @@ in
     environment.systemPackages = [ pkgs.libraspberrypi ];
 
     boot.loader.raspberryPi.firmwareConfig =
-      if cfg.overclock then ''
-        	  arm_freq=2000
-        		over_voltage=6
-        		gpu_freq=750
-        	'' else "";
+      if cfg.overclock then
+        ''
+            arm_freq=2000
+          	over_voltage=6
+          	gpu_freq=750
+        ''
+      else
+        "";
   };
 }

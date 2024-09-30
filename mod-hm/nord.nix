@@ -1,7 +1,12 @@
-{ config, pkgs, lib, inputs, ... }: {
-  imports = [
-    inputs.nix-colors.homeManagerModules.default
-  ];
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
+  imports = [ inputs.nix-colors.homeManagerModules.default ];
   config = {
     colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.nord;
 
@@ -9,7 +14,11 @@
       (writeShellApplication {
         # credit: Janik-Haag
         name = "toggle-theme";
-        runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
+        runtimeInputs = with pkgs; [
+          home-manager
+          coreutils
+          ripgrep
+        ];
         text = ''
           "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate && hyprctl reload
         '';
@@ -36,9 +45,7 @@
       };
       theme = {
         name = lib.mkDefault "Graphite-Dark-nord";
-        package = pkgs.graphite-gtk-theme.override {
-          tweaks = [ "nord" ];
-        };
+        package = pkgs.graphite-gtk-theme.override { tweaks = [ "nord" ]; };
       };
     };
 
@@ -85,7 +92,6 @@
       exec = "toggle-theme";
       categories = [ "Utility" ];
     };
-
 
     specialisation.light.configuration = {
       colorScheme = {
@@ -176,11 +182,14 @@
         # credit: Janik-Haag 
         (hiPrio (writeShellApplication {
           name = "toggle-theme";
-          runtimeInputs = with pkgs; [ home-manager coreutils ripgrep ];
-          text =
-            ''
-              "$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
-            '';
+          runtimeInputs = with pkgs; [
+            home-manager
+            coreutils
+            ripgrep
+          ];
+          text = ''
+            "$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
+          '';
         }))
       ];
     };

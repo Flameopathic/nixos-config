@@ -1,10 +1,21 @@
-{ lib, fetchFromGitHub, stdenv, wayland-scanner, wlr-protocols, wayland, ... }:
+{
+  lib,
+  fetchFromGitHub,
+  stdenv,
+  wayland-scanner,
+  wlr-protocols,
+  wayland,
+  ...
+}:
 stdenv.mkDerivation (finalAttrs: {
   name = "wl-clicker";
   version = "0.3.1";
 
   nativeBuildInputs = [ wayland-scanner ];
-  buildInputs = [ wlr-protocols wayland ];
+  buildInputs = [
+    wlr-protocols
+    wayland
+  ];
 
   src = fetchFromGitHub {
     owner = "phonetic112";

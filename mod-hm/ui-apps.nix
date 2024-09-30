@@ -1,13 +1,12 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   imports = [
     ./firefox.nix
     ./vscode.nix
     ./vesktop.nix
   ];
 
-  options.flame.ui.cursorSize = lib.mkOption {
-    default = 24;
-  };
+  options.flame.ui.cursorSize = lib.mkOption { default = 24; };
 
   config = {
     home.packages = with pkgs; [

@@ -28,9 +28,12 @@ in
       root.openssh.authorizedKeys.keys = cfg.pubKeys;
     };
     networking.firewall.allowedTCPPorts =
-      if cfg.openFirewall then [
-        80
-        22
-      ] else [ ];
+      if cfg.openFirewall then
+        [
+          80
+          22
+        ]
+      else
+        [ ];
   };
 }

@@ -14,7 +14,11 @@ in
     };
     devices = mkOption {
       description = "devices to share all folders with";
-      default = [ "fnix2" "surfnix" "servnix" ];
+      default = [
+        "fnix2"
+        "surfnix"
+        "servnix"
+      ];
     };
   };
 

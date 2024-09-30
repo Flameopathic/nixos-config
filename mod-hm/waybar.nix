@@ -1,4 +1,5 @@
-{ inputs, config, ... }: {
+{ inputs, config, ... }:
+{
   config.programs.waybar = {
     enable = true;
     settings = {
@@ -32,11 +33,25 @@
         temperature = {
           critical-threshold = 80;
           format = "{temperatureC}°C {icon}";
-          format-icons = [ "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+          ];
         };
         backlight = {
           format = "{percent}% {icon}";
-          format-icons = [ "" "" "" "" "" "" "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
         battery = {
           states = {
@@ -48,7 +63,13 @@
           format-charging = "{capacity}% ";
           format-plugged = "{capacity}% ";
           format-alt = "{time} {icon}";
-          format-icons = [ "" "" "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
         network = {
           format-wifi = "{essid} ({signalStrength}%) ";
@@ -142,7 +163,7 @@
         color: #${config.colorScheme.palette.base05};
         background-color: #${config.colorScheme.palette.base02};
       }
-      
+
       #window,
       #workspaces {
           margin: 0 4px;

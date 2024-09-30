@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ./battery.nix
     ./suspend-then-hibernate.nix

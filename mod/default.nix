@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   config = {
     nixpkgs.config.allowUnfree = true;
 
@@ -9,7 +10,10 @@
 
     users.users.flame = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "input" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [
+        "wheel"
+        "input"
+      ]; # Enable ‘sudo’ for the user.
       initialPassword = "snepis";
     };
 
@@ -33,7 +37,10 @@
     nix = {
       settings = {
         auto-optimise-store = true;
-        experimental-features = [ "nix-command" "flakes" ];
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
         trusted-users = [ "flame" ]; # should allow for remote builds
       };
       gc = {

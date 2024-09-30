@@ -1,12 +1,16 @@
-{ config, pkgs, inputs, lib, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 let
   cfg = config.flame.vscode;
 
 in
 {
-  imports = [
-    inputs.vscode-server.homeModules.default
-  ];
+  imports = [ inputs.vscode-server.homeModules.default ];
 
   options.flame.vscode.theme = lib.mkOption {
     default = "";
@@ -16,7 +20,7 @@ in
   config = {
     home.packages = [
       pkgs.unstable.nixd # language server
-      pkgs.nixpkgs-fmt
+      pkgs.nixfmt-rfc-style
     ];
     programs.vscode = {
       enable = true;
@@ -41,14 +45,12 @@ in
         "workbench.colorTheme" = cfg.theme;
         "git.confirmSync" = false;
         "nix.enableLanguageServer" = true;
-        "nix.formatterPath" = "nixpkgs-fmt";
+        "nix.formatterPath" = "nixfmt";
         "nix.serverPath" = "nixd";
         "nix.serverSettings" = {
           "nixd" = {
             "diagnostic" = {
-              "suppress" = [
-                "sema-escaping-with"
-              ];
+              "suppress" = [ "sema-escaping-with" ];
             };
           };
         };
@@ -77,13 +79,21 @@ in
         exec = "code --password-store=\"gnome-libsecret\" --disable-gpu";
         icon = "vscode";
         comment = "Code Editing. Redefined.";
-        categories = [ "Utility" "TextEditor" "Development" "IDE" ];
+        categories = [
+          "Utility"
+          "TextEditor"
+          "Development"
+          "IDE"
+        ];
         actions.new-empty-window = {
           exec = "code --new-window --password-store=\"gnome-libsecret\"";
           icon = "vscode";
           name = "New Empty Window";
         };
-        mimeType = [ "text/plain" "inode/directory" ];
+        mimeType = [
+          "text/plain"
+          "inode/directory"
+        ];
         startupNotify = true;
         type = "Application";
         settings = {

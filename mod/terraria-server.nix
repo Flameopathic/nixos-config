@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.terraria = {
     enable = true;
     password = "combine";

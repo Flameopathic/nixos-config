@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   config = {
     environment.systemPackages = [ pkgs.where-is-my-sddm-theme ]; # themeing not working
     services = {

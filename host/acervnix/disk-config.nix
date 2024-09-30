@@ -1,5 +1,6 @@
 # Example to create a bios compatible gpt partition
-{ ... }: {
+{ ... }:
+{
   disko.devices = {
     disk = {
       sda = {

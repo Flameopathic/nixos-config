@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   cfg = config.flame.hyprland;
 in
@@ -99,9 +104,7 @@ in
         xwayland = {
           force_zero_scaling = true;
         };
-        env = [
-          "XCURSOR_SIZE,${builtins.toString config.flame.ui.cursorSize}"
-        ];
+        env = [ "XCURSOR_SIZE,${builtins.toString config.flame.ui.cursorSize}" ];
 
         # binds
         "$mod" = "SUPER";
@@ -128,75 +131,76 @@ in
         bindit = "$mod, SUPER_L, exec, pkill -SIGUSR1 waybar";
         bindirt = "$mod, SUPER_L, exec, pkill -SIGUSR1 waybar";
 
-        bind = [
-          # programs
-          "$mod, tab, exec, pkill -SIGUSR1 waybar"
-          "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
-          "$mod SHIFT, s, exec, hyprshot -m region -o ~/pic/ss"
-          "$mod, q, exec, kitty"
-          "$mod, p, exec, hyprlock"
-          "$mod, t, exec, toggle-theme"
-          "$mod, w, exec, swww img /etc/nixos/resources/${cfg.wallpaper}"
-          "CTRL SHIFT $mod ALT, l, exec, firefox --new-tab https://linkedin.com/"
+        bind =
+          [
+            # programs
+            "$mod, tab, exec, pkill -SIGUSR1 waybar"
+            "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
+            "$mod SHIFT, s, exec, hyprshot -m region -o ~/pic/ss"
+            "$mod, q, exec, kitty"
+            "$mod, p, exec, hyprlock"
+            "$mod, t, exec, toggle-theme"
+            "$mod, w, exec, swww img /etc/nixos/resources/${cfg.wallpaper}"
+            "CTRL SHIFT $mod ALT, l, exec, firefox --new-tab https://linkedin.com/"
 
+            # windows
+            "$mod, c, killactive,"
+            "$mod, i, exec, hyprctl kill"
+            "$mod, n, togglefloating,"
+            "$mod, b, togglesplit,"
+            "$mod, f, fullscreen, 0"
+            "$mod SHIFT, f, fakefullscreen, 0"
 
-          # windows
-          "$mod, c, killactive,"
-          "$mod, i, exec, hyprctl kill"
-          "$mod, n, togglefloating,"
-          "$mod, b, togglesplit,"
-          "$mod, f, fullscreen, 0"
-          "$mod SHIFT, f, fakefullscreen, 0"
-          
-          # gaming mode
-          "$mod, g, setfloating"
-          "$mod, g, movetoworkspace, 5"
-          "$mod, g, moveactive, exact 25% 0%"
-          "$mod, g, resizeactive, exact 50% 100%"
-          "$mod, g, exec, hyprctl setprop active dimaround 1"
-          "$mod, g, exec, hyprctl setprop active renderunfocused"
+            # gaming mode
+            "$mod, g, setfloating"
+            "$mod, g, movetoworkspace, 5"
+            "$mod, g, moveactive, exact 25% 0%"
+            "$mod, g, resizeactive, exact 50% 100%"
+            "$mod, g, exec, hyprctl setprop active dimaround 1"
+            "$mod, g, exec, hyprctl setprop active renderunfocused"
 
+            "$mod, m, exit,"
 
-          "$mod, m, exit,"
+            # focus
+            "$mod, left, movefocus, l"
+            "$mod, right, movefocus, r"
+            "$mod, up, movefocus, u"
+            "$mod, down, movefocus, d"
+            "$mod, h, movefocus, l"
+            "$mod, l, movefocus, r"
+            "$mod, k, movefocus, u"
+            "$mod, j, movefocus, d"
 
-          # focus
-          "$mod, left, movefocus, l"
-          "$mod, right, movefocus, r"
-          "$mod, up, movefocus, u"
-          "$mod, down, movefocus, d"
-          "$mod, h, movefocus, l"
-          "$mod, l, movefocus, r"
-          "$mod, k, movefocus, u"
-          "$mod, j, movefocus, d"
+            # special workspace
+            "$mod, w, togglespecialworkspace, magic"
+            "$mod SHIFT, w, movetoworkspace, special:magic"
 
-          # special workspace
-          "$mod, w, togglespecialworkspace, magic"
-          "$mod SHIFT, w, movetoworkspace, special:magic"
-
-          # workspaces
-          "$mod SHIFT, j, workspace, +1"
-          "$mod SHIFT, k, workspace, -1"
-          "$mod SHIFT CTRL, j, movetoworkspace, +1"
-          "$mod SHIFT CTRL, k, movetoworkspace, -1"
-        ] ++ (
-          # makes 1-10 workspace bindings
-          builtins.concatLists (builtins.genList
-            (
-              x:
-              let
-                ws =
-                  let
-                    c = (x + 1) / 10;
-                  in
-                  builtins.toString (x + 1 - (c * 10));
-              in
-              [
-                "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-                "$mod SHIFT CTRL, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
-              ]
-            ) 10)
-        );
+            # workspaces
+            "$mod SHIFT, j, workspace, +1"
+            "$mod SHIFT, k, workspace, -1"
+            "$mod SHIFT CTRL, j, movetoworkspace, +1"
+            "$mod SHIFT CTRL, k, movetoworkspace, -1"
+          ]
+          ++ (
+            # makes 1-10 workspace bindings
+            builtins.concatLists (
+              builtins.genList (
+                x:
+                let
+                  ws =
+                    let
+                      c = (x + 1) / 10;
+                    in
+                    builtins.toString (x + 1 - (c * 10));
+                in
+                [
+                  "$mod, ${ws}, workspace, ${toString (x + 1)}"
+                  "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+                  "$mod SHIFT CTRL, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
+                ]
+              ) 10
+            )
+          );
       };
     };
   };
