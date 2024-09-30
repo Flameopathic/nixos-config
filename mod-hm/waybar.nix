@@ -3,6 +3,8 @@
     enable = true;
     settings = {
       main = {
+        mode = "hide";
+        start_hidden = true;
         layer = "top";
         position = "bottom";
         spacing = 4;
