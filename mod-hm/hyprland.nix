@@ -45,7 +45,7 @@ in
       enable = true;
       xwayland.enable = true;
       settings = {
-        exec-once = "swww-daemon & mako & nm-applet & pasystray &";
+        exec-once = "swww-daemon & mako & nm-applet & pasystray & waybar & (sleep 1; pkill -SIGUSR1 waybar)";
         exec = "swww img /etc/nixos/resources/" + cfg.wallpaper;
 
         monitor = cfg.monitor;
