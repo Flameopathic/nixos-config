@@ -112,7 +112,6 @@
             ./mod/rpi-boot.nix
             ./mod/ssh-server.nix
             ./mod/syncthing.nix
-            ./mod/terraria-server.nix
             {
               flame.syncthing.server = true;
             }
