@@ -19,7 +19,7 @@ in
 
   config = {
     home.packages = [
-      pkgs.unstable.nixd # language server
+      pkgs.nixd # language server
       pkgs.nixfmt-rfc-style
     ];
     programs.vscode = {
