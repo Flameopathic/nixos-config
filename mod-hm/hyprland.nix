@@ -67,6 +67,10 @@ in
             natural_scroll = true;
           };
         };
+        device = {
+          name = "logitech-mx-master-3-1";
+          sensitivity = -0.5;
+        };
         gestures = {
           workspace_swipe = true;
         };
