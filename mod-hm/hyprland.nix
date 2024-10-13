@@ -69,7 +69,7 @@ in
         };
         device = {
           name = "logitech-mx-master-3-1";
-          sensitivity = -0.5;
+          sensitivity = 1;
         };
         gestures = {
           workspace_swipe = true;
