@@ -32,7 +32,7 @@ in
     settings = {
       devices = {
         "fnix2" = {
-          id = "ONYBVSG-TRXS6VT-CXQ737X-CD4QQ5B-PQEJIC6-23CORFG-RA3MGDZ-X6YYBQP";
+          id = "GGVWVIS-UBTT7HL-DS3RF56-JGLVBZ6-KXD4JJG-J2WB7AR-7AY5V32-VW3FSQW";
         };
         "surfnix" = {
           id = "NGSXK5O-5B2CGLJ-TAHOSKL-B4L5Y52-TFSPK3Y-3L6XGVD-YBUPIAF-7SVROA6";
