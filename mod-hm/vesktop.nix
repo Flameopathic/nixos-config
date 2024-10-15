@@ -56,6 +56,7 @@
           UserVoiceShow.enabled = true;
           ValidReply.enabled = true;
           ValidUser.enabled = true;
+          VolumeBooster.enabled = true;
           WatchTogetherAdblock.enabled = true;
           WebScreenShareFixes.enabled = true;
         };
