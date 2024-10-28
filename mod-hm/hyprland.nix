@@ -156,12 +156,12 @@ in
             "$mod SHIFT, f, fakefullscreen, 0"
 
             # gaming mode
-            "$mod, g, setfloating"
-            "$mod, g, movetoworkspace, 5"
-            "$mod, g, moveactive, exact 25% 0%"
-            "$mod, g, resizeactive, exact 50% 100%"
-            "$mod, g, exec, hyprctl setprop active dimaround 1"
-            "$mod, g, exec, hyprctl setprop active renderunfocused"
+            "$mod, e, setfloating"
+            "$mod, e, movetoworkspace, 5"
+            "$mod, e, moveactive, exact 25% 0%"
+            "$mod, e, resizeactive, exact 50% 100%"
+            "$mod, e, exec, hyprctl setprop active dimaround 1"
+            "$mod, e, exec, hyprctl setprop active renderunfocused"
 
             "$mod, m, exit,"
 
