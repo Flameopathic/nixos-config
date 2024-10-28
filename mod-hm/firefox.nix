@@ -14,6 +14,7 @@
           "browser.newtabpage.enabled" = false;
           "browser.newtab.preload" = false;
           "browser.newtabpage.activity-stream.telemetry" = false;
+          "browser.newtabpage.activity-stream.feeds.telemetry" = false;
           "browser.newtabpage.activity-stream.feeds.snippets" = false;
           "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
           "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
@@ -21,8 +22,6 @@
           "browser.newtabpage.activity-stream.showSponsored" = false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "browser.newtabpage.activity-stream.default.sites" = "";
-          "geo.provider.network.url" = "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%";
-          "geo.provider.use_gpsd" = false;
           "geo.provider.use_geoclue" = false;
           "browser.region.network.url" = "";
           "browser.region.update.enabled" = false;
@@ -37,7 +36,7 @@
           "toolkit.telemetry.enabled" = false;
           "toolkit.telemetry.unified" = false;
           "toolkit.telemetry.server" = "data:,";
-          "toolkit.telemetry.archibev.enabled" = false;
+          "toolkit.telemetry.archive.enabled" = false;
           "toolkit.telemetry.newProfilePing.enabled" = false;
           "toolkit.telemetry.shutdownPingSender.enabled" = false;
           "toolkit.telemetry.updatePing.enabled" = false;
@@ -53,8 +52,6 @@
           "app.normandy.api_url" = "";
           "breakpad.reportURL" = "";
           "browser.tabs.crashReporting.sendReport" = false;
-          "captivedetect.canonicalURL" = "";
-          "network.captive-portal-service.enabled" = false;
           "network.connectivity-service.enabled" = false;
           # could disable safe-browsing stuff here - i don't trust myself with that yet though
           "network.prefetch-next" = false;
@@ -77,8 +74,14 @@
           "browser.urlbar.quicksuggest.enabled" = false;
           "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
           "browser.urlbar.suggest.quicksuggest.sponsored" = false;
+          "browser.urlbar.suggest.enabled" = false;
+          "browser.urlbar.trending.featureGate" = false;
+          "browser.urlbar.addons.featureGate" = false;
+          "browser.urlbar.mdn.featureGate" = false;
+
           # could disable password saving
           "browser.cache.disk.enable" = false;
+          "browser.privatebrowsing.forceMediaMemoryCache" = false;
           "browser.sessionstore.privacy_level" = 2;
           "browser.sessionstore.resume_from_cache" = false;
           "browser.pagethumbnails.capturing_disabled" = true;
