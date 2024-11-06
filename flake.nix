@@ -133,7 +133,7 @@
                 ];
               }
               ./mod-hm/ui-apps.nix
-              ./mod-hm/nord.nix
+              ./mod-hm/rose-pine.nix
             ];
           };
           servnix = {
