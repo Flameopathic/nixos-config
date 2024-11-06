@@ -12,6 +12,7 @@
       sshuttle
       nix-tree
       python3
+      wol
     ];
 
     programs = {

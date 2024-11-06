@@ -13,7 +13,7 @@
     (pkgs.callPackage ../../pkgs/wl-clicker { })
   ];
 
-  # networking.interfaces.*ethernet*.wakeOnLan.enable = true;
+  networking.interfaces.eno1.wakeOnLan.enable = true;
 
   system.stateVersion = "23.11"; # shouldn't be changed
 }
