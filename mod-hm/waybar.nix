@@ -4,10 +4,9 @@
     enable = true;
     settings = {
       main = {
-        # mode = "hide";
-        # start_hidden = true;
-        layer = "top";
+        layer = "bottom";
         position = "bottom";
+        height = 15;
         spacing = 4;
         modules-left = [
           "hyprland/workspaces"
@@ -22,22 +21,15 @@
         ];
         tray.spacing = 10;
         clock = {
-          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          tooltip-format = "<tt>{calendar}</tt>";
           format-alt = "{:%Y-%m-%d}";
+          calendar.format = {
+            today = "<span color='#${config.colorScheme.palette.base08}'><u>{}</u></span>";
+          };
         };
         cpu = {
           format = "{usage}% ";
           tooltip = false;
-        };
-        memory.format = "{}% ";
-        temperature = {
-          critical-threshold = 80;
-          format = "{temperatureC}°C {icon}";
-          format-icons = [
-            ""
-            ""
-            ""
-          ];
         };
         backlight = {
           format = "{percent}% {icon}";
@@ -71,14 +63,6 @@
             ""
           ];
         };
-        network = {
-          format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ipaddr}/{cidr} ";
-          tooltip-format = "{ifname} via {gwaddr} ";
-          format-linked = "{ifname} (No IP) ";
-          format-disconnected = "Disconnected ⚠";
-          format-alt = "{ifname}: {ipaddr}/{cidr}";
-        };
       };
     };
 
@@ -91,10 +75,6 @@
 
       window#waybar {
           background-color: rgba(${inputs.nix-colors.lib.conversions.hexToRGBString ", " config.colorScheme.palette.base00}, 0);
-          border-bottom: 3px solid rgba(${inputs.nix-colors.lib.conversions.hexToRGBString ", " config.colorScheme.palette.base03}, .75);
-          color: #${config.colorScheme.palette.base05};
-          transition-property: background-color;
-          transition-duration: .5s;
       }
 
       window#waybar.hidden {
@@ -118,25 +98,11 @@
           border-radius: 0;
       }
 
-      /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-      button:hover {
-          background: inherit;
-          box-shadow: inset 0 -3px #${config.colorScheme.palette.base05};
-      }
-
-      /* you can set a style on hover for any module like this */
-      #pulseaudio:hover {
-          background-color: #a37800;
-      }
-
-      #workspaces button {
-          padding: 0 5px;
-          background-color: transparent;
-          color: #${config.colorScheme.palette.base05};
-      }
-
       #workspaces button:hover {
           background: rgba(${inputs.nix-colors.lib.conversions.hexToRGBString ", " config.colorScheme.palette.base03}, 0.2);
+          border-radius: 6px;
+          background: inherit;
+          box-shadow: inset 0 -3px #${config.colorScheme.palette.base05};
       }
 
       #workspaces button.focused {
@@ -151,34 +117,21 @@
       #clock,
       #battery,
       #cpu,
-      #memory,
-      #temperature,
       #backlight,
-      #network,
-      #pulseaudio,
-      #bluetooth,
-      #disk,
-      #tray {
+      #tray,
+      #workspaces,
+      #window {
         padding: 0 10px;
         color: #${config.colorScheme.palette.base05};
         background-color: #${config.colorScheme.palette.base02};
-        border: 3px solid #${config.colorScheme.palette.base00};
+        border: 3px solid #${config.colorScheme.palette.base03};
         border-radius: 6px;
       }
 
-      #window,
-      #workspaces {
-          margin: 0 4px;
-      }
 
       /* If workspaces is the leftmost module, omit left margin */
       .modules-left > widget:first-child > #workspaces {
           margin-left: 0;
-      }
-
-      /* If workspaces is the rightmost module, omit right margin */
-      .modules-right > widget:last-child > #workspaces {
-          margin-right: 0;
       }
 
       #battery.charging, #battery.plugged {
@@ -186,70 +139,13 @@
           background-color: #${config.colorScheme.palette.base0B};
       }
 
-      @keyframes blink {
-          to {
-              background-color: #${config.colorScheme.palette.base03};
-          }
-      }
-
-      /* Using steps() instead of linear as a timing function to limit cpu usage */
       #battery.critical:not(.charging) {
           background-color: #${config.colorScheme.palette.base08};
           color: #${config.colorScheme.palette.base03};
-          animation-name: blink;
-          animation-duration: 0.5s;
-          animation-timing-function: steps(12);
-          animation-iteration-count: infinite;
-          animation-direction: alternate;
-      }
-
-      label:focus {
-          background-color: #000000;
-      }
-
-      #cpu {
-          background-color: #${config.colorScheme.palette.base01};
-      }
-
-      #memory {
-          background-color: #9b59b6;
-      }
-
-      #disk {
-          background-color: #964B00;
-      }
-
-      #backlight {
-      }
-
-      #network {
-          background-color: #2980b9;
-      }
-
-      #network.disconnected {
-          background-color: #f53c3c;
-      }
-
-      #pulseaudio {
-          background-color: #f1c40f;
-          color: #000000;
-      }
-
-      #pulseaudio.muted {
-          background-color: #90b1b1;
-          color: #2a5c45;
-      }
-
-      #temperature {
-          background-color: #f0932b;
-      }
-
-      #temperature.critical {
-          background-color: #eb4d4b;
       }
 
       #tray {
-          background-color: #${config.colorScheme.palette.base0C};
+          background-color: #${config.colorScheme.palette.base0E};
       }
 
       #tray > .passive {

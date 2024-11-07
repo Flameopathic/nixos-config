@@ -50,8 +50,8 @@ in
       enable = true;
       xwayland.enable = true;
       settings = {
-        exec-once = "swww-daemon & mako & nm-applet & pasystray & waybar";
-        exec = "swww img /etc/nixos/resources/" + cfg.wallpaper;
+        exec-once = "hyprlock & swww-daemon & mako & nm-applet & pasystray";
+        exec = "pkill waybar; waybar & swww img /etc/nixos/resources/" + cfg.wallpaper;
 
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;
@@ -85,10 +85,8 @@ in
           border_size = 3;
           gaps_out = 15;
           resize_on_border = true;
-          col = {
-            active_border = ;
-            inactive_border = ;
-          }
+          "col.active_border" = "0xff${config.colorScheme.palette.base05}";
+          "col.inactive_border" = "0xff${config.colorScheme.palette.base03}";
         };
         decoration = {
           rounding = 3;
