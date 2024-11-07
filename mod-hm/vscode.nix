@@ -57,6 +57,7 @@ in
         "editor.formatOnSave" = true;
         "editor.formatOnType" = true;
         "editor.formatOnPaste" = true;
+        "workbench.startupEditor" =  "none";
       };
       userTasks = {
         version = "2.0.0";
