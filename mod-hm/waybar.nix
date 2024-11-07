@@ -4,8 +4,8 @@
     enable = true;
     settings = {
       main = {
-        mode = "hide";
-        start_hidden = true;
+        # mode = "hide";
+        # start_hidden = true;
         layer = "top";
         position = "bottom";
         spacing = 4;
@@ -90,7 +90,7 @@
       }
 
       window#waybar {
-          background-color: rgba(${inputs.nix-colors.lib.conversions.hexToRGBString ", " config.colorScheme.palette.base00}, .75);
+          background-color: rgba(${inputs.nix-colors.lib.conversions.hexToRGBString ", " config.colorScheme.palette.base00}, 0);
           border-bottom: 3px solid rgba(${inputs.nix-colors.lib.conversions.hexToRGBString ", " config.colorScheme.palette.base03}, .75);
           color: #${config.colorScheme.palette.base05};
           transition-property: background-color;
@@ -162,6 +162,8 @@
         padding: 0 10px;
         color: #${config.colorScheme.palette.base05};
         background-color: #${config.colorScheme.palette.base02};
+        border: 3px solid #${config.colorScheme.palette.base00};
+        border-radius: 6px;
       }
 
       #window,

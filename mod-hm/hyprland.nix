@@ -85,6 +85,10 @@ in
           border_size = 3;
           gaps_out = 15;
           resize_on_border = true;
+          col = {
+            active_border = ;
+            inactive_border = ;
+          }
         };
         decoration = {
           rounding = 3;
@@ -132,8 +136,9 @@ in
           ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+"
         ];
 
-        bindit = "$mod, SUPER_L, exec, pkill -SIGUSR1 waybar";
-        bindirt = "$mod, SUPER_L, exec, pkill -SIGUSR1 waybar";
+        # waybar toggle
+        # bindit = "$mod, SUPER_L, exec, pkill -SIGUSR1 waybar";
+        # bindirt = "$mod, SUPER_L, exec, pkill -SIGUSR1 waybar";
 
         bind =
           [
