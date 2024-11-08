@@ -8,6 +8,9 @@
         position = "bottom";
         height = 15;
         spacing = 4;
+        margin-bottom = 4;
+        margin-left = 4;
+        margin-right = 4;
         modules-left = [
           "hyprland/workspaces"
           "hyprland/window"
@@ -135,11 +138,6 @@
 
       #cpu {
           color: #${config.colorScheme.palette.base0C};
-      }
-
-      /* If workspaces is the leftmost module, omit left margin */
-      .modules-left > widget:first-child > #workspaces {
-          margin-left: 0;
       }
 
       #battery.charging, #battery.plugged {
