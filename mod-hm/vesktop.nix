@@ -60,11 +60,6 @@
           WatchTogetherAdblock.enabled = true;
           WebScreenShareFixes.enabled = true;
         };
-        cloud = {
-          authenticated = true;
-          url = "https://api.vencord.dev/";
-          settingsSync = true;
-        };
       };
     };
   };
