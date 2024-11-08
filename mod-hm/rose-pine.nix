@@ -40,7 +40,7 @@
         size = config.flame.ui.cursorSize;
       };
       iconTheme = {
-        name = lib.mkDefault "rose-pine-moon";
+        name = config.gtk.theme.name;
         package = pkgs.rose-pine-icon-theme;
       };
       theme = {

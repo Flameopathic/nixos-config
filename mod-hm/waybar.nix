@@ -129,6 +129,14 @@
       }
 
 
+      #clock {
+          color: #${config.colorScheme.palette.base0D};
+      }
+
+      #cpu {
+          color: #${config.colorScheme.palette.base0C};
+      }
+
       /* If workspaces is the leftmost module, omit left margin */
       .modules-left > widget:first-child > #workspaces {
           margin-left: 0;
@@ -145,7 +153,7 @@
       }
 
       #tray {
-          background-color: #${config.colorScheme.palette.base0E};
+          color: #${config.colorScheme.palette.base0B};
       }
 
       #tray > .passive {
