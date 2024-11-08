@@ -4,10 +4,16 @@
     environment.systemPackages = [ pkgs.where-is-my-sddm-theme ]; # themeing not working
     services = {
       xserver.enable = true;
-      displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        theme = "where_is_my_sddm_theme";
+      displayManager = {
+        sddm = {
+          enable = true;
+          wayland.enable = true;
+          theme = "where_is_my_sddm_theme";
+        };
+        autoLogin = {
+          enable = true;
+          user = "flame";
+        };
       };
     };
 
