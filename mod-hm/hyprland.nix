@@ -88,6 +88,7 @@ in
         general = {
           allow_tearing = true;
           border_size = 3;
+          gaps_in = 4;
           gaps_out = 4;
           resize_on_border = true;
           "col.active_border" = "0xff${config.colorScheme.palette.base05}";
