@@ -80,6 +80,11 @@
       };
     };
 
+    gtk.iconTheme = {
+      name = "rose-pine-moon";
+      package = pkgs.rose-pine-icon-theme;
+    };
+
     programs = {
       kitty = {
         enable = true;
