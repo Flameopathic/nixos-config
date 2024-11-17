@@ -55,7 +55,7 @@ in
       enable = true;
       xwayland.enable = true;
       settings = {
-        exec-once = "hyprlock & swww-daemon & mako & nm-applet & pasystray";
+        exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
         exec = "pkill waybar; waybar & swww img /etc/nixos/resources/" + cfg.wallpaper;
 
         monitor = cfg.monitor;
@@ -152,7 +152,7 @@ in
             "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
             "$mod SHIFT, s, exec, hyprshot -m region -o ~/pic/ss"
             "$mod, q, exec, kitty"
-            "$mod, p, exec, hyprlock"
+            "$mod, p, exec, swaylock"
             "$mod, t, exec, toggle-theme"
             "$mod, w, exec, swww img /etc/nixos/resources/${cfg.wallpaper}"
             "CTRL SHIFT $mod ALT, l, exec, firefox --new-tab https://linkedin.com/"
