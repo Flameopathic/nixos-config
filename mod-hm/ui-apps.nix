@@ -49,6 +49,32 @@
         base0E = "#f6c177";
         base0F = "#56526e";
       };
+      cursor = {
+        package = pkgs.bibata-cursors-translucent;
+        name = "Bibata_Ghost";
+        size = 24;
+      };
+      fonts = {
+        # emoji.name = "iMWriting Nerd Font";
+        monospace = {
+          name = "NotoMono NF";
+          package = pkgs.nerdfonts;
+        };
+        sansSerif = {
+          name = "NotoSans NF";
+          package = pkgs.nerdfonts;
+        };
+        serif = {
+          name = "NotoSerif NF";
+          package = pkgs.nerdfonts;
+        };
+        sizes = {
+          # applications = ;
+          # desktop = ;
+          # popups = ;
+          terminal = 11;
+        };
+      };
       targets = {
         vscode.enable = false;
       };
@@ -57,7 +83,6 @@
     programs = {
       kitty = {
         enable = true;
-        theme = lib.mkDefault "Nord";
       };
       taskwarrior = {
         enable = true;
