@@ -25,32 +25,24 @@
       })
     ];
 
-    # home.pointerCursor = {
-    #   gtk.enable = true;
-    #   package = config.gtk.cursorTheme.package;
-    #   name = config.gtk.cursorTheme.name;
-    #   size = config.gtk.cursorTheme.size;
-    # };
-
-    # gtk = {
-    #   enable = true;
-    #   cursorTheme = {
-    #     name = "Bibata_Ghost";
-    #     package = pkgs.bibata-cursors-translucent;
-    #     size = config.flame.ui.cursorSize;
-    #   };
-    #   iconTheme = {
-    #     name = config.gtk.theme.name;
-    #     package = pkgs.rose-pine-icon-theme;
-    #   };
-    #   theme = {
-    #     name = lib.mkDefault "rose-pine-moon";
-    #     package = pkgs.rose-pine-gtk-theme;
-    #   };
-    # };
+    gtk = {
+      enable = true;
+      cursorTheme = {
+        name = "Bibata_Ghost";
+        package = pkgs.bibata-cursors-translucent;
+        size = config.flame.ui.cursorSize;
+      };
+      iconTheme = {
+        name = config.gtk.theme.name;
+        package = pkgs.rose-pine-icon-theme;
+      };
+      theme = {
+        name = lib.mkDefault "rose-pine-moon";
+        package = pkgs.rose-pine-gtk-theme;
+      };
+    };
 
     programs = {
-      kitty.theme = config.colorScheme.name;
       vesktop.vencord.theme = ''
         /**
         * @name Rosé Pine
@@ -199,10 +191,7 @@
       '';
     };
 
-    flame = {
-      hyprland.wallpaper = lib.mkDefault "leafy-moon.png";
-      vscode.theme = config.colorScheme.name + " (no italics)";
-    };
+    flame.vscode.theme = config.colorScheme.name + " (no italics)";
 
     xdg.desktopEntries.theme-switch = {
       name = "Toggle theme";
@@ -210,31 +199,50 @@
       categories = [ "Utility" ];
     };
 
-    # specialisation.light.configuration = {
-    #   colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
+    specialisation.light.configuration = {
+      colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
 
-    #   gtk.theme.name = "rose-pine-dawn";
+      stylix = {
+        image = ../resources/lwp.png;
+        polarity = "light";
+        base16Scheme = {
+          base00 = "#faf4ed";
+          base01 = "#fffaf3";
+          base02 = "#f2e9de";
+          base03 = "#9893a5";
+          base04 = "#797593";
+          base05 = "#575279";
+          base06 = "#575279";
+          base07 = "#cecacd";
+          base08 = "#b4637a";
+          base09 = "#ea9d34";
+          base0A = "#d7827e";
+          base0B = "#286983";
+          base0C = "#56949f";
+          base0D = "#907aa9";
+          base0E = "#ea9d34";
+          base0F = "#cecacd";
+        };
+      };
 
-    #   flame = {
-    #     hyprland.wallpaper = "lwp.png";
-    #   };
+      gtk.theme.name = "rose-pine-dawn";
 
-    #   programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
+      programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
 
-    #   home.packages = with pkgs; [
-    #     # credit: Janik-Haag 
-    #     (hiPrio (writeShellApplication {
-    #       name = "toggle-theme";
-    #       runtimeInputs = with pkgs; [
-    #         home-manager
-    #         coreutils
-    #         ripgrep
-    #       ];
-    #       text = ''
-    #         "$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
-    #       '';
-    #     }))
-    #   ];
-    # };
+      home.packages = with pkgs; [
+        # credit: Janik-Haag 
+        (hiPrio (writeShellApplication {
+          name = "toggle-theme";
+          runtimeInputs = with pkgs; [
+            home-manager
+            coreutils
+            ripgrep
+          ];
+          text = ''
+            "$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
+          '';
+        }))
+      ];
+    };
   };
 }

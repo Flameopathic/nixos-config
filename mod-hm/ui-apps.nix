@@ -29,9 +29,9 @@
 
     stylix = {
       enable = true;
-      polarity = "dark";
-      image = ../resources/leafy-moon.png;
-      base16Scheme = {
+      polarity = lib.mkDefault "dark";
+      image = lib.mkDefault ../resources/leafy-moon.png;
+      base16Scheme = lib.mkDefault {
         base00 = "#232136";
         base01 = "#2a273f";
         base02 = "#393552";
@@ -77,12 +77,9 @@
       };
       targets = {
         vscode.enable = false;
+        gtk.enable = false;
+        waybar.enable = false;
       };
-    };
-
-    gtk.iconTheme = {
-      name = "rose-pine-moon";
-      package = pkgs.rose-pine-icon-theme;
     };
 
     programs = {
