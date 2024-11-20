@@ -29,11 +29,8 @@ in
     services.mako = {
       enable = true;
       anchor = "top-center";
-      # backgroundColor = "#${config.colorScheme.palette.base02}ff";
-      # borderColor = "#${config.colorScheme.palette.base03}ff";
       borderRadius = 3;
       borderSize = 3;
-      # textColor = "#${config.colorScheme.palette.base05}ff";
     };
 
     # drun
@@ -56,16 +53,12 @@ in
       xwayland.enable = true;
       settings = {
         exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
-        exec = "pkill waybar; waybar & swww img /etc/nixos/resources/" + cfg.wallpaper;
+        exec = "swww img ${config.stylix.image}";
 
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;
 
         input = {
-          # should make steam popups happier
-          # follow_mouse = 1;
-          # mouse_refocus = false;
-
           repeat_delay = 350; # ms before key repeat
 
           touchpad = {
@@ -141,10 +134,6 @@ in
           ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+"
         ];
 
-        # waybar toggle
-        # bindit = "$mod, SUPER_L, exec, pkill -SIGUSR1 waybar";
-        # bindirt = "$mod, SUPER_L, exec, pkill -SIGUSR1 waybar";
-
         bind =
           [
             # programs
@@ -154,7 +143,6 @@ in
             "$mod, q, exec, kitty"
             "$mod, p, exec, swaylock"
             "$mod, t, exec, toggle-theme"
-            "$mod, w, exec, swww img /etc/nixos/resources/${cfg.wallpaper}"
             "CTRL SHIFT $mod ALT, l, exec, firefox --new-tab https://linkedin.com/"
 
             # windows
