@@ -55,8 +55,6 @@ in
           };
         };
         "editor.formatOnSave" = true;
-        "editor.formatOnType" = true;
-        "editor.formatOnPaste" = true;
         "workbench.startupEditor" =  "none";
       };
       userTasks = {

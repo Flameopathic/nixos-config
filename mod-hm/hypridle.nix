@@ -14,7 +14,7 @@
       swaylock = {
         enable = true;
         settings = {
-          image = "/etc/nixos/resources/bay.png";
+          # image = "/etc/nixos/resources/bay.png";
           scaling = "fill";
         };
       };
