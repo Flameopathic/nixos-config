@@ -51,9 +51,15 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
+      extraConfig = "plugin = ${pkgs.hyprlandPlugins.hy3}/lib/libhy3.so";
       settings = {
         exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
         exec = "swww img ${config.stylix.image}";
+
+        plugin.hy3.autotile = {
+          enable = true;
+          trigger_width = 400;
+        };
 
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;
@@ -72,10 +78,11 @@ in
         gestures = {
           workspace_swipe = true;
         };
-        "windowrulev2" = [
+        windowrulev2 = [
           "stayfocused,class:(wofi)"
           "tag +game, title:(THE FINALS)"
-        ]; # makes wofi stay
+          "suppressevent maximize, class:.*"
+        ];
 
         # appearance
         general = {
@@ -84,8 +91,7 @@ in
           gaps_in = 4;
           gaps_out = 4;
           resize_on_border = true;
-          # "col.active_border" = "0xff${config.colorScheme.palette.base05}";
-          # "col.inactive_border" = "0xff${config.colorScheme.palette.base03}";
+          layout = "hy3";
         };
         decoration = {
           rounding = 3;
@@ -115,7 +121,7 @@ in
         # binds
         "$mod" = "SUPER";
         bindm = [
-          "$mod, mouse:272, movewindow"
+          "$mod, mouse:272, hy3:movewindow"
           "$mod, mouse:273, resizewindow"
         ];
         bindl = [
@@ -164,14 +170,14 @@ in
             "$mod, m, exit,"
 
             # focus
-            "$mod, left, movefocus, l"
-            "$mod, right, movefocus, r"
-            "$mod, up, movefocus, u"
-            "$mod, down, movefocus, d"
-            "$mod, h, movefocus, l"
-            "$mod, l, movefocus, r"
-            "$mod, k, movefocus, u"
-            "$mod, j, movefocus, d"
+            "$mod, left, hy3:movefocus, l"
+            "$mod, right, hy3:movefocus, r"
+            "$mod, up, hy3:movefocus, u"
+            "$mod, down, hy3:movefocus, d"
+            "$mod, h, hy3:movefocus, l"
+            "$mod, l, hy3:movefocus, r"
+            "$mod, k, hy3:movefocus, u"
+            "$mod, j, hy3:movefocus, d"
 
             # special workspace
             "$mod, w, togglespecialworkspace, magic"
