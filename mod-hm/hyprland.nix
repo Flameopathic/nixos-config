@@ -53,7 +53,7 @@ in
       xwayland.enable = true;
       extraConfig = "plugin = ${pkgs.hyprlandPlugins.hy3}/lib/libhy3.so";
       settings = {
-        exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
+        exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray & waybar";
         exec = "swww img ${config.stylix.image}";
 
         plugin.hy3.autotile = {
