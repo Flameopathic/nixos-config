@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
-      url = "github:Flameopathic/home-manager/release-24.05"; # TODO: change back once vesktop module is merged
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs"; # ensures nixpkgs version is consistent between home manager and system
     };
     nix-darwin = {

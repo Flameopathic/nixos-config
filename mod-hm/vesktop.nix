@@ -1,5 +1,9 @@
 { ... }:
 {
+  imports = [
+    ./vesktop-module-yoink.nix # can be removed once vesktop gets merged
+  ];
+
   config.programs.vesktop = {
     enable = true;
     settings = {
