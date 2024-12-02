@@ -26,7 +26,6 @@
       yt-dlp
       ncdu
       freetube
-      monophony
     ];
 
     stylix = {
