@@ -34,6 +34,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-colors.url = "github:Misterio77/nix-colors";
+    hy3.url = "github:outfoxxed/hy3";
     stylix = {
       url = "github:danth/stylix/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
