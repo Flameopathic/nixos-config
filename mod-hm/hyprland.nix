@@ -84,12 +84,10 @@ in
           gaps_in = 4;
           gaps_out = 4;
           resize_on_border = true;
-          # "col.active_border" = "0xff${config.colorScheme.palette.base05}";
-          # "col.inactive_border" = "0xff${config.colorScheme.palette.base03}";
         };
         decoration = {
           rounding = 3;
-          drop_shadow = false; # setting replaced by `shadow.enabled` in latest
+          shadow.enabled = false;
         };
         cursor = {
           inactive_timeout = 15;
@@ -151,7 +149,7 @@ in
             "$mod, n, togglefloating,"
             "$mod, b, togglesplit,"
             "$mod, f, fullscreen, 0"
-            "$mod SHIFT, f, fakefullscreen, 0"
+            # "$mod SHIFT, f, fakefullscreen, 0"
 
             # gaming mode
             "$mod, e, setfloating"

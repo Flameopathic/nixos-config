@@ -1,4 +1,9 @@
-{ pkgs, lib, inputs, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 {
   imports = [
     ./firefox.nix
@@ -18,8 +23,8 @@
       hunspellDicts.en_US
       godot_4
       prismlauncher
-      gnome.file-roller
-      gnome.nautilus
+      file-roller
+      nautilus
       bottles
       geeqie
       quodlibet
@@ -80,20 +85,13 @@
         vscode.enable = false;
         gtk.enable = false;
         waybar.enable = false;
+        hyprland.enable = false;
       };
     };
 
     programs = {
       kitty = {
         enable = true;
-      };
-      taskwarrior = {
-        enable = true;
-        dataLocation = "/home/flame/doc/.task";
-        config = {
-          calendar.details = "full";
-          nag = "";
-        };
       };
     };
 

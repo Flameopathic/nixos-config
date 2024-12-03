@@ -6,12 +6,11 @@
     boot.kernelPackages = pkgs.unstable.linuxPackages;
 
     hardware = {
-      opengl = {
+      graphics = {
         enable = true;
-        driSupport = true;
-        driSupport32Bit = true;
       };
       nvidia = {
+        open = true;
         modesetting.enable = true;
         package = config.boot.kernelPackages.nvidiaPackages.latest;
       };
