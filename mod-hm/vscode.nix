@@ -3,6 +3,7 @@
   pkgs,
   inputs,
   lib,
+  osConfig,
   ...
 }:
 let
@@ -22,14 +23,13 @@ in
       pkgs.nixd # language server
       pkgs.nixfmt-rfc-style
     ];
-    programs.vscode = {
+    programs.programs.vscode = {
       enable = true;
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         arcticicestudio.nord-visual-studio-code
-        # rust-lang.rust-analyzer
         ms-python.python
         eamodio.gitlens
         ms-vscode-remote.remote-ssh
@@ -52,10 +52,21 @@ in
             "diagnostic" = {
               "suppress" = [ "sema-escaping-with" ];
             };
+            "formatting" = {
+              "command" = [ "nixfmt" ];
+            };
+            "options" = {
+              "nixos" = {
+                "expr" = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.${osConfig.networking.hostName}.options";
+              };
+              "home-manager" = {
+                "expr" = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.flame.options";
+              };
+            };
           };
         };
         "editor.formatOnSave" = true;
-        "workbench.startupEditor" =  "none";
+        "workbench.startupEditor" = "none";
       };
       userTasks = {
         version = "2.0.0";
