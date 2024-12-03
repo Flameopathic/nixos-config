@@ -1,18 +1,15 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   config = {
     services.xserver.videoDrivers = [ "nvidia" ];
-
-    boot.kernelPackages = pkgs.unstable.linuxPackages;
 
     hardware = {
       graphics = {
         enable = true;
       };
       nvidia = {
-        open = true;
+        open = false;
         modesetting.enable = true;
-        package = config.boot.kernelPackages.nvidiaPackages.latest;
       };
     };
   };
