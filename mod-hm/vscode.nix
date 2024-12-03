@@ -23,7 +23,7 @@ in
       pkgs.nixd # language server
       pkgs.nixfmt-rfc-style
     ];
-    programs.programs.vscode = {
+    programs.vscode = {
       enable = true;
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
