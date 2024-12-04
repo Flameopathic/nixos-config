@@ -63,17 +63,17 @@
       fonts = {
         # emoji.name = "iMWriting Nerd Font";
         monospace = {
-          name = "NotoMono NF";
-          package = pkgs.nerdfonts;
+          name = "Maple Mono NF";
+          package = pkgs.maple-mono-NF;
         };
-        sansSerif = {
-          name = "NotoSans NF";
-          package = pkgs.nerdfonts;
-        };
-        serif = {
-          name = "NotoSerif NF";
-          package = pkgs.nerdfonts;
-        };
+        # sansSerif = {
+        #   name = "NotoSans NF";
+        #   package = pkgs.nerdfonts;
+        # };
+        # serif = {
+        #   name = "NotoSerif NF";
+        #   package = pkgs.nerdfonts;
+        # };
         sizes = {
           # applications = ;
           # desktop = ;
@@ -85,7 +85,6 @@
         vscode.enable = false;
         gtk.enable = false;
         waybar.enable = false;
-        hyprland.enable = false;
       };
     };
 

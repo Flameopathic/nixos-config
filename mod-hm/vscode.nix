@@ -66,6 +66,8 @@ in
           };
         };
         "editor.formatOnSave" = true;
+        "editor.fontFamily" = "Maple Mono NF";
+        "editor.fontSize" = 15;
         "workbench.startupEditor" = "none";
       };
       userTasks = {
