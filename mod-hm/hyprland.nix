@@ -52,8 +52,8 @@ in
       enable = true;
       xwayland.enable = true;
       settings = {
-        exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray & waybar";
-        exec = "swww img ${config.stylix.image}";
+        exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
+        exec = "pkill waybar; waybar & swww img ${config.stylix.image}";
 
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;

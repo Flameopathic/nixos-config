@@ -2,6 +2,7 @@
   pkgs,
   lib,
   inputs,
+  config,
   ...
 }:
 {
@@ -61,19 +62,12 @@
         size = 24;
       };
       fonts = {
-        # emoji.name = "iMWriting Nerd Font";
         monospace = {
           name = "Maple Mono NF";
           package = pkgs.maple-mono-NF;
         };
-        # sansSerif = {
-        #   name = "NotoSans NF";
-        #   package = pkgs.nerdfonts;
-        # };
-        # serif = {
-        #   name = "NotoSerif NF";
-        #   package = pkgs.nerdfonts;
-        # };
+        sansSerif = config.stylix.fonts.monospace;
+        serif = config.stylix.fonts.monospace;
         sizes = {
           # applications = ;
           # desktop = ;
@@ -85,6 +79,7 @@
         vscode.enable = false;
         gtk.enable = false;
         waybar.enable = false;
+        hyprpaper.enable = lib.mkForce false;
       };
     };
 
