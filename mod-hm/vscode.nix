@@ -42,7 +42,7 @@ in
         "explorer.confirmDragAndDrop" = false;
         "remoteHub.commitDirectlyWarning" = "off";
         "git.enableSmartCommit" = true;
-        "workbench.colorTheme" = cfg.theme;
+        "workbench.colorTheme" = lib.mkForce cfg.theme;
         "git.confirmSync" = false;
         "nix.enableLanguageServer" = true;
         "nix.formatterPath" = "nixfmt";
@@ -66,8 +66,6 @@ in
           };
         };
         "editor.formatOnSave" = true;
-        "editor.fontFamily" = "Maple Mono NF";
-        "editor.fontSize" = 15;
         "workbench.startupEditor" = "none";
       };
       userTasks = {

@@ -76,7 +76,6 @@
         };
       };
       targets = {
-        vscode.enable = false;
         gtk.enable = false;
         waybar.enable = false;
         hyprpaper.enable = lib.mkForce false;
