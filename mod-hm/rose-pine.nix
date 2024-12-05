@@ -230,7 +230,7 @@
       programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
 
       home.packages = with pkgs; [
-        # credit: Janik-Haag 
+        # credit: Janik-Haag
         (hiPrio (writeShellApplication {
           name = "toggle-theme";
           runtimeInputs = with pkgs; [

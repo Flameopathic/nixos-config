@@ -10,7 +10,7 @@
 
   environment.systemPackages = with pkgs; [
     solaar
-    (pkgs.callPackage ../../pkgs/wl-clicker { })
+    pkgs.unstable.wl-clicker
   ];
 
   networking.interfaces.eno1.wakeOnLan.enable = true;
