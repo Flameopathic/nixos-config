@@ -17,6 +17,8 @@
       initialPassword = "snepis";
     };
 
+    programs.bash.completion.enable = true;
+
     nixpkgs.overlays = [
       (final: prev: {
         unstable = import inputs.nixpkgs-unstable {
