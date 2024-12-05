@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ ... }:
 {
   config = {
     services.hypridle = {
@@ -28,7 +28,6 @@
             no_fade_in = true;
           };
           background = {
-            color = "rgba(${inputs.nix-colors.lib.conversions.hexToRGBString ", " config.colorScheme.palette.base03}, 1.0)";
             path = "/etc/nixos/resources/bay.png";
           };
 

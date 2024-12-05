@@ -30,6 +30,7 @@ in
       extensions = with pkgs.vscode-extensions; [
         jnoortheen.nix-ide
         arcticicestudio.nord-visual-studio-code
+        mvllow.rose-pine
         ms-python.python
         eamodio.gitlens
         ms-vscode-remote.remote-ssh

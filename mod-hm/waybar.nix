@@ -27,7 +27,7 @@
           tooltip-format = "<tt>{calendar}</tt>";
           format-alt = "{:%Y-%m-%d}";
           calendar.format = {
-            today = "<span color='#${config.colorScheme.palette.base08}'><u>{}</u></span>";
+            today = "<span color='${config.stylix.base16Scheme.base08}'><u>{}</u></span>";
           };
         };
         cpu = {
@@ -77,7 +77,7 @@
       }
 
       window#waybar {
-          background-color: rgba(${inputs.nix-colors.lib.conversions.hexToRGBString ", " config.colorScheme.palette.base00}, 0);
+          background-color: transparent;
       }
 
       window#waybar.hidden {
@@ -102,10 +102,10 @@
       }
 
       #workspaces button:hover {
-          background: rgba(${inputs.nix-colors.lib.conversions.hexToRGBString ", " config.colorScheme.palette.base03}, 0.2);
+          background: ${config.stylix.base16Scheme.base03};
           border-radius: 6px;
           background: inherit;
-          box-shadow: inset 0 -3px #${config.colorScheme.palette.base05};
+          box-shadow: inset 0 -3px ${config.stylix.base16Scheme.base05};
       }
 
       #workspaces button.focused {
@@ -114,7 +114,7 @@
       }
 
       #workspaces button.urgent {
-          background-color: #${config.colorScheme.palette.base08};
+          background-color: ${config.stylix.base16Scheme.base08};
       }
 
       #clock,
@@ -125,33 +125,33 @@
       #workspaces,
       #window {
         padding: 0 10px;
-        color: #${config.colorScheme.palette.base05};
-        background-color: #${config.colorScheme.palette.base02};
-        border: 3px solid #${config.colorScheme.palette.base03};
+        color: ${config.stylix.base16Scheme.base05};
+        background-color: ${config.stylix.base16Scheme.base02};
+        border: 3px solid ${config.stylix.base16Scheme.base03};
         border-radius: 6px;
       }
 
 
       #clock {
-          color: #${config.colorScheme.palette.base0D};
+          color: ${config.stylix.base16Scheme.base0D};
       }
 
       #cpu {
-          color: #${config.colorScheme.palette.base0C};
+          color: ${config.stylix.base16Scheme.base0C};
       }
 
       #battery.charging, #battery.plugged {
           color: #ffffff;
-          background-color: #${config.colorScheme.palette.base0B};
+          background-color: ${config.stylix.base16Scheme.base0B};
       }
 
       #battery.critical:not(.charging) {
-          background-color: #${config.colorScheme.palette.base08};
-          color: #${config.colorScheme.palette.base03};
+          background-color: ${config.stylix.base16Scheme.base08};
+          color: ${config.stylix.base16Scheme.base03};
       }
 
       #tray {
-          color: #${config.colorScheme.palette.base0B};
+          color: ${config.stylix.base16Scheme.base0B};
       }
 
       #tray > .passive {
@@ -160,7 +160,7 @@
 
       #tray > .needs-attention {
           -gtk-icon-effect: highlight;
-          background-color: #${config.colorScheme.palette.base08};
+          background-color: ${config.stylix.base16Scheme.base08};
       }
     '';
   };

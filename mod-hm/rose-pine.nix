@@ -2,43 +2,44 @@
   config,
   pkgs,
   lib,
-  inputs,
   ...
 }:
 {
-  imports = [ inputs.nix-colors.homeManagerModules.default ];
+  imports = [
+    ./theme.nix
+  ];
   config = {
-    colorScheme = lib.mkDefault inputs.nix-colors.colorSchemes.rose-pine-moon;
-
-    home.packages = with pkgs; [
-      (writeShellApplication {
-        # credit: Janik-Haag
-        name = "toggle-theme";
-        runtimeInputs = with pkgs; [
-          home-manager
-          coreutils
-          ripgrep
-        ];
-        text = ''
-          "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate && hyprctl reload
-        '';
-      })
-    ];
+    stylix = {
+      polarity = lib.mkDefault "dark";
+      image = lib.mkDefault ../resources/leafy-moon.png;
+      base16Scheme = lib.mkDefault {
+        base00 = "#232136";
+        base01 = "#2A273F";
+        base02 = "#393552";
+        base03 = "#6E6A86";
+        base04 = "#908CAA";
+        base05 = "#E0DEF4";
+        base06 = "#E0DEF4";
+        base07 = "#56526E";
+        base08 = "#EB6F92";
+        base09 = "#F6C177";
+        base0A = "#EA9A97";
+        base0B = "#3E8FB0";
+        base0C = "#9CCFD8";
+        base0D = "#C4A7E7";
+        base0E = "#F6C177";
+        base0F = "#56526E";
+      };
+    };
 
     gtk = {
-      enable = true;
-      cursorTheme = {
-        name = "Bibata_Ghost";
-        package = pkgs.bibata-cursors-translucent;
-        size = config.flame.ui.cursorSize;
-      };
       iconTheme = {
         name = config.gtk.theme.name;
         package = pkgs.rose-pine-icon-theme;
       };
       theme = {
-        name = lib.mkDefault "rose-pine-moon";
-        package = pkgs.rose-pine-gtk-theme;
+        name = lib.mkForce "rose-pine-moon";
+        package = lib.mkForce pkgs.rose-pine-gtk-theme;
       };
     };
 
@@ -191,7 +192,7 @@
       '';
     };
 
-    flame.vscode.theme = config.colorScheme.name + " (no italics)";
+    flame.vscode.theme = lib.mkDefault "Rosé Pine Moon (no italics)";
 
     xdg.desktopEntries.theme-switch = {
       name = "Toggle theme";
@@ -200,32 +201,32 @@
     };
 
     specialisation.light.configuration = {
-      colorScheme = inputs.nix-colors.colorSchemes.rose-pine-dawn;
-
       stylix = {
         image = ../resources/lwp.png;
         polarity = "light";
         base16Scheme = {
-          base00 = "#faf4ed";
-          base01 = "#fffaf3";
-          base02 = "#f2e9de";
-          base03 = "#9893a5";
+          base00 = "#FAF4ED";
+          base01 = "#FFFAF3";
+          base02 = "#F2E9DE";
+          base03 = "#9893A5";
           base04 = "#797593";
           base05 = "#575279";
           base06 = "#575279";
-          base07 = "#cecacd";
-          base08 = "#b4637a";
-          base09 = "#ea9d34";
-          base0A = "#d7827e";
+          base07 = "#CECACD";
+          base08 = "#B4637A";
+          base09 = "#EA9D34";
+          base0A = "#D7827E";
           base0B = "#286983";
-          base0C = "#56949f";
-          base0D = "#907aa9";
-          base0E = "#ea9d34";
-          base0F = "#cecacd";
+          base0C = "#56949F";
+          base0D = "#907AA9";
+          base0E = "#EA9D34";
+          base0F = "#CECACD";
         };
       };
 
-      gtk.theme.name = "rose-pine-dawn";
+      gtk.theme.name = lib.mkOverride 10 "rose-pine-dawn";
+
+      flame.vscode.theme = "Rosé Pine Dawn (no italics)";
 
       programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
 
