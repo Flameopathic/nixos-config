@@ -27,17 +27,20 @@ in
       enable = true;
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
-      extensions = with pkgs.vscode-extensions; [
-        jnoortheen.nix-ide
-        arcticicestudio.nord-visual-studio-code
-        mvllow.rose-pine
-        ms-python.python
-        eamodio.gitlens
-        ms-vscode-remote.remote-ssh
-        github.vscode-github-actions
-        zaaack.markdown-editor
-      ];
+      extensions =
+        with pkgs.vscode-extensions;
+        lib.mkForce [
+          jnoortheen.nix-ide
+          arcticicestudio.nord-visual-studio-code
+          mvllow.rose-pine
+          ms-python.python
+          eamodio.gitlens
+          ms-vscode-remote.remote-ssh
+          github.vscode-github-actions
+          zaaack.markdown-editor
+        ];
       userSettings = {
+        "telemetry.telemetryLevel" = "off";
         "window.titleBarStyle" = "custom";
         "workbench.sideBar.location" = "right";
         "explorer.confirmDragAndDrop" = false;

@@ -28,6 +28,7 @@
         };
       };
       targets = {
+        # vscode.makeExtension = false;
         waybar.enable = false;
         hyprpaper.enable = lib.mkForce false;
       };
