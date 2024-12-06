@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
@@ -36,7 +35,7 @@
     ];
   };
 
-  fileSystems."/home/flame/doc/Nextcloud Backup" = {
+  fileSystems."/mnt/sd" = {
     device = "/dev/disk/by-uuid/723a3feb-0852-4346-b5b9-b72153a79ec0";
     fsType = "ext4";
   };

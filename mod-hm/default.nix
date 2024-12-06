@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   config = {
     home = {
@@ -41,6 +46,12 @@
         enable = true;
         defaultEditor = true;
       };
+    };
+
+    xdg.userDirs = {
+      download = "${config.home.homeDirectory}/dld";
+      pictures = "${config.home.homeDirectory}/pic";
+      music = "${config.home.homeDirectory}/mus";
     };
 
     programs.home-manager.enable = true;
