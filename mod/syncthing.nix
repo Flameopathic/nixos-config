@@ -51,7 +51,7 @@ in
           id = "doc";
           versioning = {
             type = "trashcan";
-            params.cleanoutDays = "1000";
+            params.cleanoutDays = "0";
           };
         };
         pic = {
@@ -69,7 +69,7 @@ in
           id = "prg";
           versioning = {
             type = "trashcan";
-            params.cleanoutDays = "1000";
+            params.cleanoutDays = "0";
           };
         };
         phone = {
@@ -79,6 +79,18 @@ in
         mus = {
           path = "${cfg.home}/mus";
           devices = cfg.devices ++ [ "foldeopathic" ];
+          versioning = {
+            type = "trashcan";
+            params.cleanoutDays = "0";
+          };
+        };
+        arc = {
+          path = "${cfg.home}/arc";
+          devices = cfg.devices;
+          versioning = {
+            type = "trashcan";
+            params.cleanoutDays = "0";
+          };
         };
       };
       options = {
