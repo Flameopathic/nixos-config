@@ -31,6 +31,7 @@
       yt-dlp
       ncdu
       freetube
+      bambu-studio
     ];
 
     programs = {
