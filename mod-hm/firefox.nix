@@ -149,7 +149,6 @@
         extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
           ublock-origin
           darkreader
-          simple-tab-groups
           sponsorblock
           dearrow
           videospeed
