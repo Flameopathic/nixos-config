@@ -32,6 +32,7 @@
       ncdu
       freetube
       bambu-studio
+      freecad-wayland
     ];
 
     programs = {
