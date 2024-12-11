@@ -21,7 +21,7 @@ in
   config = {
     home.packages = [
       pkgs.nixd # language server
-      pkgs.nixfmt-rfc-style
+      pkgs.unstable.nixfmt-rfc-style
     ];
     programs.vscode = {
       enable = true;
@@ -61,7 +61,8 @@ in
             };
             "options" = {
               "nixos" = {
-                "expr" = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.${osConfig.networking.hostName}.options";
+                "expr" =
+                  "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.${osConfig.networking.hostName}.options";
               };
               "home-manager" = {
                 "expr" = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.flame.options";
