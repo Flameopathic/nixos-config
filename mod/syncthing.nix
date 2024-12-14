@@ -40,14 +40,14 @@ in
         "servnix" = {
           id = "7UIBIOJ-LARMQXE-HEZH52U-NKB3J6T-W3SCKGH-SHPV5OY-B3KXSSB-UTOMQQC";
         };
-        "foldeopathic" = {
-          id = "5GC5N6H-LHNYSOH-LXBY746-U3OEOXH-LVKQFDD-P2QTFB2-6HTAOHY-Y6I4CAO";
+        "tomato" = {
+          id = "NJUAEBY-NXMNGIF-JN2OTKH-MXGEKJ5-R2MJEMI-5P4J2JO-HLDK4O4-4JSFDAG";
         };
       };
       folders = {
         doc = {
           path = "${cfg.home}/doc";
-          devices = cfg.devices;
+          devices = cfg.devices ++ [ "tomato" ];
           id = "doc";
           versioning = {
             type = "trashcan";
@@ -74,11 +74,15 @@ in
         };
         phone = {
           path = "${cfg.home}/pic/phone";
-          devices = cfg.devices ++ [ "foldeopathic" ];
+          devices = cfg.devices ++ [
+            "tomato"
+          ];
         };
         mus = {
           path = "${cfg.home}/mus";
-          devices = cfg.devices ++ [ "foldeopathic" ];
+          devices = cfg.devices ++ [
+            "tomato"
+          ];
           versioning = {
             type = "trashcan";
             params.cleanoutDays = "0";
