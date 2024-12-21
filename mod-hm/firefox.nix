@@ -109,7 +109,7 @@
           "media.peerconnection.ice.no_host" = true;
           "webgl.disabled" = true;
           "media.autoplay.default" = 5;
-          "media.eme.enabled" = false;
+          "media.eme.enabled" = true;
           "browser.download.useDownloadDir" = false;
           "browser.download.manager.addToRecentDocs" = false;
           "browser.download.lastDir" = "${config.xdg.userDirs.download}";
