@@ -33,6 +33,7 @@
       freetube
       bambu-studio
       freecad-wayland
+      blender
     ];
 
     programs = {
