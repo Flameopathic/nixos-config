@@ -26,6 +26,10 @@
       pulse.enable = true;
     };
 
+    hardware = {
+      bluetooth.enable = true;
+      spacenavd.enable = true;
+    };
 
     # makes some things log in better; compatibility feature
     services.gnome.gnome-keyring.enable = true;
