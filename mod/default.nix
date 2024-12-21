@@ -33,9 +33,6 @@
       git
     ];
 
-    # makes some things log in better; compatibility feature
-    services.gnome.gnome-keyring.enable = true;
-
     nix = {
       settings = {
         auto-optimise-store = true;

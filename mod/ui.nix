@@ -4,15 +4,14 @@
     environment.systemPackages = [ pkgs.where-is-my-sddm-theme ]; # themeing not working
     services = {
       xserver.enable = true;
-      displayManager = {
-        sddm = {
-          enable = true;
-          wayland.enable = true;
-          theme = "where_is_my_sddm_theme";
-        };
-        autoLogin = {
-          enable = true;
-          user = "flame";
+      greetd = {
+        enable = true;
+        settings = rec {
+          initial_session = {
+            command = "${pkgs.hyprland}/bin/Hyprland";
+            user = "flame";
+          };
+          default_session = initial_session;
         };
       };
     };
@@ -27,7 +26,10 @@
       pulse.enable = true;
     };
 
-    hardware.bluetooth.enable = true;
+
+    # makes some things log in better; compatibility feature
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.greetd.enableGnomeKeyring = true;
 
     # stuff to make hyprland happier
     environment.sessionVariables = {
