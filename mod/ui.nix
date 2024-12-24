@@ -30,6 +30,7 @@
       bluetooth.enable = true;
       spacenavd.enable = true;
     };
+    systemd.services.spacenavd.wantedBy = [ "graphical.target" ]; # will be upstreamed by https://github.com/NixOS/nixpkgs/pull/366768
 
     # makes some things log in better; compatibility feature
     services.gnome.gnome-keyring.enable = true;
