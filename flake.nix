@@ -37,6 +37,10 @@
       url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    jovian = {
+      url = "github:Jovian-Experiments/Jovian-NixOS";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
@@ -164,6 +168,14 @@
               ./mod/sd-boot.nix
               ./mod/ssh-server.nix
               ./mod/laptop-server.nix
+            ];
+          };
+          deck = {
+            modules = [
+              disko.nixosModules.disko
+              ./host/deck/disk-config.nix
+              ./mod/sd-boot.nix
+              ./mod/jovian.nix
             ];
           };
         };
