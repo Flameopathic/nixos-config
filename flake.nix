@@ -178,6 +178,12 @@
               ./mod/jovian.nix
             ];
           };
+          ephe = {
+            modules = [
+              (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+              ./mod/ssh-server.nix
+            ];
+          };
         };
       darwinConfigurations =
         let
