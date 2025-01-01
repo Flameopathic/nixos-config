@@ -57,7 +57,7 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
         :root {
-        --Chat-Font-Used: 'Fira Code', monospace ;
+        --Chat-Font-Used: '${config.stylix.fonts.monospace.name}', monospace ;
         --Chat-Font-Size: 14px;
 
             --font-primary: var(--Chat-Font-Used);
