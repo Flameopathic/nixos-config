@@ -31,7 +31,7 @@
       yt-dlp
       ncdu
       freetube
-      bambu-studio
+      orca-slicer
       freecad-wayland
       blender
     ];
