@@ -2,6 +2,7 @@
   pkgs,
   lib,
   inputs,
+  config,
   ...
 }:
 {
@@ -12,29 +13,31 @@
     inputs.stylix.homeManagerModules.stylix
   ];
 
-  options.flame.ui.cursorSize = lib.mkOption { default = 24; };
+  options.flame.ui = {
+    cursorSize = lib.mkOption { default = 24; };
+    minimal = lib.mkEnableOption "Only install packages necessary for testing";
+  };
 
   config = {
-    home.packages = with pkgs; [
-      nerdfonts
-      obsidian
-      vlc
-      libreoffice
-      hunspellDicts.en_US
-      godot_4
-      prismlauncher
-      file-roller
-      nautilus
-      bottles
-      geeqie
-      quodlibet
-      yt-dlp
-      ncdu
-      freetube
-      orca-slicer
-      freecad-wayland
-      blender
-    ];
+    home.packages =
+      with pkgs;
+      [
+        vlc
+        file-roller
+        nautilus
+        ncdu
+      ]
+      ++ lib.optionals (!config.flame.ui.minimal)
+      [
+        geeqie
+        prismlauncher
+        freetube
+        orca-slicer
+        freecad-wayland
+        blender
+        libreoffice
+        hunspellDicts.en_US # for libreoffice
+      ];
 
     programs = {
       kitty = {

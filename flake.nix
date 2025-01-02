@@ -94,7 +94,6 @@
                 ++ nixpkgs.lib.optional (builtins.pathExists ./host/${host}/configuration.nix) ./host/${host}/configuration.nix;
               specialArgs = specialArgs;
             };
-
         in
         builtins.mapAttrs mkHost {
           # make configuration name same as host name to make rebuild command work automagically
@@ -190,6 +189,7 @@
               ./mod/ui.nix
               ./mod/plasma.nix
               ./mod/nvidia.nix
+              { flame.ui.minimal = true; }
             ];
             home-modules = [
               ./mod-hm/ui-apps.nix
