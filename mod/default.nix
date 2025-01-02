@@ -33,6 +33,12 @@
       git
     ];
 
+    # configuration that only applies within VMs made through `nixos-rebuild build-vm`
+    virtualisation.vmVariant.virtualisation = {
+      memorySize = 4096;
+      cores = 4;
+    };
+
     nix = {
       settings = {
         auto-optimise-store = true;

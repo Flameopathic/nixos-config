@@ -184,6 +184,18 @@
               ./mod/ssh-server.nix
             ];
           };
+          testy = {
+            modules = [
+              ./mod/sd-boot.nix
+              ./mod/ui.nix
+              ./mod/plasma.nix
+              ./mod/nvidia.nix
+            ];
+            home-modules = [
+              ./mod-hm/ui-apps.nix
+              ./mod-hm/rose-pine.nix
+            ];
+          };
         };
       darwinConfigurations =
         let

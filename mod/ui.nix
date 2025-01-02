@@ -2,19 +2,7 @@
 {
   config = {
     environment.systemPackages = [ pkgs.where-is-my-sddm-theme ]; # themeing not working
-    services = {
-      xserver.enable = true;
-      greetd = {
-        enable = true;
-        settings = rec {
-          initial_session = {
-            command = "${pkgs.hyprland}/bin/Hyprland";
-            user = "flame";
-          };
-          default_session = initial_session;
-        };
-      };
-    };
+    services.xserver.enable = true;
 
     services.printing.enable = true;
 
