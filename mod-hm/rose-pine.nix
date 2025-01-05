@@ -11,7 +11,7 @@
   config = {
     stylix = {
       polarity = lib.mkDefault "dark";
-      image = lib.mkDefault ../resources/leafy-moon.png;
+      # image = lib.mkDefault ../resources/leafy-moon.png;
       base16Scheme = lib.mkDefault {
         base00 = "#232136";
         base01 = "#2A273F";

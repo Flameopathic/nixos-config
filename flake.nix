@@ -2,11 +2,11 @@
   description = "my flkae <3";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs"; # ensures nixpkgs version is consistent between home manager and system
     };
     nix-darwin = {
@@ -34,7 +34,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:Flameopathic/stylix/optional-image";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     jovian = {
@@ -189,9 +189,9 @@
               ./mod/ui.nix
               ./mod/plasma.nix
               ./mod/nvidia.nix
-              { flame.ui.minimal = true; }
             ];
             home-modules = [
+              { flame.ui.minimal = true; }
               ./mod-hm/ui-apps.nix
               ./mod-hm/rose-pine.nix
             ];

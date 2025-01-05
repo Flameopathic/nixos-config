@@ -5,6 +5,6 @@
       enable = true;
       wayland.enable = true;
     };
-    desktopManager.plasma6.enable = true;
+    xserver.desktopManager.plasma5.enable = true;
   };
 }
