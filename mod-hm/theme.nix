@@ -15,11 +15,13 @@
       };
       fonts = {
         monospace = {
-          name = "Maple Mono NF";
-          package = pkgs.maple-mono-NF;
+          name = "GeistMono NF";
+          package = pkgs.nerdfonts;
         };
-        sansSerif = config.stylix.fonts.monospace;
-        serif = config.stylix.fonts.monospace;
+        sansSerif = {
+          name = "Geist";
+          package = pkgs.geist-font;
+        };
         sizes = {
           # applications = 13;
           # desktop = ;
