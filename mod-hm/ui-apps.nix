@@ -27,8 +27,7 @@
         nautilus
         ncdu
       ]
-      ++ lib.optionals (!config.flame.ui.minimal)
-      [
+      ++ lib.optionals (!config.flame.ui.minimal) [
         geeqie
         prismlauncher
         freetube
