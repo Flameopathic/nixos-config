@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }:
 {
@@ -30,10 +31,6 @@
       };
       targets = {
         # vscode.makeExtension = false;
-        firefox = {
-          profileNames = [ "default" ];
-          firefoxGnomeTheme.enable = true;
-        };
         waybar.enable = false;
         hyprpaper.enable = lib.mkForce false;
       };
