@@ -187,7 +187,7 @@
             modules = [
               ./mod/sd-boot.nix
               ./mod/ui.nix
-              ./mod/plasma.nix
+              ./mod/kde.nix
               ./mod/nvidia.nix
               { flame.ui.minimal = true; }
             ];

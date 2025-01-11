@@ -2,9 +2,9 @@
 {
   imports = [
     inputs.jovian.nixosModules.jovian
-    ./plasma.nix
   ];
   config = {
+    services.desktopManager.plasma6.enable = true;
     jovian = {
       steam = {
         enable = true;
