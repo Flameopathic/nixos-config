@@ -189,11 +189,11 @@
               ./mod/ui.nix
               ./mod/kde.nix
               ./mod/nvidia.nix
-              { flame.ui.minimal = true; }
             ];
             home-modules = [
               ./mod-hm/ui-apps.nix
               ./mod-hm/rose-pine.nix
+              { flame.ui.minimal = true; }
             ];
           };
         };

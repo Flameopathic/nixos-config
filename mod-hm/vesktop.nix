@@ -63,7 +63,7 @@
           VolumeBooster.enabled = true;
           WatchTogetherAdblock.enabled = true;
           WebScreenShareFixes.enabled = true;
-          YoutubeAdBlock.enabled = true;
+          YoutubeAdblock.enabled = true;
         };
       };
     };
