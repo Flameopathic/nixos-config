@@ -31,11 +31,12 @@
         geeqie
         prismlauncher
         freetube
-        orca-slicer
+        bambu-studio
         freecad-wayland
         blender
         libreoffice
         hunspellDicts.en_US # for libreoffice
+        qdirstat
       ];
 
     programs = {

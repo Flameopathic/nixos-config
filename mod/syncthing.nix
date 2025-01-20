@@ -41,13 +41,13 @@ in
           id = "7UIBIOJ-LARMQXE-HEZH52U-NKB3J6T-W3SCKGH-SHPV5OY-B3KXSSB-UTOMQQC";
         };
         "tomato" = {
-          id = "NJUAEBY-NXMNGIF-JN2OTKH-MXGEKJ5-R2MJEMI-5P4J2JO-HLDK4O4-4JSFDAG";
+          id = "YM4TQ7P-WSFH4US-VFWJ7YX-4QAOULH-QVG5H6U-7RFFBGF-2YDZ4I2-RNFSWQQ";
         };
       };
       folders = {
         doc = {
           path = "${cfg.home}/doc";
-          devices = cfg.devices ++ [ "tomato" ];
+          devices = cfg.devices;
           id = "doc";
           versioning = {
             type = "trashcan";
@@ -80,9 +80,7 @@ in
         };
         mus = {
           path = "${cfg.home}/mus";
-          devices = cfg.devices ++ [
-            "tomato"
-          ];
+          devices = cfg.devices;
           versioning = {
             type = "trashcan";
             params.cleanoutDays = "0";
