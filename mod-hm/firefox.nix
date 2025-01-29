@@ -107,7 +107,7 @@
           "media.peerconnection.ice.proxy_only_if_behind_proxy" = true;
           "media.peerconnection.ice.default_address_only" = true;
           "media.peerconnection.ice.no_host" = true;
-          "webgl.disabled" = true;
+          "webgl.disabled" = false;
           "media.autoplay.default" = 5;
           "media.eme.enabled" = true;
           "browser.download.useDownloadDir" = false;
