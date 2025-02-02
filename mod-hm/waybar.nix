@@ -103,7 +103,7 @@
 
       #workspaces button:hover {
           background: ${config.stylix.base16Scheme.base03};
-          border-radius: 6px;
+          border-radius: 12px;
           background: inherit;
           box-shadow: inset 0 -3px ${config.stylix.base16Scheme.base05};
       }
@@ -128,7 +128,7 @@
         color: ${config.stylix.base16Scheme.base05};
         background-color: ${config.stylix.base16Scheme.base02};
         border: 3px solid ${config.stylix.base16Scheme.base03};
-        border-radius: 6px;
+        border-radius: 12px;
       }
 
 

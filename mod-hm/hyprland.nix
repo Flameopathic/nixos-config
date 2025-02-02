@@ -86,7 +86,7 @@ in
           resize_on_border = true;
         };
         decoration = {
-          rounding = 3;
+          rounding = 9;
           shadow.enabled = false;
         };
         cursor = {
