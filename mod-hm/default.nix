@@ -52,10 +52,6 @@
           prompt.theme = "paradox";
         };
       };
-      helix = {
-        enable = true;
-        defaultEditor = true;
-      };
     };
 
     xdg.userDirs = {
