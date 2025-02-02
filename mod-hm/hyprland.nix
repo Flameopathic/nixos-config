@@ -138,7 +138,7 @@ in
             "$mod, tab, exec, pkill -SIGUSR1 waybar"
             "$mod, R, exec, wofi --normal-window --show drun --insensitive --allow-images"
             "$mod SHIFT, s, exec, hyprshot -m region -o ~/pic/ss"
-            "$mod, q, exec, kitty"
+            "$mod, q, exec, foot"
             "$mod, p, exec, swaylock"
             "$mod, t, exec, toggle-theme"
             "CTRL SHIFT $mod ALT, l, exec, firefox --new-tab https://linkedin.com/"

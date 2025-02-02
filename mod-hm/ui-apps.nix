@@ -40,7 +40,7 @@
       ];
 
     programs = {
-      kitty = {
+      foot = {
         enable = true;
       };
     };
