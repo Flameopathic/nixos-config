@@ -11,24 +11,29 @@
   config = {
     stylix = {
       polarity = lib.mkDefault "dark";
-      image = lib.mkDefault ../resources/leafy-moon.png;
+      image = lib.mkDefault (
+        pkgs.fetchurl {
+          url = "https://github.com/rose-pine/wallpapers/blob/main/rose_pine_contourline.png?raw=true";
+          sha256 = "8OQCXMy27IImp1Oc/X4i14/8k9XjuuU+6clh0rRcAQY=";
+        }
+      );
       base16Scheme = lib.mkDefault {
-        base00 = "#232136";
-        base01 = "#2A273F";
-        base02 = "#393552";
-        base03 = "#6E6A86";
-        base04 = "#908CAA";
-        base05 = "#E0DEF4";
-        base06 = "#E0DEF4";
-        base07 = "#56526E";
-        base08 = "#EB6F92";
-        base09 = "#F6C177";
-        base0A = "#EA9A97";
-        base0B = "#3E8FB0";
-        base0C = "#9CCFD8";
-        base0D = "#C4A7E7";
-        base0E = "#F6C177";
-        base0F = "#56526E";
+        base00 = "191724";
+        base01 = "1f1d2e";
+        base02 = "26233a";
+        base03 = "6e6a86";
+        base04 = "908caa";
+        base05 = "e0def4";
+        base06 = "e0def4";
+        base07 = "524f67";
+        base08 = "eb6f92";
+        base09 = "f6c177";
+        base0A = "ebbcba";
+        base0B = "31748f";
+        base0C = "9ccfd8";
+        base0D = "c4a7e7";
+        base0E = "f6c177";
+        base0F = "524f67";
       };
     };
 
@@ -38,7 +43,7 @@
         package = pkgs.rose-pine-icon-theme;
       };
       theme = {
-        name = lib.mkForce "rose-pine-moon";
+        name = lib.mkForce "rose-pine";
         package = lib.mkForce pkgs.rose-pine-gtk-theme;
       };
     };
@@ -192,7 +197,7 @@
       '';
     };
 
-    flame.vscode.theme = lib.mkDefault "Rosé Pine Moon (no italics)";
+    flame.vscode.theme = lib.mkDefault "Rosé Pine (no italics)";
 
     xdg.desktopEntries.theme-switch = {
       name = "Toggle theme";
@@ -205,22 +210,22 @@
         image = ../resources/lwp.png;
         polarity = "light";
         base16Scheme = {
-          base00 = "#FAF4ED";
-          base01 = "#FFFAF3";
-          base02 = "#F2E9DE";
-          base03 = "#9893A5";
-          base04 = "#797593";
-          base05 = "#575279";
-          base06 = "#575279";
-          base07 = "#CECACD";
-          base08 = "#B4637A";
-          base09 = "#EA9D34";
-          base0A = "#D7827E";
-          base0B = "#286983";
-          base0C = "#56949F";
-          base0D = "#907AA9";
-          base0E = "#EA9D34";
-          base0F = "#CECACD";
+          base00 = "FAF4ED";
+          base01 = "FFFAF3";
+          base02 = "F2E9DE";
+          base03 = "9893A5";
+          base04 = "797593";
+          base05 = "575279";
+          base06 = "575279";
+          base07 = "CECACD";
+          base08 = "B4637A";
+          base09 = "EA9D34";
+          base0A = "D7827E";
+          base0B = "286983";
+          base0C = "56949F";
+          base0D = "907AA9";
+          base0E = "EA9D34";
+          base0F = "CECACD";
         };
       };
 
