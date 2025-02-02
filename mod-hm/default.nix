@@ -30,9 +30,11 @@
           safe.directory = "/etc/nixos"; # make sure to chown .git to an admin
         };
       };
-      bash = {
+      zsh = {
         enable = true;
         enableCompletion = true;
+        autosuggestion.enable = true;
+        syntaxHighlighting.enable = true;
         shellAliases = {
           snrbs = lib.mkDefault "sudo nixos-rebuild switch";
           conf = "cd /etc/nixos";
@@ -40,6 +42,14 @@
           ssh = "TERM=xterm ssh";
           sctl = "systemctl";
           jctl = "journalctl";
+        };
+        history = {
+          size = 50000;
+          expireDuplicatesFirst = true;
+        };
+        prezto = {
+          enable = true;
+          prompt.theme = "paradox";
         };
       };
       helix = {

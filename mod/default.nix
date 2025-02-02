@@ -17,7 +17,12 @@
       initialHashedPassword = "$y$j9T$Vwe6OnkGTBX4BF2ka.Ihw0$L4AU5TxtOQSLAnyHwoT0wKB7S5FQTGlK9XCwFemZjU2";
     };
 
-    programs.bash.completion.enable = true;
+    programs.zsh = {
+      enable = true;
+      enableCompletion = true;
+    };
+    users.defaultUserShell = pkgs.zsh;
+    environment.pathsToLink = [ "/share/zsh" ];
 
     nixpkgs.overlays = [
       (final: prev: {
