@@ -67,6 +67,7 @@ in
         };
         "editor.formatOnSave" = true;
         "workbench.startupEditor" = "none";
+        "chat.commandCenter.enabled" = false;
       };
       userTasks = {
         version = "2.0.0";
