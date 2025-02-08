@@ -13,7 +13,7 @@
       polarity = lib.mkDefault "dark";
       image = lib.mkDefault (
         pkgs.fetchurl {
-          url = "https://github.com/rose-pine/wallpapers/blob/main/rose_pine_circle.png?raw=true";
+          url = "https://github.com/rose-pine/wallpapers/blob/3bc7689c8ed539815fd6df2f001e7f47ebe9d3d3/rose_pine_circle.png?raw=true";
           sha256 = "fDe9LVeYbBZjapuYct114rDlrBk50rjDjo1sD+70HFM=";
         }
       );
