@@ -585,8 +585,42 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "rose-pine-discord-theme": "rose-pine-discord-theme",
+        "rose-pine-wallpapers": "rose-pine-wallpapers",
         "stylix": "stylix",
         "vscode-server": "vscode-server"
+      }
+    },
+    "rose-pine-discord-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1738782525,
+        "narHash": "sha256-1wTsT0InyhAfIBySEnHuhwtNB+IK4KVLKKJx9osreC8=",
+        "owner": "rose-pine",
+        "repo": "discord",
+        "rev": "b2dbfeb41f322d1b6eba0d294723b0aac82b7478",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rose-pine",
+        "repo": "discord",
+        "type": "github"
+      }
+    },
+    "rose-pine-wallpapers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1738599641,
+        "narHash": "sha256-/+A5cvgBZ027/zmc04Ew2yus3qJVEQoys5d6ciZvZYs=",
+        "owner": "rose-pine",
+        "repo": "wallpapers",
+        "rev": "e3d960d956c0d8dced14152e6df1c76b7ed3e7d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rose-pine",
+        "repo": "wallpapers",
+        "type": "github"
       }
     },
     "rust-overlay": {

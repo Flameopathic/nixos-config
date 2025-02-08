@@ -37,6 +37,14 @@
       url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rose-pine-discord-theme = {
+      url = "github:rose-pine/discord";
+      flake = false;
+    };
+    rose-pine-wallpapers = {
+      url = "github:rose-pine/wallpapers";
+      flake = false;
+    };
   };
 
   outputs =

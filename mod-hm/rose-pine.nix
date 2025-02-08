@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 {
@@ -11,12 +12,7 @@
   config = {
     stylix = {
       polarity = lib.mkDefault "dark";
-      image = lib.mkDefault (
-        pkgs.fetchurl {
-          url = "https://github.com/rose-pine/wallpapers/blob/3bc7689c8ed539815fd6df2f001e7f47ebe9d3d3/rose_pine_circle.png?raw=true";
-          sha256 = "fDe9LVeYbBZjapuYct114rDlrBk50rjDjo1sD+70HFM=";
-        }
-      );
+      image = lib.mkDefault "${inputs.rose-pine-wallpapers}/rose_pine_circle.png";
       base16Scheme = lib.mkDefault {
         base00 = "191724";
         base01 = "1f1d2e";
@@ -50,12 +46,7 @@
 
     programs = {
       vesktop.vencord.theme =
-        builtins.readFile (
-          pkgs.fetchurl {
-            url = "https://raw.githubusercontent.com/rose-pine/discord/refs/heads/main/rose-pine.theme.css";
-            sha256 = "9VwZ9HE0scu/TX/95IYfzo92fIqlz8Xk1L1lk1Nvmok=";
-          }
-        )
+        builtins.readFile "${inputs.rose-pine-discord-theme}/rose-pine.theme.css"
         + ''
           :root {
               --font-primary: ${config.stylix.fonts.sansSerif.name};
