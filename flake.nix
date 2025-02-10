@@ -113,6 +113,7 @@
               ./mod/remote-builder.nix
               ./mod/ssh-server.nix
               ./mod/syncthing.nix
+              ./mod/rose-pine.nix
             ];
             home-modules = [
               {
@@ -123,7 +124,6 @@
                 ];
               }
               ./mod-hm/ui-apps.nix
-              ./mod-hm/rose-pine.nix
             ];
           };
           surfnix = {
@@ -133,6 +133,7 @@
               ./mod/hyprland.nix
               ./mod/surface.nix
               ./mod/syncthing.nix
+              ./mod/rose-pine.nix
             ];
             home-modules = [
               {
@@ -142,7 +143,6 @@
                 ];
               }
               ./mod-hm/ui-apps.nix
-              ./mod-hm/rose-pine.nix
             ];
           };
           servnix = {
@@ -185,10 +185,10 @@
               ./mod/ui.nix
               ./mod/kde.nix
               ./mod/nvidia.nix
+              ./mod/rose-pine.nix
             ];
             home-modules = [
               ./mod-hm/ui-apps.nix
-              ./mod-hm/rose-pine.nix
               { flame.ui.minimal = true; }
             ];
           };

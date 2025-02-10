@@ -10,7 +10,6 @@
     ./firefox.nix
     ./vscode.nix
     ./vesktop.nix
-    inputs.stylix.homeManagerModules.stylix
   ];
 
   options.flame.ui = {
