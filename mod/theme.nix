@@ -12,15 +12,10 @@
   config = {
     stylix = {
       enable = true;
-      cursor = {
-        package = pkgs.bibata-cursors-translucent;
-        name = "Bibata_Ghost";
-        size = 24;
-      };
       fonts = {
         monospace = {
           name = "GeistMono NF";
-          package = pkgs.nerdfonts;
+          package = pkgs.nerd-fonts.geist-mono;
         };
         sansSerif = {
           name = "Geist";
