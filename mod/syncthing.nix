@@ -24,7 +24,7 @@ in
 
   config.services.syncthing = {
     enable = true;
-    openDefaultPorts = cfg.server;
+    # openDefaultPorts = cfg.server;
     user = mkDefault "flame";
     dataDir = mkDefault "${cfg.home}/.config/syncthing";
     overrideDevices = mkDefault true;
@@ -51,7 +51,7 @@ in
           id = "doc";
           versioning = {
             type = "trashcan";
-            params.cleanoutDays = "0";
+            params.cleanoutDays = "100";
           };
         };
         pic = {
@@ -60,7 +60,7 @@ in
           id = "pic";
           versioning = {
             type = "trashcan";
-            params.cleanoutDays = "0"; # never clean out - prolly a bad idea, but the versioning system isn't hugely good anyway
+            params.cleanoutDays = "14"; # never clean out - prolly a bad idea, but the versioning system isn't hugely good anyway
           };
         };
         prg = {
@@ -69,7 +69,7 @@ in
           id = "prg";
           versioning = {
             type = "trashcan";
-            params.cleanoutDays = "0";
+            params.cleanoutDays = "100";
           };
         };
         phone = {
@@ -83,7 +83,7 @@ in
           devices = cfg.devices;
           versioning = {
             type = "trashcan";
-            params.cleanoutDays = "0";
+            params.cleanoutDays = "100";
           };
         };
         arc = {
@@ -91,7 +91,7 @@ in
           devices = cfg.devices;
           versioning = {
             type = "trashcan";
-            params.cleanoutDays = "0";
+            params.cleanoutDays = "14";
           };
         };
       };

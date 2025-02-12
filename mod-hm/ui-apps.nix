@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  inputs,
   config,
   ...
 }:
@@ -24,7 +23,6 @@
         vlc
         file-roller
         nautilus
-        ncdu
       ]
       ++ lib.optionals (!config.flame.ui.minimal) [
         geeqie

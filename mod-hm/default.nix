@@ -18,6 +18,7 @@
       nix-tree
       python3
       wol
+      ncdu
     ];
 
     programs = {
