@@ -108,7 +108,7 @@ in
         xwayland = {
           force_zero_scaling = true;
         };
-        env = [ "XCURSOR_SIZE,${builtins.toString config.flame.ui.cursorSize}" ];
+        env = [ "XCURSOR_SIZE,${builtins.toString config.stylix.cursor.size}" ];
 
         # binds
         "$mod" = "SUPER";

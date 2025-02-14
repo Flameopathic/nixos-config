@@ -12,7 +12,6 @@
   ];
 
   options.flame.ui = {
-    cursorSize = lib.mkOption { default = 24; };
     minimal = lib.mkEnableOption "Only install packages necessary for testing";
   };
 
