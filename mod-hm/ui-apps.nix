@@ -33,6 +33,9 @@
         libreoffice
         hunspellDicts.en_US # for libreoffice
         qdirstat
+        gimp
+        upscaler
+        imagemagick
       ];
 
     programs = {
