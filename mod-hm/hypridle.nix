@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   config = {
     services.hypridle = {
@@ -14,7 +14,7 @@
       swaylock = {
         enable = true;
         settings = {
-          # image = "/etc/nixos/resources/bay.png";
+          image = lib.mkForce "/etc/nixos/resources/ventures_logo.png";
           scaling = "fill";
         };
       };
