@@ -11,7 +11,7 @@
   config = {
     stylix = {
       polarity = lib.mkDefault "dark";
-      image = lib.mkDefault "${inputs.rose-pine-wallpapers}/rose_pine_circle.png";
+      image = lib.mkDefault ../resources/planetary_chart_upscaled_recolored.png;
       base16Scheme = lib.mkDefault {
         base00 = "191724";
         base01 = "1f1d2e";
