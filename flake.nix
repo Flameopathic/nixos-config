@@ -106,7 +106,7 @@
           # specialArgs defaults to inheriting inputs alone
           fnix2 = {
             modules = [
-              ./mod/sd-boot.nix
+              ./mod/grub.nix
               ./mod/ui.nix
               ./mod/hyprland.nix
               ./mod/nvidia.nix
