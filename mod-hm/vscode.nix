@@ -37,7 +37,7 @@ in
       userSettings = {
         "telemetry.telemetryLevel" = "off";
         "window.titleBarStyle" = "custom";
-        "workbench.sideBar.location" = "right";
+        "workbench.sideBar.location" = "left";
         "explorer.confirmDragAndDrop" = false;
         "remoteHub.commitDirectlyWarning" = "off";
         "git.enableSmartCommit" = true;
