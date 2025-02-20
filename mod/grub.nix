@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   config.boot.loader = {
     grub = {
@@ -6,6 +6,8 @@
       device = "nodev";
       useOSProber = true;
       efiSupport = true;
+      splashImage = "/home/flame/prg/outer-wilds-grub/background.png";
+      splashMode = "normal";
     };
     efi.canTouchEfiVariables = true;
   };

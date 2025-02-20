@@ -7,6 +7,7 @@
 {
   imports = [
     inputs.stylix.nixosModules.stylix
+    ./outerwilds.nix
   ];
 
   config = {
@@ -33,6 +34,7 @@
           terminal = 11;
         };
       };
+      targets.grub.enable = false;
     };
 
     home-manager.sharedModules = [

@@ -181,7 +181,7 @@
           };
           testy = {
             modules = [
-              ./mod/sd-boot.nix
+              ./mod/grub.nix
               ./mod/ui.nix
               ./mod/kde.nix
               ./mod/nvidia.nix
