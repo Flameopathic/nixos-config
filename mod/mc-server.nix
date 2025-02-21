@@ -60,7 +60,7 @@ in
         force-gamemode = false;
         rate-limit = 0;
         hardcore = false;
-        white-list = false;
+        white-list = true;
         broadcast-console-to-ops = true;
         spawn-npcs = true;
         spawn-animals = true;
@@ -69,7 +69,7 @@ in
         initial-enabled-packs = "vanilla";
         level-type = "minecraft:normal";
         spawn-monsters = true;
-        enforce-whitelist = false;
+        enforce-whitelist = true;
         spawn-protection = 0;
         # max-world-size = 5000;
         # server-ip = ;
@@ -84,21 +84,24 @@ in
         # rcon.port = 25575;
         # level-seed = ;
       };
-      # whitelist = {
-      #   Flameopathic = "040ebdc7-9ca1-475d-9b3d-4fb62a29b19e";
-      #   DerpLemonade = "b32f9046-264b-4e02-911c-90fbcbd167a7";
-      #   nox_quack = "19051a2b-ac8e-4bab-86fd-e9ab42e8de3d";
-      #   Mercadies = "c8200af1-7fb8-48fc-83b8-1066ef221333";
-      #   LadyIanite07 = "aefc488b-ff80-4b4f-8b73-f8241e5df6d5";
-      #   Psycho_Blade1 = "2a4d0a8f-d55c-4c83-9db5-a06665ad1231";
-      #   StupidSufy = "b7248d94-9b5a-45b4-83b4-1f0d1f0d850b";
-      #   ippon_datara = "96b3cf60-32f5-4cb5-9a38-43178c59aea3";
-      #   vio_q = "861b6592-a1aa-4b63-bb9d-aac16637f30a";
-      #   Attticusss = "af017840-c5a7-4615-af67-edc8f52c4deb";
-      #   blood_ANDtendons = "0a66ec37-9a7b-4fe9-98e8-0107cd815cc4";
-      #   NumberVoice7226 = "acd79e6b-ec94-478d-ad4b-d43d7b8f3ec6";
-      #   Sephiatone = "7095eae3-c96c-42e3-9977-e1af8c3d51ff";
-      # };
+      whitelist = {
+        Flameopathic = "040ebdc7-9ca1-475d-9b3d-4fb62a29b19e";
+        nox_quack = "19051a2b-ac8e-4bab-86fd-e9ab42e8de3d";
+        Mercadies = "c8200af1-7fb8-48fc-83b8-1066ef221333";
+        LadyIanite07 = "aefc488b-ff80-4b4f-8b73-f8241e5df6d5";
+        Psycho_Blade1 = "2a4d0a8f-d55c-4c83-9db5-a06665ad1231";
+        ippon_datara = "96b3cf60-32f5-4cb5-9a38-43178c59aea3";
+        vio_q = "861b6592-a1aa-4b63-bb9d-aac16637f30a";
+        Attticusss = "af017840-c5a7-4615-af67-edc8f52c4deb";
+        Mangoey = "9f640f5a-50d7-4c57-a81d-e587a078f667";
+        lopwep = "d71d994e-c94d-4e98-9d8d-6d331b56a7cf";
+        TheKpOkay = "91e95661-a971-41b4-9955-3592fa5f5af4";
+        bogu = "b44cb594-f0da-479d-aae2-04921feec72a";
+        teemofan26 = "12b80e2a-e0ad-4601-9050-492398f31000";
+        getbuilt = "de7391b2-cbb9-4be8-a596-6fb6821aac25";
+        koyng8 = "e617dbac-5291-40d9-a577-114357ca754d";
+        BaconMambo = "8100f226-3d1d-4aa9-b71c-94364ca71c76";
+      };
     };
   };
 }
