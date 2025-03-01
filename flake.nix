@@ -128,7 +128,7 @@
           };
           surfnix = {
             modules = [
-              ./mod/sd-boot.nix
+              ./mod/grub.nix
               ./mod/ui.nix
               ./mod/hyprland.nix
               ./mod/surface.nix
