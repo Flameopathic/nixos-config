@@ -20,7 +20,7 @@ in
 
   config = {
     home.packages = [
-      pkgs.nixd # language server
+      pkgs.nil # language server
       pkgs.unstable.nixfmt-rfc-style
     ];
     programs.vscode = {
@@ -45,9 +45,9 @@ in
         "git.confirmSync" = false;
         "nix.enableLanguageServer" = true;
         "nix.formatterPath" = "nixfmt";
-        "nix.serverPath" = "nixd";
+        "nix.serverPath" = "nil";
         "nix.serverSettings" = {
-          "nixd" = {
+          "nil" = {
             "diagnostic" = {
               "suppress" = [ "sema-escaping-with" ];
             };
