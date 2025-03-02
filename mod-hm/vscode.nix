@@ -65,7 +65,6 @@ in
             };
           };
         };
-        "editor.formatOnSave" = true;
         "workbench.startupEditor" = "none";
         "chat.commandCenter.enabled" = false;
         "diffEditor.renderSideBySide" = false;
