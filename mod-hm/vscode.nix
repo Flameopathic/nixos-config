@@ -63,8 +63,10 @@ in
                 "expr" = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.flame.options";
               };
             };
-            "flakes" = {
-              "autoArchive" = true;
+            "nix" = {
+              "flakes" = {
+                "autoArchive" = true;
+              };
             };
           };
         };
