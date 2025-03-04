@@ -102,6 +102,7 @@ in
         koyng8 = "e617dbac-5291-40d9-a577-114357ca754d";
         BaconMambo = "8100f226-3d1d-4aa9-b71c-94364ca71c76";
         xXMinzhenXx = "88b8e9a0-70dd-4f57-bb83-a183a73f83a0";
+        HAKeller = "afaa29b2-fbff-430d-9930-d891bb0fd6ed";
       };
     };
   };
