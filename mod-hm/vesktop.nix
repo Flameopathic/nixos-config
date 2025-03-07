@@ -23,6 +23,7 @@
           BetterGifAltText.enabled = true;
           BetterGifPicker.enabled = true;
           BetterSettings.enabled = true;
+          BetterUploadButton.enabled = true;
           ClearURLs.enabled = true;
           CrashHandler.enabled = true;
           Dearrow.enabled = true;
@@ -38,7 +39,6 @@
           KeepCurrentChannel.enabled = true;
           MemberCount.enabled = true;
           MentionAvatars.enabled = true;
-          MessageClickActions.enabled = true;
           MessageLinkEmbeds.enabled = true;
           MessageLogger.enabled = true;
           MoreKaomoji.enabled = true;
