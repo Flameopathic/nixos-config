@@ -70,7 +70,6 @@ in
         };
         "workbench.startupEditor" = "none";
         "chat.commandCenter.enabled" = false;
-        "diffEditor.renderSideBySide" = false;
       };
       userTasks = {
         version = "2.0.0";
