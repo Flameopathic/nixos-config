@@ -36,13 +36,11 @@
       (
         { config, ... }:
         {
-          stylix.iconTheme = {
-            enable = true;
-            name = config.gtk.theme.name;
-            package = pkgs.rose-pine-icon-theme;
-          };
-          
           gtk = {
+            iconTheme = {
+              name = config.gtk.theme.name;
+              package = pkgs.rose-pine-icon-theme;
+            };
             theme = {
               name = lib.mkForce "rose-pine";
               package = lib.mkForce pkgs.rose-pine-gtk-theme;
