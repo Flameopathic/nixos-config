@@ -181,9 +181,9 @@
           };
           testy = {
             modules = [
-              ./mod/grub.nix
+              ./mod/sd-boot.nix
               ./mod/ui.nix
-              ./mod/kde.nix
+              ./mod/gnome.nix
               ./mod/nvidia.nix
               ./mod/rose-pine.nix
             ];
