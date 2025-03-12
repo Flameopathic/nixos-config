@@ -33,6 +33,7 @@ in
           jnoortheen.nix-ide
           mvllow.rose-pine
           eamodio.gitlens
+          davidanson.vscode-markdownlint
         ];
       userSettings = {
         "telemetry.telemetryLevel" = "off";
