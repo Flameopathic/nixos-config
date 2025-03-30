@@ -80,7 +80,9 @@ in
         };
         mus = {
           path = "${cfg.home}/mus";
-          devices = cfg.devices;
+          devices = cfg.devices ++ [
+            "tomato"
+          ];
           versioning = {
             type = "trashcan";
             params.cleanoutDays = "100";
