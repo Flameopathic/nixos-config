@@ -36,6 +36,7 @@
         gimp
         upscaler
         imagemagick
+        yt-dlp
       ];
 
     programs = {

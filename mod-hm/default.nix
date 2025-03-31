@@ -43,6 +43,7 @@
           ssh = "TERM=xterm ssh";
           sctl = "systemctl";
           jctl = "journalctl";
+          yt-dlm = "yt-dlp -x --audio-format mp3 --embed-subs --embed-thumbnail --embed-metadata";
         };
         history = {
           size = 50000;
