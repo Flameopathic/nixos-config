@@ -2,10 +2,12 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 {
   imports = [
+    inputs.spicetify-nix.homeManagerModules.spicetify
     ./firefox.nix
     ./vscode.nix
     ./vesktop.nix
@@ -43,6 +45,7 @@
       foot = {
         enable = true;
       };
+      spicetify.enable = true;
     };
 
     xdg.desktopEntries = {
