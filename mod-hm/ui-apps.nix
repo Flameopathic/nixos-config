@@ -26,7 +26,7 @@
         nautilus
       ]
       ++ lib.optionals (!config.flame.ui.minimal) [
-        geeqie
+        eog
         prismlauncher
         freetube
         bambu-studio
