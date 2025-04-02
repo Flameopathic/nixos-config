@@ -39,6 +39,7 @@
         upscaler
         imagemagick
         yt-dlp
+        quodlibet
       ];
 
     programs = {
