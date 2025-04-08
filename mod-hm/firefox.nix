@@ -160,6 +160,77 @@
           dearrow
           videospeed
         ];
+        search = {
+          default = "StartPage";
+          force = true;
+          engines = {
+            "StartPage" = {
+              urls = [
+                {
+                  template = "https://startpage.com/sp/search";
+                  params = [
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                    {
+                      name = "lui";
+                      value = "english";
+                    }
+                    {
+                      name = "pfre";
+                      value = "2fa6a015270de00b5fb2d150e6ee95efa7d9bc800cf5fd91dce2bc9654b5c383a748c79d2fdf53059a59216955de0be2824f524f52f88e741e676fc18d37a72928555b47bbfb09d56bbe8eab";
+                    }
+                  ];
+                }
+              ];
+
+              iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico";
+              updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = [ "@sp" ];
+            };
+
+            "Privau" = {
+              urls = [
+                {
+                  template = "https://priv.au/search";
+                  params = [
+                    {
+                      name = "q";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+
+              iconUpdateURL = "https://priv.au/favicon.ico";
+              updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = [ "@pa" ];
+            };
+
+            "Nix Packages" = {
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@np" ];
+            };
+
+          };
+        };
       };
       fallback = {
         id = 1;
