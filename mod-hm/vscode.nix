@@ -71,6 +71,7 @@ in
         "chat.commandCenter.enabled" = false;
         "diffEditor.renderSideBySide" = false;
         "explorer.confirmDelete" = false;
+        "update.showReleaseNotes" = false;
       };
       userTasks = {
         version = "2.0.0";
