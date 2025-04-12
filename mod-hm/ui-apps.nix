@@ -40,6 +40,7 @@
         imagemagick
         yt-dlp
         quodlibet
+        btop
       ];
 
     programs = {
