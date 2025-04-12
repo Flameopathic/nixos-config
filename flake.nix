@@ -2,11 +2,11 @@
   description = "my flkae <3";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs"; # ensures nixpkgs version is consistent between home manager and system
     };
     nix-darwin = {
@@ -36,7 +36,7 @@
 
     # theming
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix = {
@@ -189,7 +189,7 @@
             modules = [
               ./mod/sd-boot.nix
               ./mod/ui.nix
-              ./mod/gnome.nix
+              ./mod/hyprland.nix
               ./mod/nvidia.nix
               ./mod/rose-pine.nix
             ];

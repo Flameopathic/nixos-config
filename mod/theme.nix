@@ -21,7 +21,7 @@
       fonts = {
         monospace = {
           name = "GeistMono NF";
-          package = pkgs.nerdfonts;
+          package = pkgs.nerd-fonts.geist-mono;
         };
         sansSerif = {
           name = "Geist";
