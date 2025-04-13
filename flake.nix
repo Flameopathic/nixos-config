@@ -36,7 +36,7 @@
 
     # theming
     stylix = {
-      url = "github:danth/stylix";
+      url = "git+file:/home/flame/prg/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix = {
