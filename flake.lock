@@ -716,17 +716,17 @@
         "tinted-zed": "tinted-zed"
       },
       "locked": {
-        "lastModified": 1744270948,
-        "narHash": "sha256-+1psY8uBaDdkqV/P3G40SzulPvUcb9VHisqQnDozC0U=",
-        "owner": "danth",
-        "repo": "stylix",
-        "rev": "ce45f19e8acb43e5f02888d873d451e2f994546b",
-        "type": "github"
+        "lastModified": 1745172241,
+        "narHash": "sha256-kr58zgVq1QoMj7kxYGQ4vw+klWg90WqBXvivqWiShOg=",
+        "ref": "refs/heads/stylix/add-`mkTarget`-function",
+        "rev": "e1c6d1d1e5ab03b5e4a691477523a4e7b158eec5",
+        "revCount": 744,
+        "type": "git",
+        "url": "file:/home/flame/prg/stylix"
       },
       "original": {
-        "owner": "danth",
-        "repo": "stylix",
-        "type": "github"
+        "type": "git",
+        "url": "file:/home/flame/prg/stylix"
       }
     },
     "systems": {
