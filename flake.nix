@@ -166,7 +166,7 @@
               ./mod/mc-server.nix
               ./mod/laptop-server.nix
               ./mod/ssh-server.nix
-              ./mod/unturned.nix
+              ./mod/remote-builder.nix
               { flame.ssh-server.openFirewall = true; }
             ];
           };
