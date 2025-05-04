@@ -4,7 +4,15 @@
     environment.systemPackages = [ pkgs.where-is-my-sddm-theme ]; # themeing not working
     services.xserver.enable = true;
 
-    services.printing.enable = true;
+    # printing
+    services = {
+      printing.enable = true;
+      avahi = {
+        enable = true;
+        nssmdns4 = true;
+        openFirewall = true;
+      };
+    };
 
     security.rtkit.enable = true; # not entirely sure what this does, but the wiki said it was good
     services.pipewire = {
