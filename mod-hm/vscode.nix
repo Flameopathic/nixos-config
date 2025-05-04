@@ -69,7 +69,7 @@ in
         };
         "workbench.startupEditor" = "none";
         "chat.commandCenter.enabled" = false;
-        "diffEditor.renderSideBySide" = false;
+        "diffEditor.renderSideBySide" = true;
         "explorer.confirmDelete" = false;
         "update.showReleaseNotes" = false;
       };
