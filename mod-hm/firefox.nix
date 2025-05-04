@@ -234,6 +234,13 @@
               }
             ];
           };
+          "CUPS" = {
+            url = "http://localhost:631/";
+          };
+          syncthing = {
+            name = "syncthing";
+            url = "http://127.0.0.1:8384/";
+          };
         };
       };
       fallback = {
