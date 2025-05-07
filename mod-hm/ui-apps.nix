@@ -41,6 +41,7 @@
         yt-dlp
         quodlibet
         btop
+        unstable.trilium-next-desktop
       ];
 
     programs = {
