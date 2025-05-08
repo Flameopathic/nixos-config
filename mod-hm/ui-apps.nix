@@ -29,7 +29,7 @@
         eog
         prismlauncher
         freetube
-        bambu-studio
+        orca-slicer
         freecad-wayland
         blender
         libreoffice
