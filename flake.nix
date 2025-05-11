@@ -140,9 +140,9 @@
               ./mod/syncthing.nix
               ./mod/rose-pine.nix
             ];
-            home-modules = {
+            home-modules = [
               ./mod-hm/ui-apps.nix
-            };
+            ];
           };
           surfnix = {
             modules = [
