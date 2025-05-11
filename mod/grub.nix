@@ -6,7 +6,7 @@
       device = "nodev";
       useOSProber = true;
       efiSupport = true;
-      splashImage = "/home/flame/prg/outer-wilds-grub/background.png";
+      splashImage = ../resources/outerwildstitle.png;
       splashMode = "normal";
     };
     efi.canTouchEfiVariables = true;
