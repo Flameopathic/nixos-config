@@ -18,6 +18,7 @@ in
         "fnix2"
         "surfnix"
         "servnix"
+        "fnixaura"
       ];
     };
   };
@@ -42,6 +43,9 @@ in
         };
         "tomato" = {
           id = "YM4TQ7P-WSFH4US-VFWJ7YX-4QAOULH-QVG5H6U-7RFFBGF-2YDZ4I2-RNFSWQQ";
+        };
+        "fnixaura" = {
+          id = "W2URUFO-PPEAT7X-TNKZFP7-346OQ32-Z6L2XY7-7DJBCAK-YX33256-YOBIIA3";
         };
       };
       folders = {
