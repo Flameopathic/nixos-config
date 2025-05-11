@@ -132,6 +132,18 @@
               ./mod-hm/ui-apps.nix
             ];
           };
+          fnixaura = {
+            modules = [
+              ./mod/grub.nix
+              ./mod/ui.nix
+              ./mod/hyprland.nix
+              ./mod/syncthing.nix
+              ./mod/rose-pine.nix
+            ];
+            home-modules = {
+              ./mod-hm/ui-apps.nix
+            };
+          };
           surfnix = {
             modules = [
               ./mod/grub.nix
