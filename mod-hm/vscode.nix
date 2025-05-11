@@ -72,6 +72,7 @@ in
         "diffEditor.renderSideBySide" = true;
         "explorer.confirmDelete" = false;
         "update.showReleaseNotes" = false;
+        "git.autofetch" = true;
       };
       userTasks = {
         version = "2.0.0";
