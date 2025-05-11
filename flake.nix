@@ -195,6 +195,19 @@
             modules = [
               (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
               ./mod/ssh-server.nix
+              ./mod/kde.nix
+              ./mod/rose-pine.nix
+              ./mod/ui.nix
+            ];
+            home-modules = [
+              ./mod-hm/ui-apps.nix
+              { flame.ui.minimal = true; }
+              (
+                { pkgs, ... }:
+                {
+                  home.packages = [ pkgs.gparted ];
+                }
+              )
             ];
           };
           testy = {
