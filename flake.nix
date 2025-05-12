@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-hardware.url = "github:nixos/nixos-hardware";
+    nixos-hardware.url = "github:Flameopathic/nixos-hardware/init-Lenovo-14ILL10";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs"; # ensures nixpkgs version is consistent between home manager and system
@@ -134,7 +134,9 @@
           };
           fnixaura = {
             modules = [
+              nixos-hardware.nixosModules.lenovo-yoga-7-14ILL10
               ./mod/grub.nix
+              ./mod/mobile.nix
               ./mod/ui.nix
               ./mod/hyprland.nix
               ./mod/syncthing.nix
