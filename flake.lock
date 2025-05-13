@@ -463,16 +463,15 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1747014498,
-        "narHash": "sha256-7UW8rU4+ZVMseoZBB0zxh2osoDaL7L0vQNVTmzbw4oo=",
-        "owner": "Flameopathic",
+        "lastModified": 1747129300,
+        "narHash": "sha256-L3clA5YGeYCF47ghsI7Tcex+DnaaN/BbQ4dR2wzoiKg=",
+        "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "6815a3cb67666234835d77a5dbffaabd9e1f7b5d",
+        "rev": "e81fd167b33121269149c57806599045fd33eeed",
         "type": "github"
       },
       "original": {
-        "owner": "Flameopathic",
-        "ref": "init-Lenovo-14ILL10",
+        "owner": "NixOS",
         "repo": "nixos-hardware",
         "type": "github"
       }
