@@ -147,7 +147,7 @@
 
       #battery.critical:not(.charging) {
           background-color: #${config.stylix.base16Scheme.base08};
-          color: #${config.stylix.base16Scheme.base05};
+          color: #${config.stylix.base16Scheme.base01};
       }
 
       #tray {
