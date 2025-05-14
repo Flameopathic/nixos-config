@@ -23,6 +23,7 @@
       [
         vlc
         file-roller
+        unstable.peazip
         nautilus
       ]
       ++ lib.optionals (!config.flame.ui.minimal) [
@@ -45,9 +46,8 @@
       ];
 
     programs = {
-      foot = {
-        enable = true;
-      };
+      foot.enable = true;
+      yazi.enable = true;
       spicetify.enable = true;
     };
 
