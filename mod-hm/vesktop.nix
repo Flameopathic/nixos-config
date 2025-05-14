@@ -53,6 +53,7 @@
           ReplyTimestamp.enabled = true;
           ReverseImageSearch.enabled = true;
           ShowHiddenChannels.enabled = true;
+          ThemeAttributes.enabled = true;
           TypingIndicator.enabled = true;
           TypingTweaks.enabled = true;
           UnlockedAvatarZoom.enabled = true;

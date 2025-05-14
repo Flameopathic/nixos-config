@@ -51,6 +51,10 @@
       url = "github:rose-pine/wallpapers";
       flake = false;
     };
+    hide-elements-vesktop-theme = {
+      url = "https://gist.githubusercontent.com/Katzenwerfer/e9cc02cf5743c879cd431e3839947665/raw/398be790fc0485b8d133f0dec201f619378bb8b6/discord-cleaner.css";
+      flake = false;
+    };
   };
 
   outputs =

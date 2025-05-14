@@ -56,7 +56,8 @@
                     --font-display: ${config.stylix.fonts.sansSerif.name};
                     --font-code: ${config.stylix.fonts.monospace.name};
                 }
-              '';
+              ''
+              + builtins.readFile "${inputs.hide-elements-vesktop-theme}";
           };
 
           flame.vscode.theme = lib.mkDefault "Rosé Pine (no italics)";

@@ -371,6 +371,18 @@
         "type": "github"
       }
     },
+    "hide-elements-vesktop-theme": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-p7AHu2ByIIFuKzwogcc/MESmjh783gk6Nmy3XqCBfc0=",
+        "type": "file",
+        "url": "https://gist.githubusercontent.com/Katzenwerfer/e9cc02cf5743c879cd431e3839947665/raw/398be790fc0485b8d133f0dec201f619378bb8b6/discord-cleaner.css"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://gist.githubusercontent.com/Katzenwerfer/e9cc02cf5743c879cd431e3839947665/raw/398be790fc0485b8d133f0dec201f619378bb8b6/discord-cleaner.css"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -559,6 +571,7 @@
       "inputs": {
         "disko": "disko",
         "firefox-addons": "firefox-addons",
+        "hide-elements-vesktop-theme": "hide-elements-vesktop-theme",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "nix-darwin": "nix-darwin",
