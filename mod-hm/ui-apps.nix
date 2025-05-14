@@ -11,6 +11,7 @@
     ./firefox.nix
     ./vscode.nix
     ./vesktop.nix
+    ./trilium.nix
   ];
 
   options.flame.ui = {
@@ -42,7 +43,6 @@
         yt-dlp
         quodlibet
         btop
-        unstable.trilium-next-desktop
       ];
 
     programs = {
