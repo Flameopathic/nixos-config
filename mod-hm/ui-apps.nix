@@ -48,7 +48,10 @@
     programs = {
       foot.enable = true;
       yazi.enable = true;
-      spicetify.enable = true;
+      spicetify = {
+        enable = true;
+        spotifyPackage = pkgs.unstable.spotify;
+      };
     };
 
     xdg.desktopEntries = {
