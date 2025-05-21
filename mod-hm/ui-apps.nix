@@ -43,6 +43,7 @@
         yt-dlp
         quodlibet
         btop
+        inkscape
       ];
 
     programs = {
