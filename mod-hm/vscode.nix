@@ -25,64 +25,66 @@ in
     ];
     programs.vscode = {
       enable = true;
-      enableUpdateCheck = false;
-      enableExtensionUpdateCheck = false;
-      extensions =
-        with pkgs.vscode-extensions;
-        lib.mkForce [
-          jnoortheen.nix-ide
-          mvllow.rose-pine
-          eamodio.gitlens
-          davidanson.vscode-markdownlint
-        ];
-      userSettings = {
-        "telemetry.telemetryLevel" = "off";
-        "window.titleBarStyle" = "custom";
-        "workbench.sideBar.location" = "left";
-        "explorer.confirmDragAndDrop" = false;
-        "remoteHub.commitDirectlyWarning" = "off";
-        "git.enableSmartCommit" = true;
-        "workbench.colorTheme" = lib.mkForce cfg.theme;
-        "git.confirmSync" = false;
-        "nix.enableLanguageServer" = true;
-        "nix.formatterPath" = "nixfmt";
-        "nix.serverPath" = "nil";
-        "nix.serverSettings" = {
-          "nil" = {
-            "diagnostic" = {
-              "suppress" = [ "sema-escaping-with" ];
-            };
-            "formatting" = {
-              "command" = [ "nixfmt" ];
-            };
-            "options" = {
-              "nixos" = {
-                "expr" =
-                  "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.${osConfig.networking.hostName}.options";
+      profiles.default = {
+        enableUpdateCheck = false;
+        enableExtensionUpdateCheck = false;
+        extensions =
+          with pkgs.vscode-extensions;
+          lib.mkForce [
+            jnoortheen.nix-ide
+            mvllow.rose-pine
+            eamodio.gitlens
+            davidanson.vscode-markdownlint
+          ];
+        userSettings = {
+          "telemetry.telemetryLevel" = "off";
+          "window.titleBarStyle" = "custom";
+          "workbench.sideBar.location" = "left";
+          "explorer.confirmDragAndDrop" = false;
+          "remoteHub.commitDirectlyWarning" = "off";
+          "git.enableSmartCommit" = true;
+          "workbench.colorTheme" = lib.mkForce cfg.theme;
+          "git.confirmSync" = false;
+          "nix.enableLanguageServer" = true;
+          "nix.formatterPath" = "nixfmt";
+          "nix.serverPath" = "nil";
+          "nix.serverSettings" = {
+            "nil" = {
+              "diagnostic" = {
+                "suppress" = [ "sema-escaping-with" ];
               };
-              "home-manager" = {
-                "expr" = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.flame.options";
+              "formatting" = {
+                "command" = [ "nixfmt" ];
               };
+              "options" = {
+                "nixos" = {
+                  "expr" =
+                    "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.${osConfig.networking.hostName}.options";
+                };
+                "home-manager" = {
+                  "expr" = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.flame.options";
+                };
+              };
+              "nix"."flake"."autoArchive" = true;
             };
-            "nix"."flake"."autoArchive" = true;
           };
+          "workbench.startupEditor" = "none";
+          "chat.commandCenter.enabled" = false;
+          "diffEditor.renderSideBySide" = true;
+          "explorer.confirmDelete" = false;
+          "update.showReleaseNotes" = false;
+          "git.autofetch" = true;
         };
-        "workbench.startupEditor" = "none";
-        "chat.commandCenter.enabled" = false;
-        "diffEditor.renderSideBySide" = true;
-        "explorer.confirmDelete" = false;
-        "update.showReleaseNotes" = false;
-        "git.autofetch" = true;
-      };
-      userTasks = {
-        version = "2.0.0";
-        tasks = [
-          {
-            label = "format all nix files";
-            type = "shell";
-            command = "find . -name \"*.nix\" -exec nixpkgs-fmt {} \\;";
-          }
-        ];
+        userTasks = {
+          version = "2.0.0";
+          tasks = [
+            {
+              label = "format all nix files";
+              type = "shell";
+              command = "find . -name \"*.nix\" -exec nixpkgs-fmt {} \\;";
+            }
+          ];
+        };
       };
     };
 

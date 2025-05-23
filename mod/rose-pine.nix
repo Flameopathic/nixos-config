@@ -47,18 +47,7 @@
             };
           };
 
-          programs = {
-            vesktop.vencord.theme =
-              builtins.readFile "${inputs.rose-pine-discord-theme}/rose-pine.theme.css"
-              + ''
-                :root {
-                    --font-primary: ${config.stylix.fonts.sansSerif.name};
-                    --font-display: ${config.stylix.fonts.sansSerif.name};
-                    --font-code: ${config.stylix.fonts.monospace.name};
-                }
-              ''
-              + builtins.readFile "${inputs.hide-elements-vesktop-theme}";
-          };
+          programs.vesktop.vencord.themes.stylix = builtins.readFile "${inputs.hide-elements-vesktop-theme}";
 
           flame.vscode.theme = lib.mkDefault "Rosé Pine (no italics)";
 

@@ -1,8 +1,5 @@
 { lib, config, ... }:
 {
-  imports = [
-    ./vesktop-module-yoink.nix # can be removed once vesktop gets merged
-  ];
 
   config.programs.vesktop = lib.mkIf (!config.flame.ui.minimal) {
     enable = true;

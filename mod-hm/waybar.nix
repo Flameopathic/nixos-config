@@ -72,7 +72,7 @@
     style = ''
       * {
           /* `otf-font-awesome` is required to be installed for icons */
-          font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+          font-family: GeistMono NF;
           font-size: 13px;
       }
 

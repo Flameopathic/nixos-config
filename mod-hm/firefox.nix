@@ -154,7 +154,7 @@
           "browser.uiCustomization.state" =
             "{\"placements\":{\"widget-overflow-fixed-list\":[],\"unified-extensions-area\":[\"sponsorblocker_ajay_app-browser-action\",\"dearrow_ajay_app-browser-action\",\"_7be2ba16-0f1e-4d93-9ebc-5164397477a9_-browser-action\",\"videospeed-firefox_lelesius_eu-browser-action\"],\"nav-bar\":[\"back-button\",\"forward-button\",\"stop-reload-button\",\"customizableui-special-spring1\",\"urlbar-container\",\"customizableui-special-spring2\",\"save-to-pocket-button\",\"downloads-button\",\"fxa-toolbar-menu-button\",\"unified-extensions-button\",\"ublock0_raymondhill_net-browser-action\",\"addon_darkreader_org-browser-action\",\"simple-tab-groups_drive4ik-browser-action\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"PersonalToolbar\":[\"personal-bookmarks\"]},\"seen\":[\"developer-button\",\"addon_darkreader_org-browser-action\",\"dearrow_ajay_app-browser-action\",\"simple-tab-groups_drive4ik-browser-action\",\"sponsorblocker_ajay_app-browser-action\",\"_7be2ba16-0f1e-4d93-9ebc-5164397477a9_-browser-action\",\"ublock0_raymondhill_net-browser-action\",\"videospeed-firefox_lelesius_eu-browser-action\"],\"dirtyAreaCache\":[\"nav-bar\",\"PersonalToolbar\",\"toolbar-menubar\",\"TabsToolbar\",\"unified-extensions-area\"],\"currentVersion\":20,\"newElementCount\":2}";
         };
-        extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+        extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           ublock-origin
           darkreader
           sponsorblock
@@ -170,8 +170,7 @@
                 template = "https://startpage.com/sp/search?query={searchTerms}&lui=english&pfre=2fa6a015270de00b5fb2d150e6ee95efa7d9bc800cf5fd91dce2bc9654b5c383a748c79d2fdf53059a59216955de0be2824f524f52f88e741e676fc18d37a72928555b47bbfb09d56bbe8eab";
               };
 
-              iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico";
-              updateInterval = 24 * 60 * 60 * 1000; # every day
+              icon = "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico";
               definedAliases = [ "@s" ];
             };
 
@@ -180,8 +179,7 @@
                 template = "https://priv.au/search?q={searchTerms}";
               };
 
-              iconUpdateURL = "https://priv.au/favicon.ico";
-              updateInterval = 24 * 60 * 60 * 1000; # every day
+              icon = "https://priv.au/favicon.ico";
               definedAliases = [ "@p" ];
             };
 
@@ -208,8 +206,7 @@
                 template = "https://en.wikipedia.org/wiki/Special:Search?search={searchTerms}";
               };
 
-              iconUpdateURL = "https://wikipedia.org/favicon.ico";
-              updateInterval = 24 * 60 * 60 * 1000; # every day
+              icon = "https://wikipedia.org/favicon.ico";
               definedAliases = [ "@w" ];
             };
             "Home Manager" = {
@@ -217,30 +214,34 @@
                 template = "https://home-manager-options.extranix.com/?query={searchTerms}";
               };
 
-              iconUpdateURL = "https://home-manager-options.extranix.com/favicon.ico";
-              updateInterval = 24 * 60 * 60 * 1000; # every day
+              icon = "https://home-manager-options.extranix.com/favicon.ico";
               definedAliases = [ "@h" ];
             };
           };
         };
         bookmarks = {
-          toolbar = {
-            toolbar = true;
-            bookmarks = [
-              {
-                name = "EMAG";
-                tags = [ "school" ];
-                url = "https://waltscientific.weebly.com/ap-physics-c-emag.html";
-              }
-            ];
-          };
-          "CUPS" = {
-            url = "http://localhost:631/";
-          };
-          syncthing = {
-            name = "syncthing";
-            url = "http://127.0.0.1:8384/";
-          };
+          force = true;
+          settings = [
+            {
+              name = "toolbar";
+              toolbar = true;
+              bookmarks = [
+                {
+                  name = "EMAG";
+                  tags = [ "school" ];
+                  url = "https://waltscientific.weebly.com/ap-physics-c-emag.html";
+                }
+              ];
+            }
+            {
+              name = "CUPS";
+              url = "http://localhost:631/";
+            }
+            {
+              name = "syncthing";
+              url = "http://127.0.0.1:8384/";
+            }
+          ];
         };
       };
       fallback = {

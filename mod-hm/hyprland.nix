@@ -28,9 +28,11 @@ in
     # notification daemon
     services.mako = {
       enable = true;
-      anchor = "top-center";
-      borderRadius = 3;
-      borderSize = 3;
+      settings = {
+        anchor = "top-center";
+        border-radius = 3;
+        border-size = 3;
+      };
     };
 
     # drun

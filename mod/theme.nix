@@ -14,14 +14,14 @@
     stylix = {
       enable = true;
       cursor = {
-        package = pkgs.bibata-cursors-translucent;
+        package = pkgs.bibata-cursors;
         name = "Bibata_Ghost";
         size = 24;
       };
       fonts = {
         monospace = {
           name = "GeistMono NF";
-          package = pkgs.nerdfonts;
+          package = pkgs.nerd-fonts.geist-mono;
         };
         sansSerif = {
           name = "Geist";
@@ -42,6 +42,7 @@
         stylix.targets = {
           waybar.enable = false;
           hyprpaper.enable = lib.mkForce false;
+          firefox.profileNames = [ "default" ];
         };
         home.packages = with pkgs; [
           (writeShellApplication {
