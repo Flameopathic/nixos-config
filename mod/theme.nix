@@ -15,8 +15,8 @@
       enable = true;
       cursor = {
         package = pkgs.bibata-cursors;
-        name = "Bibata_Ghost";
-        size = 24;
+        name = "Bibata-Original-Classic";
+        size = 20;
       };
       fonts = {
         monospace = {
