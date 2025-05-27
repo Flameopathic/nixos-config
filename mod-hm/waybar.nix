@@ -27,7 +27,7 @@
           tooltip-format = "<tt>{calendar}</tt>";
           format-alt = "{:%Y-%m-%d}";
           calendar.format = {
-            today = "<span color='#${config.stylix.base16Scheme.base08}'><u>{}</u></span>";
+            today = "<span color='#${config.lib.stylix.colors.base08}'><u>{}</u></span>";
           };
         };
         cpu = {
@@ -102,10 +102,10 @@
       }
 
       #workspaces button:hover {
-          background: #${config.stylix.base16Scheme.base03};
+          background: #${config.lib.stylix.colors.base03};
           border-radius: 12px;
           background: inherit;
-          box-shadow: inset 0 -3px #${config.stylix.base16Scheme.base05};
+          box-shadow: inset 0 -3px #${config.lib.stylix.colors.base05};
       }
 
       #workspaces button.focused {
@@ -114,7 +114,7 @@
       }
 
       #workspaces button.urgent {
-          background-color: #${config.stylix.base16Scheme.base08};
+          background-color: #${config.lib.stylix.colors.base08};
       }
 
       #clock,
@@ -125,33 +125,33 @@
       #workspaces,
       #window {
         padding: 0 10px;
-        color: #${config.stylix.base16Scheme.base05};
-        background-color: #${config.stylix.base16Scheme.base02};
-        border: 3px solid #${config.stylix.base16Scheme.base03};
+        color: #${config.lib.stylix.colors.base05};
+        background-color: #${config.lib.stylix.colors.base02};
+        border: 3px solid #${config.lib.stylix.colors.base03};
         border-radius: 12px;
       }
 
 
       #clock {
-          color: #${config.stylix.base16Scheme.base0D};
+          color: #${config.lib.stylix.colors.base0D};
       }
 
       #cpu {
-          color: #${config.stylix.base16Scheme.base0C};
+          color: #${config.lib.stylix.colors.base0C};
       }
 
       #battery.charging, #battery.plugged {
           color: #ffffff;
-          background-color: #${config.stylix.base16Scheme.base0B};
+          background-color: #${config.lib.stylix.colors.base0B};
       }
 
       #battery.critical:not(.charging) {
-          background-color: #${config.stylix.base16Scheme.base08};
-          color: #${config.stylix.base16Scheme.base01};
+          background-color: #${config.lib.stylix.colors.base08};
+          color: #${config.lib.stylix.colors.base01};
       }
 
       #tray {
-          color: #${config.stylix.base16Scheme.base0B};
+          color: #${config.lib.stylix.colors.base0B};
       }
 
       #tray > .passive {
@@ -160,7 +160,7 @@
 
       #tray > .needs-attention {
           -gtk-icon-effect: highlight;
-          background-color: #${config.stylix.base16Scheme.base08};
+          background-color: #${config.lib.stylix.colors.base08};
       }
     '';
   };
