@@ -14,7 +14,7 @@
       swaylock = {
         enable = true;
         settings = {
-          image = lib.mkForce "/etc/nixos/resources/ventures_logo.png";
+          image = lib.mkForce ../resources/rose-pine/outer-wilds/ventures-logo-wide.png;
           scaling = "fill";
         };
       };
@@ -27,9 +27,9 @@
             ignore_empty_input = true;
             no_fade_in = true;
           };
-          background = {
-            path = "/etc/nixos/resources/bay.png";
-          };
+          # background = {
+          #   path = "/etc/nixos/resources/bay.png";
+          # };
 
           input-field = {
             size = "600, 100";

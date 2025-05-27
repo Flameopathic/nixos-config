@@ -18,10 +18,6 @@ in
       default = [ ", highres, auto, auto" ];
       description = "list of monitor configuration(s)";
     };
-    wallpaper = lib.mkOption {
-      default = "";
-      description = "name of image in /etc/nixos/resources";
-    };
   };
 
   config = {

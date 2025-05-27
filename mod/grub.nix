@@ -6,7 +6,7 @@
       device = "nodev";
       useOSProber = true;
       efiSupport = true;
-      splashImage = ../resources/outerwildstitle.png;
+      splashImage = ../resources/outer-wilds/title.png;
       splashMode = "normal";
     };
     efi.canTouchEfiVariables = true;
