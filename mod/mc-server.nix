@@ -105,6 +105,7 @@ in
         HAKeller = "afaa29b2-fbff-430d-9930-d891bb0fd6ed";
         Itzatli = "df1fb96a-0d80-4c82-9a7d-160bf3536945";
         whenthejava = "17d4bd16-42d9-49d4-9917-e5f75a9e0971";
+        DeepFriedNoob = "ed2fb72f-162f-4691-8b21-35ac9953c952";
       };
     };
   };
