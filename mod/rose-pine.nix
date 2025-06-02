@@ -10,7 +10,6 @@
   ];
   config = {
     stylix = {
-      polarity = lib.mkDefault "dark";
       image = lib.mkDefault ../resources/rose-pine/outer-wilds/planetary-chart.png;
       base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     };
@@ -40,11 +39,12 @@
             categories = [ "Utility" ];
           };
 
+
           specialisation.light.configuration = {
             stylix = {
               image = ../resources/rose-pine/gradient-nix.png;
               polarity = "light";
-              base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
+              base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
             };
 
             gtk.theme.name = lib.mkOverride 10 "rose-pine-dawn";
