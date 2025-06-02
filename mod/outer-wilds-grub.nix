@@ -45,47 +45,51 @@ in
     };
   };
 
-  config.boot.loader.grub.theme = lib.mkOverride 99 (
-    pkgs.runCommand "outer-wilds-grub"
-      {
-        themeTxt = ''
-          desktop-image: "background.png"
-          desktop-image-scale-method: "fitwidth"
+  config.boot.loader.grub = {
+    splashImage = lib.mkForce ../resources/outer-wilds/title-screen.png;
+    splashMode = "normal";
+    theme = lib.mkOverride 99 (
+      pkgs.runCommand "outer-wilds-grub"
+        {
+          themeTxt = ''
+            desktop-image: "background.png"
+            desktop-image-scale-method: "fitwidth"
 
-          title-text: ""
+            title-text: ""
 
-          + image {
-            file = logo.png
-            top = 10%
-            left = ${builtins.toString (round (wrtX 10))}%
-            height = 30%
-            width = ${builtins.toString (round (wrtX (30 * 669 / 298)))}%
-          }
+            + image {
+              file = logo.png
+              top = 10%
+              left = ${builtins.toString (round (wrtX 10))}%
+              height = 30%
+              width = ${builtins.toString (round (wrtX (30 * 669 / 298)))}%
+            }
 
-          + boot_menu {
-            top = 50%
-            left = ${builtins.toString (round (wrtX 10))}%
-            height = 40%
-            width = 40%
-            item_font = "ITC Serif Gothic Std Bold ${builtins.toString fontSize}"
-            item_color = "#ff7d25"
-            selected_item_color = "#ffffa0"
-            item_height = 60
-            item_padding = 0
-            item_spacing = 20
-            scrollbar = false
-          }
-        '';
-        passAsFile = [ "themeTxt" ];
-      }
-      ''
-        mkdir $out
-        cp $themeTxtPath $out/theme.txt
+            + boot_menu {
+              top = 50%
+              left = ${builtins.toString (round (wrtX 10))}%
+              height = 40%
+              width = 40%
+              item_font = "ITC Serif Gothic Std Bold ${builtins.toString fontSize}"
+              item_color = "#ff7d25"
+              selected_item_color = "#ffffa0"
+              item_height = 60
+              item_padding = 0
+              item_spacing = 20
+              scrollbar = false
+            }
+          '';
+          passAsFile = [ "themeTxt" ];
+        }
+        ''
+          mkdir $out
+          cp $themeTxtPath $out/theme.txt
 
-        cp ${../resources/outer-wilds/title-screen.png} $out/background.png
-        cp ${../resources/outer-wilds/logo.png} $out/logo.png
+          cp ${../resources/outer-wilds/title-screen.png} $out/background.png
+          cp ${../resources/outer-wilds/logo.png} $out/logo.png
 
-        cp ${mkGrubFont ../resources/outer-wilds/title-font.otf (builtins.toString fontSize)} $out/sans_serif.pf2
-      ''
-  );
+          cp ${mkGrubFont ../resources/outer-wilds/title-font.otf (builtins.toString fontSize)} $out/sans_serif.pf2
+        ''
+    );
+  };
 }
