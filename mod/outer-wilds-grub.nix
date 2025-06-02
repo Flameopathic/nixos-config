@@ -82,10 +82,10 @@ in
         mkdir $out
         cp $themeTxtPath $out/theme.txt
 
-        cp ${../resources/outerwildstitle.png} $out/background.png
-        cp ${../resources/outerwildstitlelogo.png} $out/logo.png
+        cp ${../resources/outer-wilds/title-screen.png} $out/background.png
+        cp ${../resources/outer-wilds/logo.png} $out/logo.png
 
-        cp ${mkGrubFont ../resources/outerwildstitlefont.otf (builtins.toString fontSize)} $out/sans_serif.pf2
+        cp ${mkGrubFont ../resources/outer-wilds/title-font.otf (builtins.toString fontSize)} $out/sans_serif.pf2
       ''
   );
 }
