@@ -44,6 +44,7 @@
         quodlibet
         btop
         inkscape
+        audacity
       ];
 
     programs = {
