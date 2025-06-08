@@ -1,22 +1,12 @@
 {
-  config,
   pkgs,
   inputs,
   lib,
   osConfig,
   ...
 }:
-let
-  cfg = config.flame.vscode;
-
-in
 {
   imports = [ inputs.vscode-server.homeModules.default ];
-
-  options.flame.vscode.theme = lib.mkOption {
-    default = "";
-    description = "string name of theme";
-  };
 
   config = {
     home.packages = [
@@ -43,7 +33,6 @@ in
           "explorer.confirmDragAndDrop" = false;
           "remoteHub.commitDirectlyWarning" = "off";
           "git.enableSmartCommit" = true;
-          "workbench.colorTheme" = lib.mkForce cfg.theme;
           "git.confirmSync" = false;
           "nix.enableLanguageServer" = true;
           "nix.formatterPath" = "nixfmt";

@@ -31,7 +31,7 @@
 
           programs.vesktop.vencord.themes.stylix = builtins.readFile "${inputs.hide-elements-vesktop-theme}";
 
-          flame.vscode.theme = lib.mkDefault "Rosé Pine (no italics)";
+          programs.vscode.profiles.default.userSettings."workbench.colorTheme" = lib.mkOverride 99 "Rosé Pine (no italics)";
 
           xdg.desktopEntries.theme-switch = {
             name = "Toggle theme";
@@ -49,7 +49,7 @@
 
             gtk.theme.name = lib.mkOverride 10 "rose-pine-dawn";
 
-            flame.vscode.theme = "Rosé Pine Dawn (no italics)";
+            programs.vscode.profiles.default.userSettings."workbench.colorTheme" = lib.mkOverride 10 "Rosé Pine Dawn (no italics)";
 
             programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
 
