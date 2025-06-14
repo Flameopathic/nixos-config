@@ -35,7 +35,6 @@
           "git.enableSmartCommit" = true;
           "git.confirmSync" = false;
           "nix.enableLanguageServer" = true;
-          "nix.formatterPath" = "nixfmt";
           "nix.serverPath" = "nil";
           "nix.serverSettings" = {
             "nil" = {
@@ -43,7 +42,10 @@
                 "suppress" = [ "sema-escaping-with" ];
               };
               "formatting" = {
-                "command" = [ "nixfmt" ];
+                "command" = [
+                  "nixfmt"
+                  "-w=80"
+                ];
               };
               "options" = {
                 "nixos" = {
