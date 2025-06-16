@@ -1,11 +1,5 @@
 { pkgs, ... }:
 {
-  programs = {
-    steam = {
-      enable = true;
-    };
-  };
-
   hardware.logitech.wireless.enable = true;
 
   environment.systemPackages = with pkgs; [

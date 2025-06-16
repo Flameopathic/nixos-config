@@ -124,6 +124,7 @@
               ./mod/ssh-server.nix
               ./mod/syncthing.nix
               ./mod/rose-pine.nix
+              ./mod/gaming.nix
             ];
             home-modules = [
               {
@@ -145,6 +146,7 @@
               ./mod/hyprland.nix
               ./mod/syncthing.nix
               ./mod/rose-pine.nix
+              ./mod/gaming.nix
             ];
             home-modules = [
               ./mod-hm/ui-apps.nix

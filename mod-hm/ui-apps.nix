@@ -29,7 +29,6 @@
       ]
       ++ lib.optionals (!config.flame.ui.minimal) [
         eog
-        prismlauncher
         freetube
         orca-slicer
         freecad-wayland

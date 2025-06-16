@@ -1,9 +1,5 @@
 { ... }:
 {
-  # programs = {
-  #   steam.enable = true;
-  # };
-
   services.logind = {
     powerKey = "suspend";
     powerKeyLongPress = "poweroff";
