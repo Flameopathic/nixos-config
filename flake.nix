@@ -34,6 +34,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # theming
     stylix = {
       url = "github:nix-community/stylix/release-25.05";
@@ -125,6 +130,7 @@
               ./mod/syncthing.nix
               ./mod/rose-pine.nix
               ./mod/gaming.nix
+              ./mod/mc-server.nix
             ];
             home-modules = [
               {
