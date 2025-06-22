@@ -51,7 +51,9 @@ in
       folders = {
         doc = {
           path = "${cfg.home}/doc";
-          devices = cfg.devices;
+          devices = cfg.devices ++ [
+            "tomato"
+          ];
           id = "doc";
           versioning = {
             type = "trashcan";
