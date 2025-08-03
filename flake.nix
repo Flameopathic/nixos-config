@@ -155,6 +155,7 @@
           };
           fnixaura = {
             modules = [
+              nixos-hardware.nixosModules.lenovo-yoga-7-14ILL10
               ./mod/grub.nix
               ./mod/mobile.nix
               ./mod/ui.nix
