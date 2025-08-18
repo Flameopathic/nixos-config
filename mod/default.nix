@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
 {
   config = {
     nixpkgs.config.allowUnfree = true;
@@ -6,7 +6,7 @@
     networking.networkmanager.enable = true;
     services.resolved.enable = true;
 
-    time.timeZone = "US/Eastern";
+    time.timeZone = lib.mkDefault "US/Eastern";
 
     users.users.flame = {
       isNormalUser = true;
