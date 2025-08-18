@@ -44,6 +44,7 @@
         btop
         inkscape
         audacity
+        chromium
       ];
 
     programs = {
