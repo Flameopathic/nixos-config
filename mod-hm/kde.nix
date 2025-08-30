@@ -6,6 +6,16 @@
   programs.plasma = {
     enable = true;
     overrideConfig = true;
+    hotkeys.commands = {
+      toggle-theme = {
+        command = "toggle-theme";
+        key = "Meta+T";
+      };
+      terminal = {
+        command = "foot";
+        key = "Meta+Return";
+      };
+    };
     input.touchpads = [
       {
         name = "SYNA2BA6:00 06CB:CFD8 Touchpad";
