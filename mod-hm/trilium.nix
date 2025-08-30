@@ -1,12 +1,12 @@
 { pkgs, ... }:
 {
   home.packages = [
-    pkgs.unstable.trilium-next-desktop
+    pkgs.unstable.trilium-desktop
   ];
 
   xdg.desktopEntries = {
     Trilium = {
-      name = "TriliumNext Notes";
+      name = "Trilium Notes";
 
       # sets specific trilium data directory
       exec = "env TRILIUM_DATA_DIR=/home/flame/doc/trilium-data trilium";
@@ -17,7 +17,7 @@
       ];
       type = "Application";
       settings = {
-        StartupWMClass = "Trilium Notes Next";
+        StartupWMClass = "Trilium Notes";
       };
     };
   };
