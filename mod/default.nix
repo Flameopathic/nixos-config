@@ -14,6 +14,7 @@
         "wheel"
         "input"
         "minecraft"
+        "wireshark"
       ]; # Enable ‘sudo’ for the user.
       initialHashedPassword = "$y$j9T$Vwe6OnkGTBX4BF2ka.Ihw0$L4AU5TxtOQSLAnyHwoT0wKB7S5FQTGlK9XCwFemZjU2";
     };

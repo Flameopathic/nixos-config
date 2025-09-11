@@ -22,6 +22,12 @@
       pulse.enable = true;
     };
 
+    programs.wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+      dumpcap.enable = true;
+    };
+
     hardware = {
       bluetooth.enable = true;
       spacenavd.enable = true;
