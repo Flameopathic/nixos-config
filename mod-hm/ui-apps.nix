@@ -40,7 +40,7 @@
         upscaler
         imagemagick
         yt-dlp
-        quodlibet
+        eartag
         btop
         inkscape
         audacity
