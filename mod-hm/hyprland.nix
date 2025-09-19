@@ -49,6 +49,9 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
+      plugins = [
+        pkgs.hyprlandPlugins.hyprexpo
+      ];
       settings = {
         exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
         exec = "pkill waybar; waybar & swww img ${config.stylix.image}";
@@ -74,6 +77,15 @@ in
           "stayfocused,class:(wofi)"
           "tag +game, title:(THE FINALS)"
         ]; # makes wofi stay
+
+        # plugins
+        plugin.hyprexpo = {
+          colums = 3;
+          gap_size = 5;
+          bg_col = "rgb(${config.lib.stylix.colors.base01})";
+          workspace_method = "first 1";
+          gesture_distance = 300;
+        };
 
         # appearance
         general = {
@@ -147,6 +159,7 @@ in
             "$mod, n, togglefloating,"
             "$mod, b, togglesplit,"
             "$mod, f, fullscreen, 0"
+            "$mod, SUPER_L, hyprexpo:expo, toggle"
             # "$mod SHIFT, f, fakefullscreen, 0"
 
             # gaming mode
