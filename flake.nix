@@ -158,7 +158,7 @@
               ./mod/grub.nix
               ./mod/mobile.nix
               ./mod/ui.nix
-              ./mod/kde.nix
+              ./mod/hyprland.nix
               ./mod/syncthing.nix
               ./mod/rose-pine.nix
               ./mod/gaming.nix
