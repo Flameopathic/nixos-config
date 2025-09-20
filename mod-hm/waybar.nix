@@ -100,23 +100,21 @@
           box-shadow: inset 0 -3px transparent;
           /* Avoid rounded borders under each button name */
           border: none;
-          border-radius: 0;
+          border-radius: 6px;
       }
 
       #workspaces button:hover {
-          background: #${config.lib.stylix.colors.base0A};
-          border-radius: 6px;
+          background: #${config.lib.stylix.colors.base06};
           background: inherit;
           box-shadow: inset 0 -3px #${config.lib.stylix.colors.base04};
       }
 
       #workspaces button.active {
-          background-color: #${config.lib.stylix.colors.base09};
-          border-radius: 6px;
+          background-color: #${config.lib.stylix.colors.base07};
       }
 
       #workspaces button.urgent {
-          background-color: #${config.lib.stylix.colors.base08};
+          box-shadow: inset 0 -3px #${config.lib.stylix.colors.base08};
       }
 
       #clock,
