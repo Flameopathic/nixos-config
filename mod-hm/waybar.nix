@@ -12,8 +12,10 @@
         margin-left = 4;
         margin-right = 4;
         modules-left = [
-          "hyprland/workspaces"
           "hyprland/window"
+        ];
+        modules-center = [
+          "hyprland/workspaces"
         ];
         modules-right = [
           "cpu"
@@ -102,15 +104,15 @@
       }
 
       #workspaces button:hover {
-          background: #${config.lib.stylix.colors.base03};
-          border-radius: 12px;
+          background: #${config.lib.stylix.colors.base0A};
+          border-radius: 6px;
           background: inherit;
-          box-shadow: inset 0 -3px #${config.lib.stylix.colors.base05};
+          box-shadow: inset 0 -3px #${config.lib.stylix.colors.base04};
       }
 
-      #workspaces button.focused {
-          background-color: #b4637a;
-          box-shadow: inset 0 -3px #b4637a;
+      #workspaces button.active {
+          background-color: #${config.lib.stylix.colors.base09};
+          border-radius: 6px;
       }
 
       #workspaces button.urgent {
