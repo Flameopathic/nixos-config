@@ -75,7 +75,6 @@ in
         };
         "windowrulev2" = [
           "stayfocused,class:(wofi)"
-          "tag +game, title:(THE FINALS)"
         ]; # makes wofi stay
 
         # plugins
