@@ -218,7 +218,7 @@
             modules = [
               (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
               ./mod/ssh-server.nix
-              ./mod/kde.nix
+              ./mod/hyprland.nix
               ./mod/rose-pine.nix
               ./mod/ui.nix
             ];
