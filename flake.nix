@@ -193,7 +193,10 @@
               ./mod/rpi-boot.nix
               ./mod/ssh-server.nix
               ./mod/syncthing.nix
-              { flame.syncthing.server = true; }
+              {
+                flame.syncthing.server = true;
+                flame.ssh-server.openFirewall = true;
+              }
             ];
           };
           shaktop = {
