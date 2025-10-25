@@ -159,6 +159,7 @@
               ./mod/mobile.nix
               ./mod/ui.nix
               ./mod/hyprland.nix
+              ./mod/remote-builder.nix
               ./mod/syncthing.nix
               ./mod/rose-pine.nix
               ./mod/gaming.nix
