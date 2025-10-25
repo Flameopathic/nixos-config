@@ -45,6 +45,7 @@
         inkscape
         audacity
         chromium
+        discord
       ];
 
     programs = {
