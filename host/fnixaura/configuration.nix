@@ -1,6 +1,4 @@
 {
-  time.timeZone = "US/Central";
-
   # https://codeberg.org/AndrewKvalheim/configuration/src/commit/9b0b0f90a2220c635f67123d435d239182f73406/hosts/main/system.nix#L24-L32
   systemd.services.configure-sound-leds = rec {
     wantedBy = [ "sound.target" ];

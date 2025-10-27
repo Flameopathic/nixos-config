@@ -11,7 +11,7 @@
     networking.networkmanager.enable = true;
     services.resolved.enable = true;
 
-    time.timeZone = lib.mkDefault "US/Eastern";
+    time.timeZone = lib.mkDefault "US/Central";
 
     users.users.flame = {
       isNormalUser = true;
