@@ -54,7 +54,7 @@ with lib;
             };
           };
 
-          programs.zsh.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
+          programs.zsh.shellAliases.snrbs = "sudo nixos-rebuild switch";
 
           home.packages = with pkgs; [
             (writeShellApplication {
