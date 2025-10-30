@@ -24,8 +24,7 @@
       [
         vlc
         file-roller
-        unstable.peazip
-        nautilus
+        kdePackages.dolphin
       ]
       ++ lib.optionals (!config.flame.ui.minimal) [
         eog
