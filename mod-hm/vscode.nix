@@ -25,6 +25,8 @@
             mvllow.rose-pine
             eamodio.gitlens
             davidanson.vscode-markdownlint
+            fill-labs.dependi
+            pkgs.unstable.vscode-extensions.rust-lang.rust-analyzer
           ];
         userSettings = {
           "telemetry.telemetryLevel" = "off";

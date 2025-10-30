@@ -46,6 +46,8 @@
         audacity
         chromium
         discord
+        rustup
+        gcc
       ];
 
     programs = {
