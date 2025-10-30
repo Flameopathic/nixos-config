@@ -12,6 +12,7 @@
     ./vscode.nix
     ./vesktop.nix
     ./trilium.nix
+    ./zed.nix
   ];
 
   options.flame.ui = {
