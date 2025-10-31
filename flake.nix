@@ -40,6 +40,7 @@
         home-manager.follows = "home-manager";
       };
     };
+    dolphin-overlay.url = "github:rumboon/dolphin-overlay";
 
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";

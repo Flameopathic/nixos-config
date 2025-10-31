@@ -1,4 +1,9 @@
-{ pkgs, inputs, lib, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 {
   config = {
     nixpkgs.config.allowUnfree = true;
@@ -33,6 +38,7 @@
           config.allowUnfree = true;
         };
       })
+      inputs.dolphin-overlay.overlays.default
     ];
 
     environment.systemPackages = with pkgs; [
