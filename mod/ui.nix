@@ -28,7 +28,6 @@
 
     # makes some things log in better; compatibility feature
     services.gnome.gnome-keyring.enable = true;
-    security.pam.services.greetd.enableGnomeKeyring = true;
 
     # stuff to make hyprland happier
     environment.sessionVariables = {

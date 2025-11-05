@@ -1,9 +1,5 @@
-{ ... }: {
-  services.xserver = {
-    desktopManager.gnome.enable = true;
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
-  };
+{ ... }:
+{
+  imports = [ ./gdm.nix ];
+  services.xserver.desktopManager.gnome.enable = true;
 }
