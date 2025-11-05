@@ -117,7 +117,8 @@
           "browser.contentblocking.category" = "strict";
           "privacy.partition.serviceWorkers" = true;
           "privacy.partition.always_partition_third_party_non_cookie_storage" = true;
-          "privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage" = true;
+          "privacy.partition.always_partition_third_party_non_cookie_storage.exempt_sessionstorage" =
+            true;
           "dom.disable_open_during_load" = true;
           "dom.popup_allowed_events" = "click dblclick mousedown pointerdown";
           "extensions.pocket.enabled" = false;
@@ -156,7 +157,7 @@
         };
         extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           adaptive-tab-bar-colour
-          adnauseam
+          ublock-origin
           behind-the-overlay-revival
           better-canvas
           clearurls
@@ -165,6 +166,7 @@
           indie-wiki-buddy
           sponsorblock
           videospeed
+          chameleon-ext
         ];
         search = {
           default = "StartPage";
