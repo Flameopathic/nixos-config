@@ -6,7 +6,6 @@
   ...
 }:
 {
-  imports = [ inputs.vscode-server.homeModules.default ];
 
   config = {
     home.packages = [
@@ -80,8 +79,6 @@
         };
       };
     };
-
-    services.vscode-server.enable = true;
 
     xdg.desktopEntries = {
       code = {
