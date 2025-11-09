@@ -1,18 +1,46 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.zed-editor = {
     enable = true;
-    package = pkgs.unstable.zed-editor;
+    package = pkgs.unstable.zed-editor; # necessary for signing in
     extensions = [
       "nix"
+      "rust"
     ];
     userSettings = {
-      lsp.nil.settings = {
-        formatting.command = [
-          "nixfmt"
-          "-w=80"
-        ];
-        diagnostics.suppress = [ ];
+      use_system_prompts = false;
+      lsp = {
+        nil.settings = {
+          nix = {
+            maxMemoryMB = 6120;
+            flake = {
+              autoArchive = true;
+              autoEvalInputs = true;
+            };
+          };
+          formatting.command = [
+            "nixfmt"
+            "-w=80"
+          ];
+          diagnostics.suppress = [ ];
+        };
+        rust-analyzer = {
+          binary = {
+            path = lib.getExe pkgs.unstable.rust-analyzer;
+          };
+          initialization_options = {
+            inlayHints = {
+              maxLength = 140;
+              lifetimeElisionHints = {
+                enable = "skip_trivial";
+                useParameterNames = true;
+              };
+              closureReturnTypeHints = {
+                enable = "always";
+              };
+            };
+          };
+        };
       };
       languages.Nix.language_servers = [
         "nil"
