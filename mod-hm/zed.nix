@@ -42,10 +42,13 @@
           };
         };
       };
-      languages.Nix.language_servers = [
-        "nil"
-        "!nixd"
-      ];
+      languages.Nix = {
+        tab_size = 2;
+        language_servers = [
+          "nil"
+          "!nixd"
+        ];
+      };
 
       disable_ai = true;
     };
