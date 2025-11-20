@@ -2,6 +2,11 @@
 {
   hardware.logitech.wireless.enable = true;
 
+  boot.loader.grub.dimensions = {
+    x = 4096;
+    y = 2160;
+  };
+
   environment.systemPackages = with pkgs; [
     solaar
   ];

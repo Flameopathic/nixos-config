@@ -36,12 +36,12 @@ in
     x = lib.mkOption {
       description = "x dimension of the monitor which will be used on boot";
       type = lib.types.int;
-      default = 5120;
+      default = 1920;
     };
     y = lib.mkOption {
       description = "y dimension of the monitor which will be used on boot";
       type = lib.types.int;
-      default = 1440;
+      default = 1200;
     };
   };
 
