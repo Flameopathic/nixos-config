@@ -36,14 +36,15 @@
         libreoffice
         hunspellDicts.en_US # for libreoffice
         qdirstat
-        gimp
-        upscaler
+        krita
         imagemagick
         yt-dlp
         eartag
         btop
         inkscape
         audacity
+        flowblade
+        shotcut
         chromium
         discord
         rustup
