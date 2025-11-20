@@ -193,6 +193,7 @@
                 flame.syncthing.server = true;
                 flame.ssh-server.openFirewall = true;
               }
+              ./mod/av.nix
             ];
           };
           shaktop = {
