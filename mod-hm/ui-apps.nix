@@ -24,7 +24,7 @@
       with pkgs;
       [
         vlc
-        file-roller
+        peazip
         kdePackages.dolphin
       ]
       ++ lib.optionals (!config.flame.ui.minimal) [
