@@ -29,16 +29,22 @@
             };
           };
 
-          programs.vesktop.vencord.themes.stylix = builtins.readFile "${inputs.hide-elements-vesktop-theme}";
-
-          programs.vscode.profiles.default.userSettings."workbench.colorTheme" = lib.mkOverride 99 "Rosé Pine (no italics)";
+          programs = {
+            vesktop.vencord.themes.stylix = builtins.readFile "${inputs.hide-elements-vesktop-theme
+            }";
+            vscode.profiles.default.userSettings."workbench.colorTheme" =
+              lib.mkOverride 99 "Rosé Pine (no italics)";
+            zed-editor = {
+              userSettings.theme = lib.mkOverride 99 "Rosé Pine";
+              extensions = [ "rose-pine-theme" ];
+            };
+          };
 
           xdg.desktopEntries.theme-switch = {
             name = "Toggle theme";
             exec = "toggle-theme";
             categories = [ "Utility" ];
           };
-
 
           specialisation.light.configuration = {
             stylix = {
@@ -49,9 +55,13 @@
 
             gtk.theme.name = lib.mkOverride 10 "rose-pine-dawn";
 
-            programs.vscode.profiles.default.userSettings."workbench.colorTheme" = lib.mkOverride 10 "Rosé Pine Dawn (no italics)";
+            programs = {
+              vscode.profiles.default.userSettings."workbench.colorTheme" =
+                lib.mkOverride 10 "Rosé Pine Dawn (no italics)";
+              zed-editor.userSettings.theme = lib.mkForce "Rosé Pine Dawn";
 
-            programs.bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
+              bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
+            };
 
             home.packages = with pkgs; [
               # credit: Janik-Haag
