@@ -158,7 +158,6 @@
         extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           adaptive-tab-bar-colour
           ublock-origin
-          behind-the-overlay-revival
           better-canvas
           clearurls
           darkreader
