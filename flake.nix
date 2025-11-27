@@ -78,7 +78,10 @@
               host: kind:
               nixpkgs.lib.optionalAttrs (kind == "directory") (
                 let
-                  module = import ./host/${host};
+                  module =
+                    nixpkgs.lib.optionalAttrs (builtins.pathExists ./host/${host}/default.nix)
+                      import
+                      ./host/${host};
                 in
                 if nixpkgs.lib.isFunction module then module { inherit inputs; } else module
               )
