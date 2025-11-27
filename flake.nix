@@ -9,11 +9,6 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs"; # ensures nixpkgs version is consistent between home manager and system
     };
-    nix-darwin = {
-      # declarative macOS with nix
-      url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     lanzaboote = {
       # secure boot
       url = "github:nix-community/lanzaboote/v0.3.0";
@@ -69,21 +64,23 @@
 
   outputs =
     { ... }@inputs:
-    with inputs;
+    let
+      inherit (inputs.nixpkgs) lib;
+    in
     {
       nixosConfigurations =
         let
+          optionalPath = path: lib.optional (builtins.pathExists path) path;
           detectHosts = (
-            nixpkgs.lib.mapAttrs (
+            lib.mapAttrs (
               host: kind:
-              nixpkgs.lib.optionalAttrs (kind == "directory") (
+              lib.optionalAttrs (kind == "directory") (
                 let
                   module =
-                    nixpkgs.lib.optionalAttrs (builtins.pathExists ./host/${host}/default.nix)
-                      import
+                    lib.optionalAttrs (builtins.pathExists ./host/${host}/default.nix) import
                       ./host/${host};
                 in
-                if nixpkgs.lib.isFunction module then module { inherit inputs; } else module
+                if lib.isFunction module then module { inherit inputs; } else module
               )
             ) (builtins.readDir ./host)
           );
@@ -98,20 +95,15 @@
               },
               ...
             }:
-            nixpkgs.lib.nixosSystem {
+            lib.nixosSystem {
               system = system;
               modules =
                 modules
                 ++ [
-                  (
-                    { ... }:
-                    {
-                      networking.hostName = host;
-                    }
-                  )
                   ./mod
-                  home-manager.nixosModules.home-manager
+                  inputs.home-manager.nixosModules.home-manager
                   {
+                    networking.hostName = host;
                     home-manager = {
                       useGlobalPkgs = true;
                       useUserPackages = false;
@@ -120,16 +112,13 @@
                       };
                       backupFileExtension = "hm-bkp";
                       users.flame = {
-                        imports =
-                          home-modules
-                          ++ [ ./mod-hm ]
-                          ++ nixpkgs.lib.optional (builtins.pathExists ./host/${host}/home.nix) ./host/${host}/home.nix;
+                        imports = home-modules ++ [ ./mod-hm ] ++ optionalPath ./host/${host}/home.nix;
                       };
                     };
                   }
                 ]
-                ++ nixpkgs.lib.optional (builtins.pathExists ./host/${host}/hardware-configuration.nix) ./host/${host}/hardware-configuration.nix
-                ++ nixpkgs.lib.optional (builtins.pathExists ./host/${host}/configuration.nix) ./host/${host}/configuration.nix;
+                ++ optionalPath ./host/${host}/hardware-configuration.nix
+                ++ optionalPath ./host/${host}/configuration.nix;
               specialArgs = specialArgs;
             };
         in
@@ -138,46 +127,5 @@
       # system default is "x86_64-linux"
       # modules default to ./mod and ./host/${host}/configuration.nix
       # specialArgs defaults to inheriting inputs alone
-      darwinConfigurations =
-        let
-          mkDarwin =
-            host:
-            {
-              modules ? [ ],
-              home-modules ? [ ],
-              system ? "x86_64-darwin",
-              specialArgs ? {
-                inherit inputs;
-              },
-              ...
-            }:
-            nix-darwin.lib.darwinSystem {
-              modules = modules ++ [
-                (
-                  { ... }:
-                  {
-                    networking.hostName = host;
-                    nixpkgs.hostPlatform = system;
-                  }
-                )
-                ./host/${host}/configuration.nix
-                home-manager.nixosModules.home-manager
-                {
-                  home-manager = {
-                    useGlobalPkgs = true;
-                    useUserPackages = true;
-                    extraSpecialArgs = {
-                      inherit inputs;
-                    };
-                    users.flame = {
-                      imports = home-modules ++ [ ./mod-hm ];
-                    };
-                  };
-                }
-              ];
-              specialArgs = specialArgs;
-            };
-        in
-        builtins.mapAttrs mkDarwin { bear = { }; };
     };
 }
