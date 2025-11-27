@@ -73,6 +73,17 @@
     {
       nixosConfigurations =
         let
+          detectHosts = (
+            nixpkgs.lib.mapAttrs (
+              host: kind:
+              nixpkgs.lib.optionalAttrs (kind == "directory") (
+                let
+                  module = import ./host/${host};
+                in
+                if nixpkgs.lib.isFunction module then module { inherit inputs; } else module
+              )
+            ) (builtins.readDir ./host)
+          );
           mkHost =
             host:
             {
@@ -119,135 +130,11 @@
               specialArgs = specialArgs;
             };
         in
-        builtins.mapAttrs mkHost {
-          # make configuration name same as host name to make rebuild command work automagically
-          # system default is "x86_64-linux"
-          # modules default to ./mod and ./host/${host}/configuration.nix
-          # specialArgs defaults to inheriting inputs alone
-          fnix2 = {
-            modules = [
-              ./mod/grub.nix
-              ./mod/ui.nix
-              ./mod/hyprland.nix
-              ./mod/nvidia.nix
-              ./mod/remote-builder.nix
-              ./mod/ssh-server.nix
-              ./mod/syncthing.nix
-              ./mod/rose-pine.nix
-              ./mod/gaming.nix
-              ./mod/mc-server.nix
-            ];
-            home-modules = [
-              {
-                flame.hyprland.monitor = [
-                  "Unknown-1, disabled"
-                  "DP-1, highres, 0x0, auto"
-                  "HDMI-A-1, highres, auto, 2, vrr, 1"
-                ];
-              }
-              ./mod-hm/ui-apps.nix
-            ];
-          };
-          fnixaura = {
-            modules = [
-              nixos-hardware.nixosModules.lenovo-yoga-7-14ILL10
-              ./mod/grub.nix
-              ./mod/mobile.nix
-              ./mod/ui.nix
-              ./mod/hyprland.nix
-              ./mod/remote-builder.nix
-              ./mod/syncthing.nix
-              ./mod/rose-pine.nix
-              ./mod/gaming.nix
-            ];
-            home-modules = [
-              ./mod-hm/ui-apps.nix
-            ];
-          };
-          surfnix = {
-            modules = [
-              ./mod/grub.nix
-              ./mod/ui.nix
-              ./mod/hyprland.nix
-              ./mod/surface.nix
-              ./mod/syncthing.nix
-              ./mod/rose-pine.nix
-            ];
-            home-modules = [
-              {
-                flame.hyprland.monitor = [
-                  "eDP-1, preferred, 1920x0, auto"
-                  "DP-1, preferred, 0x0, 1"
-                ];
-              }
-              ./mod-hm/ui-apps.nix
-            ];
-          };
-          servnix = {
-            system = "aarch64-linux";
-            modules = [
-              ./mod/rpi-boot.nix
-              ./mod/ssh-server.nix
-              ./mod/syncthing.nix
-              {
-                flame.syncthing.server = true;
-                flame.ssh-server.openFirewall = true;
-              }
-              ./mod/av.nix
-            ];
-          };
-          shaktop = {
-            modules = [
-              ./mod/sd-boot.nix
-              ./mod/mc-server.nix
-              ./mod/laptop-server.nix
-              ./mod/ssh-server.nix
-              ./mod/remote-builder.nix
-              { flame.ssh-server.openFirewall = true; }
-            ];
-          };
-          acervnix = {
-            modules = [
-              disko.nixosModules.disko
-              ./host/acervnix/disk-config.nix
-              ./mod/sd-boot.nix
-              ./mod/ssh-server.nix
-              ./mod/laptop-server.nix
-            ];
-          };
-          ephe = {
-            modules = [
-              (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
-              ./mod/ssh-server.nix
-              ./mod/hyprland.nix
-              ./mod/rose-pine.nix
-              ./mod/ui.nix
-            ];
-            home-modules = [
-              ./mod-hm/ui-apps.nix
-              { flame.ui.minimal = true; }
-              (
-                { pkgs, ... }:
-                {
-                  home.packages = [ pkgs.gparted ];
-                }
-              )
-            ];
-          };
-          testy = {
-            modules = [
-              ./mod/sd-boot.nix
-              ./mod/ui.nix
-              ./mod/gnome.nix
-              ./mod/nvidia.nix
-              ./mod/rose-pine.nix
-            ];
-            home-modules = [
-              ./mod-hm/ui-apps.nix
-              { flame.ui.minimal = true; }
-            ];
-          };
-        };
+        builtins.mapAttrs mkHost detectHosts;
+      # make configuration name same as host name to make rebuild command work automagically
+      # system default is "x86_64-linux"
+      # modules default to ./mod and ./host/${host}/configuration.nix
+      # specialArgs defaults to inheriting inputs alone
       darwinConfigurations =
         let
           mkDarwin =
