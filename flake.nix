@@ -31,6 +31,10 @@
       };
     };
     dolphin-overlay.url = "github:rumboon/dolphin-overlay";
+    betterfox = {
+      url = "github:HeitorAugustoLN/betterfox-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
