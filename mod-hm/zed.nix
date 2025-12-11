@@ -1,5 +1,9 @@
 { pkgs, lib, ... }:
 {
+  home.packages = [
+    pkgs.nil # language server
+    pkgs.unstable.nixfmt-rfc-style
+  ];
   programs.zed-editor = {
     enable = true;
     package = pkgs.unstable.zed-editor; # necessary for signing in
