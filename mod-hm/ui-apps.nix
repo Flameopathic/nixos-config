@@ -9,7 +9,6 @@
   imports = [
     inputs.spicetify-nix.homeManagerModules.spicetify
     ./firefox.nix
-    ./vscode.nix
     ./vesktop.nix
     ./trilium.nix
     ./zed.nix
