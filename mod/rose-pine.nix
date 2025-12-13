@@ -65,7 +65,7 @@
 
             home.packages = with pkgs; [
               # credit: Janik-Haag
-              (hiPrio (writeShellApplication {
+              (lib.hiPrio (writeShellApplication {
                 name = "toggle-theme";
                 runtimeInputs = with pkgs; [
                   home-manager

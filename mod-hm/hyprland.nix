@@ -77,6 +77,8 @@ in
         pkgs.hyprlandPlugins.hyprexpo
       ];
       settings = {
+        ecosystem.no_update_news = true;
+
         exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
         exec = "pkill waybar; waybar & swww img ${config.stylix.image}";
 
@@ -93,9 +95,6 @@ in
         device = {
           name = "logitech-mx-master-3-1";
           sensitivity = .75;
-        };
-        gestures = {
-          workspace_swipe = true;
         };
         "windowrulev2" = [
           "stayfocused,class:(tofi)"

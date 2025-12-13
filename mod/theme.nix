@@ -43,9 +43,9 @@ with lib;
         {
           stylix = {
             iconTheme = {
-              package = mkDefault pkgs.colloid-icon-theme;
-              dark = mkDefault "Colloid";
-              light = mkDefault "Colloid";
+              package = pkgs.colloid-icon-theme;
+              dark = mkForce "Colloid";
+              light = mkForce "Colloid";
             };
             targets = {
               waybar.enable = mkDefault false;

@@ -24,9 +24,11 @@
     programs = {
       git = {
         enable = true;
-        userName = "Flameopathic";
-        userEmail = "flameopathic@gmail.com";
-        extraConfig = {
+        settings = {
+          user = {
+            name = "Flameopathic";
+            email = "flameopathic@gmail.com";
+          };
           init.defaultBranch = "master";
           safe.directory = "/etc/nixos"; # make sure to chown .git to an admin
         };
