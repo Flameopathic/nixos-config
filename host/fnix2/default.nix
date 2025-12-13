@@ -16,8 +16,8 @@
         hardware.logitech.wireless.enable = true;
 
         boot.loader.grub.dimensions = {
-          x = 4096;
-          y = 2160;
+          x = 5120;
+          y = 1440;
         };
 
         environment.systemPackages = with pkgs; [
@@ -41,7 +41,7 @@
 
         flame.hyprland.monitor = [
           "Unknown-1, disabled"
-          "DP-1, highres, 0x0, auto"
+          "DP-2, 5120x1440@239.76Hz, 0x0, 1.25"
           "HDMI-A-1, highres, auto, 2, vrr, 1"
         ];
         wayland.windowManager.hyprland.settings.exec-once =
