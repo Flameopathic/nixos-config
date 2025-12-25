@@ -66,7 +66,7 @@ with lib;
                 ripgrep
               ];
               text = ''
-                "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate && hyprctl reload
+                "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate
               '';
             })
           ];

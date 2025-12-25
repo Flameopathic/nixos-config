@@ -52,6 +52,21 @@ in
       };
     };
     home.activation = {
+      hypreload =
+        lib.hm.dag.entryAfter
+          [
+            "writeBoundary"
+          ]
+          ''
+            (
+              XDG_RUNTIME_DIR=''${XDG_RUNTIME_DIR:-/run/user/$(id -u)}
+              if [[ -d "/tmp/hypr" || -d "$XDG_RUNTIME_DIR/hypr" ]]; then
+                for i in $(${pkgs.hyprland}/bin/hyprctl instances -j | jq ".[].instance" -r); do
+                ${pkgs.hyprland}/bin/hyprctl -i "$i" reload
+                done
+              fi
+            )
+          '';
       # for tofi
       # https://github.com/philj56/tofi/issues/115#issuecomment-1701748297
       regenerateTofiCache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
