@@ -54,19 +54,21 @@
 
     nix = {
       settings = {
-        auto-optimise-store = true;
         experimental-features = [
           "nix-command"
           "flakes"
         ];
         trusted-users = [ "flame" ]; # should allow for remote builds
       };
-      gc = {
-        # garbage collection
-        automatic = true;
-        dates = "monthly";
-        options = "--delete-older-than 30d";
-      };
+
+      # obsolete because of nh
+      # settings.auto-optimise-store = true;
+      # gc = {
+      #   # garbage collection
+      #   automatic = true;
+      #   dates = "monthly";
+      #   options = "--delete-older-than 30d";
+      # };
     };
   };
 }

@@ -5,6 +5,8 @@
   ...
 }:
 {
+  imports = [ ./nh.nix ];
+
   config = {
     home = {
       username = "flame";
