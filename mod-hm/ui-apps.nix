@@ -48,6 +48,7 @@
         discord
         rustup
         gcc
+        adw-bluetooth
       ];
 
     programs = {
