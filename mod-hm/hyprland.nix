@@ -95,7 +95,7 @@ in
         ecosystem.no_update_news = true;
 
         exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
-        exec = "pkill waybar; swww img ${config.stylix.image} & sleep 0.01; waybar";
+        exec = "swww img ${config.stylix.image}";
 
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;
