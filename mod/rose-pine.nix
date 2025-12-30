@@ -80,6 +80,17 @@
                 lxsudo /nix/var/nix/profiles/system/bin/switch-to-configuration switch
               '';
             }))
+            (lib.hiPrio (
+              pkgs.writeShellApplication {
+                name = "nos";
+                runtimeInputs = with pkgs; [
+                  nh
+                ];
+                text = ''
+                  nh os switch --specialisation light
+                '';
+              }
+            ))
           ];
         }
       ];
