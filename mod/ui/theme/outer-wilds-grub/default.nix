@@ -46,7 +46,7 @@ in
   };
 
   config.boot.loader.grub = {
-    splashImage = lib.mkForce ../resources/outer-wilds/title-screen.png;
+    splashImage = lib.mkForce ./resources/title-screen.png;
     splashMode = "normal";
     theme = lib.mkOverride 99 (
       pkgs.runCommand "outer-wilds-grub"
@@ -85,10 +85,10 @@ in
           mkdir $out
           cp $themeTxtPath $out/theme.txt
 
-          cp ${../resources/outer-wilds/title-screen.png} $out/background.png
-          cp ${../resources/outer-wilds/logo.png} $out/logo.png
+          cp ${./resources/title-screen.png} $out/background.png
+          cp ${./resources/logo.png} $out/logo.png
 
-          cp ${mkGrubFont ../resources/outer-wilds/title-font.otf (builtins.toString fontSize)} $out/sans_serif.pf2
+          cp ${mkGrubFont ./resources/title-font.otf (builtins.toString fontSize)} $out/sans_serif.pf2
         ''
     );
   };

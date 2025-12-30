@@ -10,7 +10,7 @@ with lib;
 {
   imports = [
     inputs.stylix.nixosModules.stylix
-    ./outer-wilds-grub.nix
+    ./outer-wilds-grub
   ];
 
   config = {

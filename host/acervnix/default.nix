@@ -1,11 +1,11 @@
 { inputs }:
 {
   modules = [
+    ../../mod/boot/sd-boot.nix
+    ../../mod/server/laptop.nix
+    ../../mod/server/ssh.nix
+    ./disk-config.nix
     inputs.disko.nixosModules.disko
-    ../../host/acervnix/disk-config.nix
-    ../../mod/sd-boot.nix
-    ../../mod/ssh-server.nix
-    ../../mod/laptop-server.nix
     {
       system.stateVersion = "24.11";
     }

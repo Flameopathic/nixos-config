@@ -1,10 +1,10 @@
 {
   modules = [
-    ../../mod/sd-boot.nix
-    ../../mod/mc-server.nix
-    ../../mod/laptop-server.nix
-    ../../mod/ssh-server.nix
-    ../../mod/remote-builder.nix
+    ../../mod/boot/sd-boot.nix
+    ../../mod/hardware/remote-builder.nix
+    ../../mod/server/laptop.nix
+    ../../mod/server/mc.nix
+    ../../mod/server/ssh.nix
     (
       { pkgs, ... }:
       {

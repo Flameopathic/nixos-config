@@ -2,14 +2,14 @@
 {
   modules = [
     inputs.nixos-hardware.nixosModules.lenovo-yoga-7-14ILL10
-    ../../mod/grub.nix
-    ../../mod/mobile.nix
-    ../../mod/ui.nix
-    ../../mod/hyprland.nix
-    ../../mod/remote-builder.nix
+    ../../mod/boot/grub
+    ../../mod/hardware/remote-builder.nix
+    ../../mod/hardware/mobile
     ../../mod/syncthing.nix
-    ../../mod/rose-pine.nix
-    ../../mod/gaming.nix
+    ../../mod/ui/theme/rose-pine
+    ../../mod/ui
+    ../../mod/ui/apps/gaming.nix
+    ../../mod/ui/env/hyprland.nix
     (
       { pkgs, ... }:
       {

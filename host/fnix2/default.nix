@@ -1,15 +1,15 @@
 {
   modules = [
-    ../../mod/grub.nix
-    ../../mod/ui.nix
-    ../../mod/hyprland.nix
-    ../../mod/nvidia.nix
-    ../../mod/remote-builder.nix
-    ../../mod/ssh-server.nix
+    ../../mod/boot/grub
+    ../../mod/hardware/nvidia.nix
+    ../../mod/hardware/remote-builder.nix
+    ../../mod/server/mc.nix
+    ../../mod/server/ssh.nix
     ../../mod/syncthing.nix
-    ../../mod/rose-pine.nix
-    ../../mod/gaming.nix
-    ../../mod/mc-server.nix
+    ../../mod/ui/theme/rose-pine
+    ../../mod/ui
+    ../../mod/ui/apps/gaming.nix
+    ../../mod/ui/env/hyprland.nix
     (
       { pkgs, ... }:
       {

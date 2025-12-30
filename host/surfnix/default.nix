@@ -1,11 +1,11 @@
 {
   modules = [
-    ../../mod/grub.nix
-    ../../mod/ui.nix
-    ../../mod/hyprland.nix
-    ../../mod/surface.nix
+    ../../mod/boot/grub
+    ../../mod/hardware/surface.nix
     ../../mod/syncthing.nix
-    ../../mod/rose-pine.nix
+    ../../mod/ui/theme/rose-pine
+    ../../mod/ui
+    ../../mod/ui/env/hyprland.nix
     (
       { ... }:
       {

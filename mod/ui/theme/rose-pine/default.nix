@@ -6,11 +6,11 @@
 }:
 {
   imports = [
-    ./theme.nix
+    ./..
   ];
   config = {
     stylix = {
-      image = lib.mkDefault ../resources/rose-pine/outer-wilds/planetary-chart.png;
+      image = lib.mkDefault ./resources/planetary-chart.png;
       base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     };
 
@@ -52,7 +52,7 @@
 
     specialisation.light.configuration = {
       stylix = {
-        image = ../resources/rose-pine/gradient-nix.png;
+        image = ./resources/gradient-nix.png;
         polarity = "light";
         base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
       };

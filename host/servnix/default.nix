@@ -1,10 +1,10 @@
 {
   system = "aarch64-linux";
   modules = [
-    ../../mod/rpi-boot.nix
-    ../../mod/ssh-server.nix
-    ../../mod/syncthing.nix
     ../../mod/av.nix
+    ../../mod/boot/rpi-boot.nix
+    ../../mod/server/ssh.nix
+    ../../mod/syncthing.nix
     {
       flame = {
         syncthing.server = true;

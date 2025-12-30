@@ -2,10 +2,10 @@
 {
   modules = [
     (inputs.nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
-    ../../mod/ssh-server.nix
-    ../../mod/hyprland.nix
-    ../../mod/rose-pine.nix
-    ../../mod/ui.nix
+    ../../mod/server/ssh.nix
+    ../../mod/ui/theme/rose-pine
+    ../../mod/ui
+    ../../mod/ui/env/hyprland.nix
     {
       networking.wireless.enable = false;
     }
