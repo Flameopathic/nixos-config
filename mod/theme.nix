@@ -61,12 +61,10 @@ with lib;
               # credit: Janik-Haag
               name = "toggle-theme";
               runtimeInputs = with pkgs; [
-                home-manager
-                coreutils
-                ripgrep
+                lxqt.lxqt-sudo
               ];
               text = ''
-                "$(home-manager generations | head -1 | rg -o '/[^ ]*')"/specialisation/light/activate
+                lxsudo /nix/var/nix/profiles/system/specialisation/light/bin/switch-to-configuration switch
               '';
             })
           ];

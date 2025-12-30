@@ -95,7 +95,7 @@ in
         ecosystem.no_update_news = true;
 
         exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
-        exec = "pkill waybar; waybar & swww img ${config.stylix.image}";
+        exec = "pkill waybar; swww img ${config.stylix.image} & sleep 0.01; waybar";
 
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;
@@ -113,6 +113,7 @@ in
         };
         "windowrulev2" = [
           "stayfocused,class:(tofi)"
+          "float,title:(LXQt sudo)"
         ]; # makes tofi stay
 
         # plugins

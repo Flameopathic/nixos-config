@@ -46,40 +46,43 @@
             categories = [ "Utility" ];
           };
 
-          specialisation.light.configuration = {
-            stylix = {
-              image = ../resources/rose-pine/gradient-nix.png;
-              polarity = "light";
-              base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
-            };
-
-            gtk.theme.name = lib.mkOverride 10 "rose-pine-dawn";
-
-            programs = {
-              vscode.profiles.default.userSettings."workbench.colorTheme" =
-                lib.mkOverride 10 "Rosé Pine Dawn (no italics)";
-              zed-editor.userSettings.theme = lib.mkForce "Rosé Pine Dawn";
-
-              bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
-            };
-
-            home.packages = with pkgs; [
-              # credit: Janik-Haag
-              (lib.hiPrio (writeShellApplication {
-                name = "toggle-theme";
-                runtimeInputs = with pkgs; [
-                  home-manager
-                  coreutils
-                  ripgrep
-                ];
-                text = ''
-                  "$(home-manager generations | head -2 | tail -1 | rg -o '/[^ ]*')"/activate && hyprctl reload
-                '';
-              }))
-            ];
-          };
         }
       )
     ];
+
+    specialisation.light.configuration = {
+      stylix = {
+        image = ../resources/rose-pine/gradient-nix.png;
+        polarity = "light";
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-dawn.yaml";
+      };
+
+      home-manager.sharedModules = [
+        {
+          gtk.theme.name = lib.mkOverride 10 "rose-pine-dawn";
+
+          programs = {
+            vscode.profiles.default.userSettings."workbench.colorTheme" =
+              lib.mkOverride 10 "Rosé Pine Dawn (no italics)";
+            zed-editor.userSettings.theme = lib.mkForce "Rosé Pine Dawn";
+
+            bash.shellAliases.snrbs = "sudo nixos-rebuild switch && toggle-theme";
+          };
+
+          home.packages = with pkgs; [
+            # credit: Janik-Haag
+            (lib.hiPrio (writeShellApplication {
+              name = "toggle-theme";
+              runtimeInputs = with pkgs; [
+                lxqt.lxqt-sudo
+              ];
+              text = ''
+                lxsudo /nix/var/nix/profiles/system/bin/switch-to-configuration switch
+              '';
+            }))
+          ];
+        }
+      ];
+    };
   };
 }
