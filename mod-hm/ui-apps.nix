@@ -60,17 +60,30 @@
       };
     };
 
-    xdg.desktopEntries = {
-      shutdown = {
-        name = "Shutdown now";
-        exec = "shutdown now";
-        comment = "Shutdown computer immediately";
-        categories = [ "Utility" ];
+    xdg = {
+      desktopEntries = {
+        shutdown = {
+          name = "Shutdown now";
+          exec = "shutdown now";
+          comment = "Shutdown computer immediately";
+          categories = [ "Utility" ];
+        };
+        reboot = {
+          name = "Reboot";
+          exec = "reboot";
+          categories = [ "Utility" ];
+        };
       };
-      reboot = {
-        name = "Reboot";
-        exec = "reboot";
-        categories = [ "Utility" ];
+      mimeApps = {
+        enable = true;
+        defaultApplications = {
+          # browser
+          "text/html" = "firefox.desktop";
+          "x-scheme-handler/http" = "firefox.desktop";
+          "x-scheme-handler/https" = "firefox.desktop";
+          "x-scheme-handler/about" = "firefox.desktop";
+          "x-scheme-handler/unknown" = "firefox.desktop";
+        };
       };
     };
   };
