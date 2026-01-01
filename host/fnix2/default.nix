@@ -41,7 +41,7 @@
 
         flame.hyprland.monitor = [
           "Unknown-1, disabled"
-          "DP-2, 5120x1440@239.76Hz, 0x0, 1.25"
+          "DP-2, 5120x1440@239.76Hz, 0x0, 1.25, vrr, 1"
           "HDMI-A-1, highres, auto, 2, vrr, 1"
         ];
         wayland.windowManager.hyprland.settings.exec-once =
