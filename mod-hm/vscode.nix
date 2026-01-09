@@ -10,7 +10,7 @@
   config = {
     home.packages = [
       pkgs.nil # language server
-      pkgs.unstable.nixfmt-rfc-style
+      pkgs.unstable.nixfmt
     ];
     programs.vscode = {
       enable = true;

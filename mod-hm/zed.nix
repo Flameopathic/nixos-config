@@ -2,7 +2,7 @@
 {
   home.packages = [
     pkgs.nil # language server
-    pkgs.unstable.nixfmt-rfc-style
+    pkgs.unstable.nixfmt
   ];
   programs.zed-editor = {
     enable = true;
