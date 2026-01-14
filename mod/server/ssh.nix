@@ -7,9 +7,7 @@ in
     openFirewall = lib.mkEnableOption "open firewall ports for remote ssh connection";
     pubKeys = lib.mkOption {
       default = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC38crYgufmRowdoWdCfMZxF0uwl2xcFuNLjnN8tspUP flame"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILc5oDe4Uk3ZgEIENiQL7gZIv1FLFh37iPs9zxrrizfP flame"
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINEGcYKPs7832AsYLoFTiG/T9GofZCR2Ry/JhcYA6QVJ flame"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBIw9lGau1jJof3vKpQ66e/v/eThjxuKclcEaqvi+gun flame"
       ];
     };
