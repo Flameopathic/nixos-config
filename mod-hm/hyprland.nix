@@ -113,6 +113,7 @@ in
         };
         "windowrulev2" = [
           "stayfocused,class:(tofi)"
+          "stayfocused,title:(LXQt sudo)"
           "float,title:(LXQt sudo)"
         ]; # makes tofi stay
 
