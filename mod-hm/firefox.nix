@@ -38,6 +38,7 @@
             sponsorblock
             videospeed
             chameleon-ext
+            zybooks-auto
           ];
         search = {
           default = "StartPage";
