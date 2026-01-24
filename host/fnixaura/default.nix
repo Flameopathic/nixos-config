@@ -21,8 +21,8 @@
     ../../mod-hm/ui-apps.nix
     {
       flame.hyprland.monitor = [
-        "eDP-1, preferred, 1920x0, 1.25"
-        "DP-1, preferred, 0x0, 1"
+        "eDP-1, preferred, 192x0, 1.25"
+        "DP-1, preferred, 0x960, 1"
       ];
       home.stateVersion = "24.11";
     }
