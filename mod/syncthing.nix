@@ -43,6 +43,9 @@ in
         "fnixaura" = {
           id = "W2URUFO-PPEAT7X-TNKZFP7-346OQ32-Z6L2XY7-7DJBCAK-YX33256-YOBIIA3";
         };
+        # "bees" = {
+        #   id = "WD7MIZZ-JSMHW6L-4YKWQU6-N4TB4DL-Q6OYXMA-QXVZJKN-Z7C3P23-6G7XTQA";
+        # };
       };
       folders = {
         doc = {
@@ -98,6 +101,12 @@ in
             params.cleanoutDays = "14";
           };
         };
+
+        # # beeshare
+        # hxgmp-nvgqw = {
+        #   path = "${cfg.home}/bees";
+        #   devices = cfg.devices ++ [ "bees" ];
+        # };
       };
       options = {
         urAccepted = -1;
