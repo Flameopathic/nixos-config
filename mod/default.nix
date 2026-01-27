@@ -32,12 +32,25 @@
     environment.pathsToLink = [ "/share/zsh" ];
 
     nixpkgs.overlays = [
+      # unstable
       (final: prev: {
         unstable = import inputs.nixpkgs-unstable {
           system = pkgs.stdenv.hostPlatform.system;
           config.allowUnfree = true;
         };
       })
+
+      # lix
+      (final: prev: {
+        inherit (prev.lixPackageSets.stable)
+          nixpkgs-review
+          nix-eval-jobs
+          nix-fast-build
+          colmena
+          ;
+      })
+
+      # dolphin fixes
       inputs.dolphin-overlay.overlays.default
     ];
 
@@ -53,6 +66,7 @@
     };
 
     nix = {
+      package = pkgs.lixPackageSets.stable.lix;
       settings = {
         experimental-features = [
           "nix-command"
