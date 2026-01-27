@@ -12,7 +12,7 @@
       "rust"
     ];
     userSettings = {
-      use_system_prompts = false;
+      use_system_path_prompts = false;
       lsp = {
         nil.settings = {
           nix = {
