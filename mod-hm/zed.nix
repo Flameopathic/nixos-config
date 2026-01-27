@@ -1,5 +1,6 @@
 { pkgs, lib, ... }:
 {
+  imports = [ ./python.nix ];
   home.packages = [
     pkgs.nil # language server
     pkgs.unstable.nixfmt
