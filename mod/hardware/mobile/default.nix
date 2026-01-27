@@ -1,6 +1,6 @@
 {
   imports = [
-    ./battery.nix
+    # ./battery.nix
     ./suspend-then-hibernate.nix
   ];
   config = {
