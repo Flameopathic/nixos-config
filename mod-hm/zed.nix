@@ -1,9 +1,10 @@
 { pkgs, lib, ... }:
 {
-  imports = [ ./python.nix ];
   home.packages = [
-    pkgs.nil # language server
+    pkgs.nil # python language server
     pkgs.unstable.nixfmt
+
+    pkgs.ruff # python language server
   ];
   programs.zed-editor = {
     enable = true;
