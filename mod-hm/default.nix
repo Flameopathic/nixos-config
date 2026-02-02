@@ -58,6 +58,7 @@
           prompt.theme = "paradox";
         };
       };
+      btop.enable = true;
     };
 
     xdg.userDirs = {

@@ -39,7 +39,6 @@
         imagemagick
         yt-dlp
         eartag
-        btop
         inkscape
         audacity
         flowblade
