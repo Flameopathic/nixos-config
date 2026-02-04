@@ -12,6 +12,7 @@
     extensions = [
       "nix"
       "rust"
+      "live-server"
     ];
     userSettings = {
       use_system_path_prompts = false;
