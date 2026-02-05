@@ -9,7 +9,7 @@
     ../../mod/ui/theme/rose-pine
     ../../mod/ui
     ../../mod/ui/apps/gaming.nix
-    ../../mod/ui/env/hyprland
+    ../../mod/ui/env/hyprland.nix
     (
       { pkgs, ... }:
       {

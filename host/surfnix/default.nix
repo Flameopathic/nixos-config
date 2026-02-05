@@ -5,7 +5,7 @@
     ../../mod/syncthing.nix
     ../../mod/ui/theme/rose-pine
     ../../mod/ui
-    ../../mod/ui/env/hyprland
+    ../../mod/ui/env/hyprland.nix
     (
       { ... }:
       {

@@ -8,7 +8,10 @@ let
   cfg = config.flame.hyprland;
 in
 {
-  imports = [ ./hypridle-hm.nix ];
+  imports = [
+    ./waybar.nix
+    ./hypridle.nix
+  ];
 
   options.flame.hyprland = {
     monitor = lib.mkOption {
@@ -18,6 +21,16 @@ in
   };
 
   config = {
+    # notification daemon
+    services.mako = {
+      enable = true;
+      settings = {
+        anchor = "top-center";
+        border-radius = 3;
+        border-size = 3;
+      };
+    };
+
     # drun
     programs.tofi = {
       enable = true;
@@ -78,7 +91,8 @@ in
       settings = {
         ecosystem.no_update_news = true;
 
-        exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray & hyprpanel";
+        exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
+        exec = "swww img ${config.stylix.image}";
 
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;

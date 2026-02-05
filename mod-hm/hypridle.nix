@@ -14,7 +14,7 @@
       swaylock = {
         enable = true;
         settings = {
-          image = lib.mkForce ../../theme/rose-pine/resources/ventures-logo-wide.png;
+          image = lib.mkForce ../mod/ui/theme/rose-pine/resources/ventures-logo-wide.png;
           scaling = "fill";
         };
       };
