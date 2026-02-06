@@ -46,7 +46,7 @@
           engines = {
             "StartPage" = {
               urls = lib.singleton {
-                template = "https://startpage.com/sp/search?query={searchTerms}&lui=english&pfre=2fa6a015270de00b5fb2d150e6ee95efa7d9bc800cf5fd91dce2bc9654b5c383a748c79d2fdf53059a59216955de0be2824f524f52f88e741e676fc18d37a72928555b47bbfb09d56bbe8eab";
+                template = "https://www.startpage.com/sp/search?query={searchTerms}&abp=1&abe=1&t=device&lui=english&sc=9U7yOJI1JTpD10&cat=web&abd=1&abe=1&prfe=023d551d26228e018885ffa63615e6febfc9e2c5d8505b4a5f0240951f237a5f076f7f1377e514d6af20992915444bff21494004468200cf5794216ebf6c8c0627c5cfd21b8c1e96f8da4e09a1d0520d";
               };
 
               icon = "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico";
