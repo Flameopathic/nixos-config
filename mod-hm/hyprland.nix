@@ -11,6 +11,7 @@ in
   imports = [
     ./waybar.nix
     ./hypridle.nix
+    ./swaync.nix
   ];
 
   options.flame.hyprland = {
@@ -22,14 +23,14 @@ in
 
   config = {
     # notification daemon
-    services.mako = {
-      enable = true;
-      settings = {
-        anchor = "top-center";
-        border-radius = 3;
-        border-size = 3;
-      };
-    };
+    # services.mako = {
+    #   enable = true;
+    #   settings = {
+    #     anchor = "top-center";
+    #     border-radius = 3;
+    #     border-size = 3;
+    #   };
+    # };
 
     # drun
     programs.tofi = {

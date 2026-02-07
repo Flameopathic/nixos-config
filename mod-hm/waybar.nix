@@ -29,6 +29,7 @@
           "battery"
           "clock"
           "tray"
+          "custom/notification"
         ];
         tray.spacing = 10;
         clock = {
@@ -73,6 +74,26 @@
             ""
             ""
           ];
+        };
+        "custom/notification" = {
+          "tooltip" = false;
+          "format" = "{icon}<span><sup>{0}</sup></span>";
+          "format-icons" = {
+            "notification" = "󱅫";
+            "none" = "󰂚";
+            "dnd-notification" = "󰂛";
+            "dnd-none" = "󰂛";
+            "inhibited-notification" = "󱅫";
+            "inhibited-none" = "󰂚";
+            "dnd-inhibited-notification" = "󰂛";
+            "dnd-inhibited-none" = "󰂛";
+          };
+          "return-type" = "json";
+          "exec-if" = "which swaync-client";
+          "exec" = "swaync-client -swb";
+          "on-click" = "swaync-client -t -sw";
+          "on-click-right" = "swaync-client -d -sw";
+          "escape" = true;
         };
       };
     };
@@ -129,6 +150,7 @@
       #backlight,
       #tray,
       #workspaces,
+      #custom-notification,
       #window {
         padding: 0 10px;
         color: #${config.lib.stylix.colors.base05};
