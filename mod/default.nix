@@ -5,6 +5,7 @@
   ...
 }:
 {
+  imports = [ inputs.nix-index-database.nixosModules.default ];
   config = {
     nixpkgs.config.allowUnfree = true;
 
@@ -30,6 +31,7 @@
     };
     users.defaultUserShell = pkgs.zsh;
     environment.pathsToLink = [ "/share/zsh" ];
+    programs.nix-index-database.comma.enable = true;
 
     nixpkgs.overlays = [
       # unstable
