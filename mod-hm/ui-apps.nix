@@ -28,9 +28,7 @@
       ]
       ++ lib.optionals (!config.flame.ui.minimal) [
         eog
-        freetube
         orca-slicer
-        freecad-wayland
         blender
         libreoffice
         hunspellDicts.en_US # for libreoffice
@@ -38,12 +36,8 @@
         krita
         imagemagick
         yt-dlp
-        eartag
         inkscape
         audacity
-        flowblade
-        shotcut
-        chromium
         discord
         rustup
         gcc
