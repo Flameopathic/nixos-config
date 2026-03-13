@@ -42,6 +42,7 @@
         rustup
         gcc
         adw-bluetooth
+        typora
       ];
 
     programs = {
