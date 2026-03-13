@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  inputs,
+  ...
+}:
 {
 
   config.programs.vesktop = lib.mkIf (!config.flame.ui.minimal) {
@@ -12,7 +17,9 @@
     };
 
     vencord = {
+      themes.disblock-origin = builtins.readFile "${inputs.disblock-origin}";
       settings = {
+        enabledThemes = [ "disblock-origin.css" ];
         autoUpdate = true;
         autoUpdateNotification = true;
         useQuickCss = true;

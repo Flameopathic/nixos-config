@@ -30,8 +30,6 @@
           };
 
           programs = {
-            vesktop.vencord.themes.stylix = builtins.readFile "${inputs.hide-elements-vesktop-theme
-            }";
             vscode.profiles.default.userSettings."workbench.colorTheme" =
               lib.mkOverride 99 "Rosé Pine (no italics)";
             zed-editor = {

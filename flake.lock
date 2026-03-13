@@ -124,6 +124,18 @@
         "type": "github"
       }
     },
+    "disblock-origin": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-aZL9QR/fQvtWUHt7rv7ZuoMF8wW8PohqWmIeU9hxLrg=",
+        "type": "file",
+        "url": "https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -368,18 +380,6 @@
         "ref": "gnome-49",
         "repo": "gnome-shell",
         "type": "gitlab"
-      }
-    },
-    "hide-elements-vesktop-theme": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-p7AHu2ByIIFuKzwogcc/MESmjh783gk6Nmy3XqCBfc0=",
-        "type": "file",
-        "url": "https://gist.githubusercontent.com/Katzenwerfer/e9cc02cf5743c879cd431e3839947665/raw/398be790fc0485b8d133f0dec201f619378bb8b6/discord-cleaner.css"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://gist.githubusercontent.com/Katzenwerfer/e9cc02cf5743c879cd431e3839947665/raw/398be790fc0485b8d133f0dec201f619378bb8b6/discord-cleaner.css"
       }
     },
     "home-manager": {
@@ -627,10 +627,10 @@
     "root": {
       "inputs": {
         "betterfox": "betterfox",
+        "disblock-origin": "disblock-origin",
         "disko": "disko",
         "dolphin-overlay": "dolphin-overlay",
         "firefox-addons": "firefox-addons",
-        "hide-elements-vesktop-theme": "hide-elements-vesktop-theme",
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "nix-minecraft": "nix-minecraft",
