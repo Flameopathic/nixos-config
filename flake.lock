@@ -127,7 +127,7 @@
     "disblock-origin": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-v+veUBB+QPJkX3MlUTYbM+UVjSo0QtYPvi98dKW4xFk=",
+        "narHash": "sha256-6x+4mEjhbRaIrWFnv7qvFZuTiQDCXH7qnzxHlw9vTPQ=",
         "type": "file",
         "url": "https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css"
       },
