@@ -31,7 +31,6 @@
           with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
             adaptive-tab-bar-colour
             ublock-origin
-            better-canvas
             clearurls
             darkreader
             dearrow
