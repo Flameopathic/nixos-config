@@ -112,10 +112,14 @@ in
         "windowrulev2" = [
           # no window may maximize itself
           "suppressevent maximize, class:.*"
+
+          # ensures tofi is not lost
           "stayfocused,class:(tofi)"
+
+          # makes LXQt sudo act like wofi
           "stayfocused,title:(LXQt sudo)"
           "float,title:(LXQt sudo)"
-        ]; # makes tofi stay
+        ];
 
         # appearance
         general = {
