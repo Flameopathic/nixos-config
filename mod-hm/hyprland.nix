@@ -110,6 +110,8 @@ in
           sensitivity = .75;
         };
         "windowrulev2" = [
+          # no window may maximize itself
+          "suppressevent maximize, class:.*"
           "stayfocused,class:(tofi)"
           "stayfocused,title:(LXQt sudo)"
           "float,title:(LXQt sudo)"
