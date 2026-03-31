@@ -43,6 +43,7 @@
         gcc
         adw-bluetooth
         typora
+        freecad-wayland
       ];
 
     programs = {
