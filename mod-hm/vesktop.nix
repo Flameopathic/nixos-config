@@ -17,7 +17,7 @@
     };
 
     vencord = {
-      themes.disblock-origin = builtins.readFile "${inputs.disblock-origin}";
+      themes.disblock-origin = builtins.readFile "${inputs.disblock-origin}/DisblockOrigin.theme.css";
       settings = {
         enabledThemes = [ "disblock-origin.css" ];
         autoUpdate = true;

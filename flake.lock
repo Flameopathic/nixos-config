@@ -127,13 +127,17 @@
     "disblock-origin": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-fVZVzGK3/V2l1as6Pas3oAJM5OwfMTO9/9MNXihlloM=",
-        "type": "file",
-        "url": "https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css"
+        "lastModified": 1775733374,
+        "narHash": "sha256-WX9lZM9JNTn8nWg3+gWca7p5vzQLajFsOOrLzXwzb78=",
+        "ref": "refs/heads/master",
+        "rev": "475988ebbc97125f16df8709fab6f5371b0d06a7",
+        "revCount": 239,
+        "type": "git",
+        "url": "https://codeberg.org/AllPurposeMat/Disblock-Origin.git"
       },
       "original": {
-        "type": "file",
-        "url": "https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css"
+        "type": "git",
+        "url": "https://codeberg.org/AllPurposeMat/Disblock-Origin.git"
       }
     },
     "disko": {

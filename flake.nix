@@ -65,7 +65,7 @@
       flake = false;
     };
     disblock-origin = {
-      url = "https://codeberg.org/AllPurposeMat/Disblock-Origin/raw/branch/master/DisblockOrigin.theme.css";
+      url = "git+https://codeberg.org/AllPurposeMat/Disblock-Origin.git";
       flake = false;
     };
   };
