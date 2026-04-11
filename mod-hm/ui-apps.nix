@@ -42,7 +42,7 @@
         rustup
         gcc
         adw-bluetooth
-        typora
+        obsidian
         freecad-wayland
         wootility
       ];
