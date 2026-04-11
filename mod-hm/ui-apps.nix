@@ -44,6 +44,7 @@
         adw-bluetooth
         typora
         freecad-wayland
+        wootility
       ];
 
     programs = {
@@ -72,6 +73,8 @@
       mimeApps = {
         enable = true;
         defaultApplications = {
+          "text/plain" = "zed.desktop";
+
           # browser
           "text/html" = "firefox.desktop";
           "x-scheme-handler/http" = "firefox.desktop";

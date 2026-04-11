@@ -24,6 +24,7 @@
     hardware = {
       bluetooth.enable = true;
       spacenavd.enable = true;
+      wooting.enable = true;
     };
 
     # makes some things log in better; compatibility feature
