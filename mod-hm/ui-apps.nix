@@ -46,6 +46,7 @@
         freecad-wayland
         wootility
         thunderbird
+        kdePackages.kdenlive
       ];
 
     programs = {
