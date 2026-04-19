@@ -45,6 +45,7 @@
         obsidian
         freecad-wayland
         wootility
+        thunderbird
       ];
 
     programs = {
