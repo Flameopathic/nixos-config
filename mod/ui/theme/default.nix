@@ -18,9 +18,9 @@ with lib;
       enable = mkDefault true;
       polarity = mkDefault "dark";
       cursor = {
-        package = mkDefault pkgs.bibata-cursors;
-        name = mkDefault "Bibata-Original-Classic";
-        size = mkDefault 20;
+        package = mkDefault pkgs.posy-cursors;
+        name = mkDefault "Posy_Cursor_Black";
+        size = mkDefault 32;
       };
       fonts = {
         monospace = {
