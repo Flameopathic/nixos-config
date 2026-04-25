@@ -47,15 +47,16 @@
         wootility
         thunderbird
         kdePackages.kdenlive
+        spotify
       ];
 
     programs = {
       foot.enable = true;
       yazi.enable = true;
-      spicetify = {
-        enable = true;
-        spotifyPackage = pkgs.unstable.spotify;
-      };
+      # spicetify = {
+      #   enable = true;
+      #   spotifyPackage = pkgs.unstable.spotify;
+      # };
     };
 
     xdg = {
