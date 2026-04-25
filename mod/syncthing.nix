@@ -43,9 +43,9 @@ in
         "fnixaura" = {
           id = "W2URUFO-PPEAT7X-TNKZFP7-346OQ32-Z6L2XY7-7DJBCAK-YX33256-YOBIIA3";
         };
-        # "bees" = {
-        #   id = "WD7MIZZ-JSMHW6L-4YKWQU6-N4TB4DL-Q6OYXMA-QXVZJKN-Z7C3P23-6G7XTQA";
-        # };
+        "aragorn" = {
+          id = "WD7MIZZ-JSMHW6L-4YKWQU6-N4TB4DL-Q6OYXMA-QXVZJKN-Z7C3P23-6G7XTQA";
+        };
       };
       folders = {
         doc = {
@@ -102,11 +102,13 @@ in
           };
         };
 
-        # # beeshare
-        # hxgmp-nvgqw = {
-        #   path = "${cfg.home}/bees";
-        #   devices = cfg.devices ++ [ "bees" ];
-        # };
+        # beeshare
+        hxgmp-nvgqw = {
+          enable = false;
+          label = "aragorn";
+          path = "${cfg.home}/aragorn";
+          devices = cfg.devices ++ [ "aragorn" ];
+        };
       };
       options = {
         urAccepted = -1;
