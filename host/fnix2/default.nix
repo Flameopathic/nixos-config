@@ -44,8 +44,6 @@
           "DP-2, 5120x1440@239.76Hz, 0x0, 1.25, vrr, 1"
           "HDMI-A-1, highres, auto, 2, vrr, 1"
         ];
-        wayland.windowManager.hyprland.settings.exec-once =
-          lib.mkForce "swaylock & swww-daemon & mako & nm-applet & pasystray & spotify";
 
         home.stateVersion = "23.11"; # home manager can be updated without changing this - read documentation
       }
