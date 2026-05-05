@@ -3,6 +3,7 @@
   modules = [
     (inputs.nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
     ../../mod/server/ssh.nix
+    ../../mod/hardware/nvidia.nix
     ../../mod/ui/theme/rose-pine
     ../../mod/ui
     ../../mod/ui/env/hyprland.nix
