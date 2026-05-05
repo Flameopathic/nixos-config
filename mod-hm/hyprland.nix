@@ -109,7 +109,7 @@ in
           name = "logitech-mx-master-3-1";
           sensitivity = .75;
         };
-        "windowrulev2" = [
+        windowrule = [
           # no window may maximize itself
           "suppressevent maximize, class:.*"
 
