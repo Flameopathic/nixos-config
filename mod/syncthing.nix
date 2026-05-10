@@ -100,6 +100,9 @@ in
             type = "trashcan";
             params.cleanoutDays = "14";
           };
+          ignorePatterns = [
+            "lost+found"
+          ];
         };
 
         # beeshare

@@ -35,6 +35,11 @@
     fsType = "vfat";
   };
 
+  fileSystems."/home/flame/arc" = {
+    device = "/dev/disk/by-label/secondary";
+    fsType = "ext4";
+  };
+
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
