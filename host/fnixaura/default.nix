@@ -9,7 +9,7 @@
     ../../mod/ui/theme/rose-pine
     ../../mod/ui
     ../../mod/ui/apps/gaming.nix
-    ../../mod/ui/env/hyprland.nix
+    ../../mod/ui/env/kde.nix
     (
       { pkgs, ... }:
       {
@@ -30,10 +30,10 @@
   home-modules = [
     ../../mod-hm/ui-apps.nix
     {
-      flame.hyprland.monitor = [
-        "eDP-1, preferred, 192x0, 1.25"
-        "DP-1, preferred, 0x960, 1"
-      ];
+      # flame.hyprland.monitor = [
+      #   "eDP-1, preferred, 192x0, 1.25"
+      #   "DP-1, preferred, 0x960, 1"
+      # ];
       home.stateVersion = "24.11";
     }
   ];

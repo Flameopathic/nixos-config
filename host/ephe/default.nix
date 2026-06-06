@@ -6,10 +6,7 @@
     ../../mod/hardware/nvidia.nix
     ../../mod/ui/theme/rose-pine
     ../../mod/ui
-    ../../mod/ui/env/hyprland.nix
-    {
-      networking.wireless.enable = false;
-    }
+    ../../mod/ui/env/kde.nix
   ];
   home-modules = [
     ../../mod-hm/ui-apps.nix

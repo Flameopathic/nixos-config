@@ -1,4 +1,4 @@
 { ... }:
 {
-  services.logind.lidSwitch = "ignore";
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
 }

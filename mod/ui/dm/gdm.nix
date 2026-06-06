@@ -1,7 +1,4 @@
 {
-  services.xserver.displayManager.gdm = {
-    enable = true;
-    wayland = true;
-  };
+  services.displayManager.gdm.enable = true;
   security.pam.services.gdm.enableGnomeKeyring = true;
 }

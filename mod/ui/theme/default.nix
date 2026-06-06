@@ -42,7 +42,7 @@ with lib;
         { config, ... }:
         {
           stylix = {
-            iconTheme = {
+            icons = {
               package = pkgs.colloid-icon-theme;
               dark = mkForce "Colloid";
               light = mkForce "Colloid";

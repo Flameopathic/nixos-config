@@ -9,7 +9,7 @@
     ../../mod/ui/theme/rose-pine
     ../../mod/ui
     ../../mod/ui/apps/gaming.nix
-    ../../mod/ui/env/hyprland.nix
+    ../../mod/ui/env/kde.nix
     (
       { pkgs, ... }:
       {
@@ -39,11 +39,11 @@
           GDK_SCALE = 2;
         };
 
-        flame.hyprland.monitor = [
-          "Unknown-1, disabled"
-          "DP-2, 5120x1440@239.76Hz, 0x0, 1.25, vrr, 1"
-          "HDMI-A-1, highres, auto, 2, vrr, 1"
-        ];
+        # flame.hyprland.monitor = [
+        #   "Unknown-1, disabled"
+        #   "DP-2, 5120x1440@239.76Hz, 0x0, 1.25, vrr, 1"
+        #   "HDMI-A-1, highres, auto, 2, vrr, 1"
+        # ];
 
         home.stateVersion = "23.11"; # home manager can be updated without changing this - read documentation
       }

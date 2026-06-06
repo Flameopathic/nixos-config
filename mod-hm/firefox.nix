@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   lib,
+  config,
   ...
 }:
 {
@@ -9,6 +10,7 @@
 
   config.programs.firefox = {
     enable = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     betterfox = {
       enable = true;
       profiles.default.enableAllSections = true;

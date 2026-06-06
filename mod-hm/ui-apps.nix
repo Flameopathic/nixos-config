@@ -24,7 +24,6 @@
       [
         vlc
         peazip
-        kdePackages.dolphin
       ]
       ++ lib.optionals (!config.flame.ui.minimal) [
         eog
@@ -52,7 +51,10 @@
 
     programs = {
       foot.enable = true;
-      yazi.enable = true;
+      yazi = {
+        enable = true;
+        shellWrapperName = "y";
+      };
       # spicetify = {
       #   enable = true;
       #   spotifyPackage = pkgs.unstable.spotify;

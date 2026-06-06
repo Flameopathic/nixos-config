@@ -5,13 +5,13 @@
     ../../mod/syncthing.nix
     ../../mod/ui/theme/rose-pine
     ../../mod/ui
-    ../../mod/ui/env/hyprland.nix
+    ../../mod/ui/env/kde.nix
     (
       { ... }:
       {
-        services.logind = {
-          powerKey = "suspend";
-          powerKeyLongPress = "poweroff";
+        services.logind.settings.Login = {
+          HandlePowerKey = "suspend";
+          HandlePowerKeyLongPress = "poweroff";
         };
 
         system.stateVersion = "23.11";
@@ -33,10 +33,10 @@
           GDK_SCALE = 2;
         };
 
-        flame.hyprland.monitor = [
-          "eDP-1, preferred, 1920x0, auto"
-          "DP-1, preferred, 0x0, 1"
-        ];
+        # flame.hyprland.monitor = [
+        #   "eDP-1, preferred, 1920x0, auto"
+        #   "DP-1, preferred, 0x0, 1"
+        # ];
 
         systemd.user.tmpfiles.rules = [
           "L ${config.home.homeDirectory}/dld - - - - /mnt/sd/dld"

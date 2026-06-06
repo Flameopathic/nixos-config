@@ -51,9 +51,6 @@
           colmena
           ;
       })
-
-      # dolphin fixes
-      inputs.dolphin-overlay.overlays.default
     ];
 
     environment.systemPackages = with pkgs; [

@@ -78,7 +78,7 @@ in
 
     # packages
     home.packages = with pkgs; [
-      swww
+      awww
       brillo
       networkmanagerapplet
       hyprshot
@@ -89,11 +89,14 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
+
+      configType = "hyprlang"; # TODO: migrate to lua
+
       settings = {
         ecosystem.no_update_news = true;
 
-        exec-once = "swaylock & swww-daemon & mako & nm-applet & pasystray";
-        exec = "swww img ${config.stylix.image}";
+        exec-once = "swaylock & awww-daemon & mako & nm-applet & pasystray";
+        exec = "awww img ${config.stylix.image}";
 
         monitor = cfg.monitor;
         "misc:disable_hyprland_logo" = true;
