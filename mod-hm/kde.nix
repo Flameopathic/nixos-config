@@ -5,7 +5,6 @@
   ];
   programs.plasma = {
     enable = true;
-    overrideConfig = true;
     hotkeys.commands = {
       toggle-theme = {
         command = "toggle-theme";
@@ -20,7 +19,7 @@
       {
         name = "SYNA2BA6:00 06CB:CFD8 Touchpad";
         vendorId = "06CB";
-        productId = "CFD8"; 
+        productId = "CFD8";
         enable = true;
         disableWhileTyping = true;
         leftHanded = true;
