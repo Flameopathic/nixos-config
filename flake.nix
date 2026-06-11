@@ -118,6 +118,7 @@
                         inherit inputs;
                       };
                       backupFileExtension = "hm-bkp";
+                      overwriteBackup = true;
                       users.flame = {
                         imports = home-modules ++ [ ./mod-hm ] ++ optionalPath ./host/${host}/home.nix;
                       };
