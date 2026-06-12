@@ -89,14 +89,6 @@
               icon = "https://wikipedia.org/favicon.ico";
               definedAliases = [ "@w" ];
             };
-            "Home Manager" = {
-              urls = lib.singleton {
-                template = "https://home-manager-options.extranix.com/?query={searchTerms}";
-              };
-
-              icon = "https://home-manager-options.extranix.com/favicon.ico";
-              definedAliases = [ "@h" ];
-            };
           };
         };
         bookmarks = {
