@@ -24,14 +24,6 @@
           "parport"
           "parport_pc"
         ];
-
-        systemd.services.fnlock-off = {
-          wantedBy = [ "multi-user.target" ];
-          description = "Deactivate fn lock LED";
-          script = ''
-            echo "0" > "/sys/class/leds/platform::fnlock/brightness"
-          '';
-        };
       }
     )
   ];
