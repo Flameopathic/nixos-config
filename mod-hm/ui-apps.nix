@@ -33,6 +33,7 @@
         hunspellDicts.en_US # for libreoffice
         qdirstat
         krita
+        ffmpeg
         imagemagick
         yt-dlp
         inkscape
