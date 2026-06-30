@@ -48,7 +48,6 @@
         thunderbird
         kdePackages.kdenlive
         spotify
-        bottles
         chromium
       ];
 
