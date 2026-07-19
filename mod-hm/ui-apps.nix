@@ -26,9 +26,7 @@
         peazip
       ]
       ++ lib.optionals (!config.flame.ui.minimal) [
-        eog
         orca-slicer
-        blender
         libreoffice
         hunspellDicts.en_US # for libreoffice
         qdirstat
@@ -36,27 +34,18 @@
         ffmpeg
         imagemagick
         yt-dlp
-        inkscape
         audacity
-        discord
-        rustup
-        gcc
-        adw-bluetooth
         obsidian
-        freecad-wayland
-        wootility
-        thunderbird
-        kdePackages.kdenlive
         spotify
         chromium
       ];
 
     programs = {
       foot.enable = true;
-      yazi = {
-        enable = true;
-        shellWrapperName = "y";
-      };
+      # yazi = {
+      #   enable = true;
+      #   shellWrapperName = "y";
+      # };
       # spicetify = {
       #   enable = true;
       #   spotifyPackage = pkgs.unstable.spotify;

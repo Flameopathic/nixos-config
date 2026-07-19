@@ -26,7 +26,6 @@ let
 
   # "with respect to" functions; useful for setting one value for sure and scaling another based on aspect ratio
   wrtX = number: number * dimensions.y / dimensions.x;
-  wrtY = number: number * dimensions.x / dimensions.y;
 
   fontSize = round (dimensions.y * 45 / 1440);
 in
