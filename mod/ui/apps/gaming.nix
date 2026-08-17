@@ -4,5 +4,6 @@
   services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     prismlauncher
+    unstable.modrinth-app
   ];
 }
