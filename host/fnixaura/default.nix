@@ -10,7 +10,6 @@
     ../../mod/ui
     ../../mod/ui/apps/gaming.nix
     ../../mod/ui/env/kde.nix
-    ../../mod/winboat.nix
     (
       { pkgs, ... }:
       {
