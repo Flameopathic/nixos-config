@@ -38,6 +38,7 @@
         obsidian
         spotify
         chromium
+        lmstudio
       ];
 
     programs = {
