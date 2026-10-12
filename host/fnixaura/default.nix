@@ -15,6 +15,8 @@
       {
         system.stateVersion = "24.11";
 
+        environment.systemPackages = [ pkgs.unstable.bambu-studio ];
+
         services.udev.extraRules = ''
           SUBSYSTEM=="usb", ATTR{idVendor}=="1a86", ATTR{idProduct}=="7584", MODE="0666"
         '';

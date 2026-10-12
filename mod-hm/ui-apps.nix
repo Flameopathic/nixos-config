@@ -26,7 +26,6 @@
         peazip
       ]
       ++ lib.optionals (!config.flame.ui.minimal) [
-        orca-slicer
         libreoffice
         hunspellDicts.en_US # for libreoffice
         qdirstat
