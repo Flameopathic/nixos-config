@@ -38,6 +38,8 @@
         spotify
         chromium
         lmstudio
+        kicad
+        musescore
       ];
 
     programs = {
